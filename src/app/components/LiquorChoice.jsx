@@ -9,16 +9,18 @@ export default function LiquorChoice() {
 
   function handleLiquorChoice(liquor) {
     setLiquorChoice(liquor);
+    console.log(`Debug liquorChoice State: ${liquorChoice}`);
   }
 
   function createLiquorButtons() {
-    return liquorOptions.map((spirit, index) => {
+    return liquorOptions.map((liquor, index) => {
       return (
         <button
           key={index}
           className="p-2 m-5 border-solid border-2 border-sky-500 rounded-lg"
+          onClick={() => handleLiquorChoice(liquor)}
         >
-          {spirit}
+          {liquor}
         </button>
       );
     });
