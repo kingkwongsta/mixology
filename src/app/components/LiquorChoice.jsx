@@ -1,7 +1,8 @@
-import Image from "next/image";
+"use client";
+
 import { useState } from "react";
 
-export default function Home() {
+export default function LiquorChoice() {
   const [liquorChoice, setLiquorChoice] = useState();
 
   const liquorOptions = ["Vodka", "Whiskey", "Rum", "Gin", "Tequila", "Brandy"];
@@ -24,12 +25,9 @@ export default function Home() {
   }
 
   return (
-    <main>
-      <div className="bg-slate-500 text-lime-300">HELLO</div>
-      <div>
-        <h2>What liquor are you interested in using?</h2>
-        <div>{createLiquorButtons()}</div>
-      </div>
-    </main>
+    <div>
+      <h2>What liquor are you interested in using?</h2>
+      <div>{createLiquorButtons()}</div>
+    </div>
   );
 }
