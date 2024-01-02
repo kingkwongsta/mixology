@@ -5,7 +5,14 @@ export default function Home() {
 
   function createLiquorButtons() {
     return liquor.map((spirit, index) => {
-      return <button key={index}>{spirit}</button>;
+      return (
+        <button
+          key={index}
+          className="p-2 m-5 border-solid border-2 border-sky-500 rounded-lg"
+        >
+          {spirit}
+        </button>
+      );
     });
   }
 
