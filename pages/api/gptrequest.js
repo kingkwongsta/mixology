@@ -2,7 +2,7 @@ export default async function createMessage(req, res) {
   const apiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
   const url = "https://api.openai.com/v1/chat/completions";
   const { prompt } = req.body;
-  const question = `create cocktail recipe with ${prompt}, only return result into a js object with name, ingredients, and instructions`;
+  const question = `create cocktail recipe with ${prompt}, only return a json with name, ingredients, and instructions`;
   const messages = [
     {
       role: "system",
