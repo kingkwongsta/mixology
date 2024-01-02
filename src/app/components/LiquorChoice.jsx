@@ -49,15 +49,19 @@ export default function LiquorChoice() {
 
   function showState() {
     console.log(recipe);
+    console.log("test");
+    console.log(`Name: ${recipe.name}`);
+    console.log(`Ingredients: ${recipe.ingredients}`);
+    console.log(`Instructionss: ${recipe.instructions}`);
   }
 
   return (
     <div>
       <h2>What liquor are you interested in using?</h2>
       <div>{createLiquorButtons()}</div>
-      <div className="m-5 text-2xl text-red-600">{recipe}</div>
+      {/* <div className="m-5 text-2xl text-red-600">{recipe}</div> */}
       <button
-        onClick={showState()}
+        onClick={() => showState()}
         className="rounded-xl p-2 m-5 border-solid border-2 border-green-500"
       >
         show recipe state
