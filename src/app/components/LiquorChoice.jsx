@@ -7,12 +7,31 @@ export default function LiquorChoice() {
   const [recipe, setRecipe] = useState();
   const liquorOptions = ["Vodka", "Whiskey", "Rum", "Gin", "Tequila", "Brandy"];
 
-  function handleLiquorChoice(liquor) {
-    setLiquorChoice(liquor);
-    console.log(`Debug liquorChoice State: ${liquorChoice}`);
+  const handleLiquorChoice = async (liquor) => {
+    // setLiquorChoice(liquor);
+    // console.log(`Debug liquorChoice State: ${liquorChoice}`);
 
-    setRecipe(getGPT(liquor));
-  }
+    try {
+      const response = await fetch("/api/gptrequest", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ liquor }),
+      });
+
+      const data = await response.json();
+
+      if (data.data.choices && data.data.choices.length > 0) {
+        setRecipe(data.data.choices[0].message.content);
+        console.log(data);
+      } else {
+        setRecipe("Error: Unexpected response structure");
+      }
+    } catch (error) {
+      console.error(error);
+      setRecipe("Error");
+      console.log(error.response);
+    }
+  };
 
   function createLiquorButtons() {
     return liquorOptions.map((liquor, index) => {
@@ -32,22 +51,7 @@ export default function LiquorChoice() {
     <div>
       <h2>What liquor are you interested in using?</h2>
       <div>{createLiquorButtons()}</div>
+      <div className="m-5 text-2xl text-red-600">{recipe}</div>
     </div>
   );
-}
-
-async function getGPT(liquor) {
-  try {
-    const response = await fetch("/api/gptrequest", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ liquor }),
-    });
-
-    const data = await response.json();
-    return data.data.choices[0].message.content;
-  } catch (error) {
-    console.error(error);
-    setResponse("Error: Failed to communicate with the server.");
-  }
 }
