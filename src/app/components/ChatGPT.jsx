@@ -1,6 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import OpenAI from "openai";
+import React, { useState } from "react";
 
 function ChatGPT() {
   const [prompt, setPrompt] = useState("");
@@ -10,18 +9,25 @@ function ChatGPT() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    setIsLoading(true);
+
     try {
-      const response = await fetch("/api/chatgpt", {
+      const response = await fetch("/api/gptrequest", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt }),
       });
 
       const data = await response.json();
-      setResponse(data.response);
+      setResponse(data.data.choices[0].message.content);
+      console.log(data);
+      console.log(response);
     } catch (error) {
       console.error(error);
       setResponse("Error: Failed to communicate with the server.");
+      console.log(response);
+    } finally {
+      setIsLoading(false);
     }
   };
 
