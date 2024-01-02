@@ -59,7 +59,9 @@ export default function LiquorChoice() {
     <div>
       <h2>What liquor are you interested in using?</h2>
       <div>{createLiquorButtons()}</div>
-      {/* <div className="m-5 text-2xl text-red-600">{recipe}</div> */}
+      <div className="m-5 text-2xl text-red-600">
+        {recipe ? recipe.name : ""}
+      </div>
       <button
         onClick={() => showState()}
         className="rounded-xl p-2 m-5 border-solid border-2 border-green-500"
