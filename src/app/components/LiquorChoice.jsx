@@ -4,7 +4,6 @@ import { useState } from "react";
 
 export default function LiquorChoice() {
   const [liquorChoice, setLiquorChoice] = useState();
-
   const liquorOptions = ["Vodka", "Whiskey", "Rum", "Gin", "Tequila", "Brandy"];
 
   function handleLiquorChoice(liquor) {
