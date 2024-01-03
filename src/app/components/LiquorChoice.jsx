@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import LiquorButtons from "./LiquorButtons";
 
 export default function LiquorChoice() {
   const [liquorChoice, setLiquorChoice] = useState();
   const [recipe, setRecipe] = useState();
-  const liquorOptions = ["Vodka", "Whiskey", "Rum", "Gin", "Tequila", "Brandy"];
 
   const handleLiquorChoice = async (liquor) => {
     setLiquorChoice(liquor);
@@ -31,20 +31,6 @@ export default function LiquorChoice() {
       console.log(error.response);
     }
   };
-
-  function createLiquorButtons() {
-    return liquorOptions.map((liquor, index) => {
-      return (
-        <button
-          key={index}
-          className="p-2 m-5 border-solid border-2 border-sky-500 rounded-lg"
-          onClick={() => handleLiquorChoice(liquor)}
-        >
-          {liquor}
-        </button>
-      );
-    });
-  }
 
   function renderRecipe() {
     return Object.entries(recipe).map(([key, value], index) => {
@@ -75,7 +61,7 @@ export default function LiquorChoice() {
   return (
     <div>
       <h2>What liquor are you interested in using?</h2>
-      <div>{createLiquorButtons()}</div>
+      <LiquorButtons />
       <div className="">{recipe ? renderRecipe() : ""}</div>
       <button
         onClick={() => showState()}
