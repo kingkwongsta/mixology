@@ -33,22 +33,29 @@ export default function LiquorChoice() {
   };
 
   function renderRecipe() {
-    return Object.entries(recipe).map(([key, value], index) => {
-      return (
-        <div key={index} className="m-5 text-lg text-slate-300">
-          <strong>{key}:</strong>{" "}
-          {Array.isArray(value)
-            ? value.map((item, index2) => (
-                <div key={index2}>
-                  <p>
-                    <strong>{item.name}:</strong> {item.quantity}
-                  </p>
-                </div>
-              ))
-            : value}
+    return (
+      <div>
+        <h2>Name: {recipe.name}</h2>
+        <div>
+          <strong>Ingredients:</strong>
+          <ul>
+            {recipe.ingredients.map((ingredient, index) => (
+              <li key={index}>
+                {ingredient.name}: {ingredient.quantity}
+              </li>
+            ))}
+          </ul>
         </div>
-      );
-    });
+        <div>
+          <strong>Instructions:</strong>
+          <ol>
+            {recipe.instructions.split("\n").map((instruction, index) => (
+              <li key={index}>{instruction.trim()}</li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    );
   }
 
   function showState() {
