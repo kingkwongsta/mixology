@@ -4,13 +4,13 @@ export default async function createMessage(req, res) {
   const { liquor } = req.body;
   console.log(`Liquor Choice: ${liquor}`);
 
-  const prompt = `cocktail recipe with ${liquor},return a json with name ingredients instructions,ingredients is an array of key value pairs with name and quantity`;
+  const prompt = `create a cocktail recipe with ${liquor},json should contain name ingredients instructions,ingredients is an array of key value pairs with name and quantity`;
   console.log(`prompt: ${prompt}`);
 
   const messages = [
     {
       role: "system",
-      content: "You have every PHD available and read ever book known to man",
+      content: "You are a helpful assistant designed to output JSON",
     },
     { role: "user", content: prompt },
   ];
