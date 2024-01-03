@@ -6,9 +6,11 @@ import LiquorButtons from "./LiquorButtons";
 export default function LiquorChoice() {
   const [liquorChoice, setLiquorChoice] = useState();
   const [recipe, setRecipe] = useState();
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleLiquorChoice = async (liquor) => {
     setLiquorChoice(liquor);
+    setIsLoading(true);
 
     try {
       const response = await fetch("/api/gptrequest", {
@@ -29,6 +31,8 @@ export default function LiquorChoice() {
       console.error(error);
       setRecipe("Error");
       console.log(error.response);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -70,12 +74,16 @@ export default function LiquorChoice() {
       <h2>What liquor are you interested in using?</h2>
       <LiquorButtons handleLiquorChoice={handleLiquorChoice} />
       <div className="">{recipe ? renderRecipe() : ""}</div>
-      <button
+      <div className="m-5 text-slate-500 text-xl">
+        {isLoading ? <p>Shaking up your signature sip... </p> : ""}
+      </div>
+      {/* --------- Debug State --------- */}
+      {/* <button
         onClick={() => showState()}
         className="rounded-xl p-2 m-5 border-solid border-2 border-green-500"
       >
         show recipe state
-      </button>
+      </button> */}
     </div>
   );
 }
