@@ -61,7 +61,7 @@ export default function LiquorChoice() {
   return (
     <div>
       <h2>What liquor are you interested in using?</h2>
-      <LiquorButtons />
+      <LiquorButtons handleLiquorChoice={handleLiquorChoice} />
       <div className="">{recipe ? renderRecipe() : ""}</div>
       <button
         onClick={() => showState()}
