@@ -1,5 +1,8 @@
-export default async function createMessage(req, res) {
-  const { prompt } = req.body;
-  console.log(prompt);
-  res.status(200).json({ message: "I am in the root pages folder - not src" });
+export default async function handler(req, res) {
+  const { liquor } = req.body;
+
+  console.log(`Received liquor: ${liquor}`);
+  console.log(`req: ${req}`);
+
+  res.status(200).json({ message: `This is the ${liquor}` });
 }

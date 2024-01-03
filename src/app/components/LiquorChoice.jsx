@@ -8,8 +8,7 @@ export default function LiquorChoice() {
   const liquorOptions = ["Vodka", "Whiskey", "Rum", "Gin", "Tequila", "Brandy"];
 
   const handleLiquorChoice = async (liquor) => {
-    // setLiquorChoice(liquor);
-    // console.log(`Debug liquorChoice State: ${liquorChoice}`);
+    setLiquorChoice(liquor);
 
     try {
       const response = await fetch("/api/gptrequest", {
@@ -67,6 +66,12 @@ export default function LiquorChoice() {
         className="rounded-xl p-2 m-5 border-solid border-2 border-green-500"
       >
         show recipe state
+      </button>
+      <button
+        onClick={() => testAPI()}
+        className="rounded-xl p-2 m-5 border-solid border-2 border-green-500"
+      >
+        test API
       </button>
     </div>
   );
