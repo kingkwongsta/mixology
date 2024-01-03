@@ -46,9 +46,27 @@ export default function LiquorChoice() {
     });
   }
 
+  function renderRecipe() {
+    return Object.entries(recipe).map(([key, value], index) => {
+      return (
+        <div key={index} className="m-5 text-2xl text-red-600">
+          <strong>{key}:</strong>{" "}
+          {Array.isArray(value)
+            ? value.map((item, index2) => (
+                <div key={index2}>
+                  <p>
+                    <strong>{item.name}:</strong> {item.quantity}
+                  </p>
+                </div>
+              ))
+            : value}
+        </div>
+      );
+    });
+  }
+
   function showState() {
     console.log(recipe);
-    console.log("test");
     console.log(`Name: ${recipe.name}`);
     console.log(`Ingredients: ${recipe.ingredients}`);
     console.log(`Instructionss: ${recipe.instructions}`);
@@ -58,20 +76,12 @@ export default function LiquorChoice() {
     <div>
       <h2>What liquor are you interested in using?</h2>
       <div>{createLiquorButtons()}</div>
-      <div className="m-5 text-2xl text-red-600">
-        {recipe ? recipe.name : ""}
-      </div>
+      <div className="">{recipe ? renderRecipe() : ""}</div>
       <button
         onClick={() => showState()}
         className="rounded-xl p-2 m-5 border-solid border-2 border-green-500"
       >
         show recipe state
-      </button>
-      <button
-        onClick={() => testAPI()}
-        className="rounded-xl p-2 m-5 border-solid border-2 border-green-500"
-      >
-        test API
       </button>
     </div>
   );
