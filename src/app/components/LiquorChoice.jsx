@@ -73,17 +73,17 @@ export default function LiquorChoice() {
     <div className="mx-5">
       <h2>What liquor are you interested in using?</h2>
       <LiquorButtons handleLiquorChoice={handleLiquorChoice} />
-      <div className="">{recipe ? renderRecipe() : ""}</div>
+      {/* <div className="">{recipe ? renderRecipe() : ""}</div> */}
       <div className="m-5 text-slate-500 text-xl">
         {isLoading ? <p>Shaking up your signature sip... </p> : ""}
       </div>
       {/* --------- Debug State --------- */}
-      {/* <button
+      <button
         onClick={() => showState()}
         className="rounded-xl p-2 m-5 border-solid border-2 border-green-500"
       >
         show recipe state
-      </button> */}
+      </button>
     </div>
   );
 }
