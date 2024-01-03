@@ -35,8 +35,8 @@ export default function LiquorChoice() {
   function renderRecipe() {
     return (
       <div>
-        <h2>Name: {recipe.name}</h2>
-        <div>
+        <h2 className="my-3">Cocktail: {recipe.name}</h2>
+        <div className="my-3">
           <strong>Ingredients:</strong>
           <ul>
             {recipe.ingredients.map((ingredient, index) => (
@@ -46,7 +46,7 @@ export default function LiquorChoice() {
             ))}
           </ul>
         </div>
-        <div>
+        <div className="my-3">
           <strong>Instructions:</strong>
           <ol>
             {recipe.instructions.split("\n").map((instruction, index) => (
@@ -66,7 +66,7 @@ export default function LiquorChoice() {
   }
 
   return (
-    <div>
+    <div className="mx-5">
       <h2>What liquor are you interested in using?</h2>
       <LiquorButtons handleLiquorChoice={handleLiquorChoice} />
       <div className="">{recipe ? renderRecipe() : ""}</div>
