@@ -49,7 +49,7 @@ export default function LiquorChoice() {
   function renderRecipe() {
     return Object.entries(recipe).map(([key, value], index) => {
       return (
-        <div key={index} className="m-5 text-2xl text-red-600">
+        <div key={index} className="m-5 text-lg text-slate-300">
           <strong>{key}:</strong>{" "}
           {Array.isArray(value)
             ? value.map((item, index2) => (
