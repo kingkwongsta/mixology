@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main>
       <LiquorChoice />
-      <ChatGPT />
+      {/* <ChatGPT /> */}
     </main>
   );
 }
