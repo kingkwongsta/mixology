@@ -10,8 +10,12 @@ export default function Home() {
 
   return (
     <main>
-      {showWelcome && <Welcome display={() => setshowWelcome(false)} />}
-      {/* <LiquorChoice /> */}
+      {showWelcome ? (
+        <Welcome display={() => setshowWelcome(false)} />
+      ) : (
+        <LiquorChoice />
+      )}
+
       {/* <ChatGPT /> */}
     </main>
   );
