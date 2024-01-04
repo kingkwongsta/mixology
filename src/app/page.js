@@ -1,12 +1,16 @@
+"use client";
 import Image from "next/image";
 import LiquorChoice from "./components/LiquorChoice";
 import ChatGPT from "./components/ChatGPT";
 import Welcome from "./components/Welcome";
+import { useState } from "react";
 
 export default function Home() {
+  const [showWelcome, setshowWelcome] = useState(true);
+
   return (
     <main>
-      <Welcome />
+      {showWelcome && <Welcome display={() => setshowWelcome(false)} />}
       {/* <LiquorChoice /> */}
       {/* <ChatGPT /> */}
     </main>
