@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
 
 export default function Preferences() {
   const [randomNum, setrandomNum] = useState(0);
@@ -48,9 +49,9 @@ export default function Preferences() {
   function renderFlavorProfiles() {
     return flavorProfiles.map((flavor, index) => {
       return (
-        <button key={index} className="rounded-xl border-2 p-2 m-3">
+        <Button key={index} className="rounded-xl border-2 p-2 m-3">
           {flavor.profile}
-        </button>
+        </Button>
       );
     });
   }
@@ -60,6 +61,7 @@ export default function Preferences() {
       <h1>{introMessages[randomNum]}</h1>
       <h1>Let's start with the flavor profile</h1>
       <div>{renderFlavorProfiles()}</div>
+      <Button>Click me</Button>
     </div>
   );
 }
