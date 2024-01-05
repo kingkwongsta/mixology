@@ -48,7 +48,7 @@ export default function Preferences() {
   function renderFlavorProfiles() {
     return flavorProfiles.map((flavor, index) => {
       return (
-        <button key={index} className="rounded-xl border-2 p-2">
+        <button key={index} className="rounded-xl border-2 p-2 m-3">
           {flavor.profile}
         </button>
       );
