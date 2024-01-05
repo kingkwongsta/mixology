@@ -3,6 +3,7 @@ import Image from "next/image";
 import LiquorChoice from "./components/LiquorChoice";
 import ChatGPT from "./components/ChatGPT";
 import Welcome from "./components/Welcome";
+import Preferences from "./components/Preferences";
 import { useState } from "react";
 
 export default function Home() {
@@ -13,7 +14,7 @@ export default function Home() {
       {showWelcome ? (
         <Welcome display={() => setshowWelcome(false)} />
       ) : (
-        <LiquorChoice />
+        <Preferences />
       )}
 
       {/* <ChatGPT /> */}
