@@ -12,7 +12,7 @@ export default function Preferences() {
     "Elevate your evenings with bespoke cocktails! Unleash your inner bartender with our taste profile quiz.",
   ];
 
-  const flavorProfile = [
+  const flavorProfiles = [
     {
       profile: "Sweetness",
       description:
@@ -45,10 +45,21 @@ export default function Preferences() {
     setrandomNum(randomIndex);
   }, []);
 
+  function renderFlavorProfiles() {
+    return flavorProfiles.map((flavor, index) => {
+      return (
+        <button key={index} className="rounded-xl border-2 p-2">
+          {flavor.profile}
+        </button>
+      );
+    });
+  }
+
   return (
     <div>
       <h1>{introMessages[randomNum]}</h1>
       <h1>Let's start with the flavor profile</h1>
+      <div>{renderFlavorProfiles()}</div>
     </div>
   );
 }
