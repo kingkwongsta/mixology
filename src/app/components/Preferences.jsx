@@ -9,9 +9,14 @@ export default function Preferences() {
     "Can't decide on a cocktail? Let's unlock your taste buds with a personalized mixology journey!",
   ];
 
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * introMessages.length);
+    setrandomNum(randomIndex);
+  }, []);
+
   return (
     <div>
-      <h1>{introMessages}</h1>
+      <h1>{introMessages[randomNum]}</h1>
     </div>
   );
 }
