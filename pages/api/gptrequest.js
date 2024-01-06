@@ -15,7 +15,7 @@ export default async function createMessage(req, res) {
     const messages = [
       {
         role: "system",
-        content: "You are a helpful assistant designed to output JSON.",
+        content: "You are a helpful mixologist designed to output JSON.",
       },
       { role: "user", content: prompt },
     ];
