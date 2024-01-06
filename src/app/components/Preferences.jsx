@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 export default function Preferences() {
   const [randomNum, setrandomNum] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
   const introMessages = [
     "Ready for a flavor adventure? Answer a few quick questions and we'll whip up a drink you'll love!",
     "Forget bland beverages! Unmask your true cocktail personality with our fun and fiery quiz.",
@@ -48,8 +49,14 @@ export default function Preferences() {
   function renderFlavorProfiles() {
     return flavorProfiles.map((flavor, index) => {
       return (
-        <button key={index} className="rounded-xl border-2 p-2">
+        <button
+          key={index}
+          className="rounded-xl border-2 p-2 m-3"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
           {flavor.profile}
+          {isHovered && <div>{flavor.description}</div>}
         </button>
       );
     });

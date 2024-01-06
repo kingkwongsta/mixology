@@ -16,7 +16,7 @@ export default function Home() {
       ) : (
         <div>
           <Preferences />
-          <LiquorChoice />
+          {/* <LiquorChoice /> */}
         </div>
       )}
 
