@@ -10,6 +10,7 @@ export default async function createMessage(req, res) {
     console.log(`User's liquor choice is: ${liquor}`);
 
     const prompt = `Create a creative/unique/advanced cocktail recipe with ${liquor}. JSON should contain name, ingredients (array of key-value pairs with name and quantity), and instructions.`;
+    console.log(`Prmopt sent to OpenAI API: ${prompt}`);
 
     const messages = [
       {
@@ -36,6 +37,7 @@ export default async function createMessage(req, res) {
 
     const data = await response.json();
     res.status(200).json({ data });
+    console.log("Data fetch was successful");
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Failed to generate cocktail recipe" });
