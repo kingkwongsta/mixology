@@ -3,7 +3,7 @@
 import { useState } from "react";
 import LiquorButtons from "./LiquorButtons";
 
-export default function LiquorChoice({ setLiquorChoice }) {
+export default function LiquorChoice({ setLiquorChoice, userFlavor }) {
   const [recipe, setRecipe] = useState();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -15,7 +15,7 @@ export default function LiquorChoice({ setLiquorChoice }) {
       const response = await fetch("/api/gptrequest", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ liquor }),
+        body: JSON.stringify({ liquor, userFlavor }),
       });
 
       const data = await response.json();
