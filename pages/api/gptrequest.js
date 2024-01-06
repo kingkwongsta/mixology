@@ -6,10 +6,10 @@ export default async function createMessage(req, res) {
     }
 
     const url = "https://api.openai.com/v1/chat/completions";
-    const { liquor } = req.body;
+    const { liquor, userFlavor } = req.body;
     console.log(`User's liquor choice is: ${liquor}`);
 
-    const prompt = `Create a creative/unique/advanced cocktail recipe with ${liquor}. JSON should contain name, ingredients (array of key-value pairs with name and quantity), and instructions.`;
+    const prompt = `Create a creative/unique/advanced cocktail recipe with ${liquor} that emphasizes a ${userFlavor} flavor profile.. JSON should contain name, ingredients (array of key-value pairs with name and quantity), and instructions.`;
     console.log(`Prmopt sent to OpenAI API: ${prompt}`);
 
     const messages = [

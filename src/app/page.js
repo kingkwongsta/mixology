@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import LiquorChoice from "./components/LiquorChoice";
-import ChatGPT from "./components/ChatGPT";
 import Welcome from "./components/Welcome";
 import Preferences from "./components/Preferences";
 import { useState } from "react";
@@ -24,13 +23,12 @@ export default function Home() {
           />
         </div>
       )}
-      <button
+      {/* <button
         onClick={() => console.log(liquorChoice)}
         className="p-2 m-5 border-solid border-2 border-sky-500 rounded-lg"
       >
         Debug: get liquorChoice state
-      </button>
-      {/* <ChatGPT /> */}
+      </button> */}
     </main>
   );
 }
