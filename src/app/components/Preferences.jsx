@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 export default function Preferences() {
   const [randomNum, setrandomNum] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [userFlavor, setUserFlavor] = useState("");
   const introMessages = [
     "Ready for a flavor adventure? Answer a few quick questions and we'll whip up a drink you'll love!",
     "Forget bland beverages! Unmask your true cocktail personality with our fun and fiery quiz.",
@@ -47,19 +48,25 @@ export default function Preferences() {
   }, []);
 
   function renderFlavorProfiles() {
-    return flavorProfiles.map((flavor, index) => {
-      return (
-        <button
-          key={index}
-          className="rounded-xl border-2 p-2 m-3"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          {flavor.profile}
-          {isHovered && <div>{flavor.description}</div>}
-        </button>
-      );
-    });
+    return (
+      <div className="button-container">
+        {flavorProfiles.map((flavor, index) => (
+          <button
+            key={index}
+            className="flavor-button p-2 m-5 border-solid border-2 border-sky-500 rounded-lg"
+            onMouseEnter={() => setIsHovered(flavor.description)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            {flavor.profile}
+          </button>
+        ))}
+        {isHovered && (
+          <div className="hover-description mx-5 my-2 max-w-[400px]">
+            {isHovered}
+          </div>
+        )}
+      </div>
+    );
   }
 
   return (
