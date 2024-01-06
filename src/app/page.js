@@ -14,7 +14,10 @@ export default function Home() {
       {showWelcome ? (
         <Welcome display={() => setshowWelcome(false)} />
       ) : (
-        <Preferences />
+        <div>
+          <Preferences />
+          <LiquorChoice />
+        </div>
       )}
 
       {/* <ChatGPT /> */}
