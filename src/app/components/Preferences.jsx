@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 export default function Preferences({ setUserFlavor }) {
   const [randomNum, setrandomNum] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [selectedButton, setSelectedButton] = useState();
   const introMessages = [
     "Ready for a flavor adventure? Answer a few quick questions and we'll whip up a drink you'll love!",
     "Forget bland beverages! Unmask your true cocktail personality with our fun and fiery quiz.",
@@ -48,15 +49,18 @@ export default function Preferences({ setUserFlavor }) {
 
   function renderFlavorProfiles() {
     return (
-      <div className="button-container">
+      <div className="button-container min-h-[200px]">
         {flavorProfiles.map((flavor, index) => (
           <button
             key={index}
-            className="flavor-button p-2 m-5 border-solid border-2 border-sky-500 rounded-lg"
+            className={`flavor-button p-2 m-5 border-solid border-2 border-sky-500 rounded-lg ${
+              index === selectedButton && "bg-sky-500"
+            }`}
             onMouseEnter={() => setIsHovered(flavor.description)}
             onMouseLeave={() => setIsHovered(false)}
             onClick={(e) => {
               setUserFlavor(event.target.textContent);
+              setSelectedButton(index);
             }}
           >
             {flavor.profile}
