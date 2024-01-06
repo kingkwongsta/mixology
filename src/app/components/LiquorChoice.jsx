@@ -3,8 +3,7 @@
 import { useState } from "react";
 import LiquorButtons from "./LiquorButtons";
 
-export default function LiquorChoice() {
-  const [liquorChoice, setLiquorChoice] = useState();
+export default function LiquorChoice({ setLiquorChoice }) {
   const [recipe, setRecipe] = useState();
   const [isLoading, setIsLoading] = useState(false);
 

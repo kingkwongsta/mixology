@@ -9,6 +9,7 @@ import { useState } from "react";
 export default function Home() {
   const [showWelcome, setshowWelcome] = useState(true);
   const [userFlavor, setUserFlavor] = useState("");
+  const [liquorChoice, setLiquorChoice] = useState();
 
   return (
     <main>
@@ -17,9 +18,18 @@ export default function Home() {
       ) : (
         <div>
           <Preferences setUserFlavor={setUserFlavor} />
-          {/* <LiquorChoice /> */}
+          <LiquorChoice
+            userFlavor={userFlavor}
+            setLiquorChoice={setLiquorChoice}
+          />
         </div>
       )}
+      <button
+        onClick={() => console.log(liquorChoice)}
+        className="p-2 m-5 border-solid border-2 border-sky-500 rounded-lg"
+      >
+        Debug: get liquorChoice state
+      </button>
       {/* <ChatGPT /> */}
     </main>
   );
