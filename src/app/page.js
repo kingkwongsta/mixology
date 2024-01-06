@@ -8,6 +8,7 @@ import { useState } from "react";
 
 export default function Home() {
   const [showWelcome, setshowWelcome] = useState(true);
+  const [userFlavor, setUserFlavor] = useState("");
 
   return (
     <main>
@@ -15,11 +16,10 @@ export default function Home() {
         <Welcome display={() => setshowWelcome(false)} />
       ) : (
         <div>
-          <Preferences />
+          <Preferences setUserFlavor={setUserFlavor} />
           {/* <LiquorChoice /> */}
         </div>
       )}
-
       {/* <ChatGPT /> */}
     </main>
   );

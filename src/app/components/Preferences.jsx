@@ -1,10 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
 
-export default function Preferences() {
+export default function Preferences({ setUserFlavor }) {
   const [randomNum, setrandomNum] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
-  const [userFlavor, setUserFlavor] = useState("");
   const introMessages = [
     "Ready for a flavor adventure? Answer a few quick questions and we'll whip up a drink you'll love!",
     "Forget bland beverages! Unmask your true cocktail personality with our fun and fiery quiz.",
