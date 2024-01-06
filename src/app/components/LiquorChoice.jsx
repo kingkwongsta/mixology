@@ -6,6 +6,7 @@ import LiquorButtons from "./LiquorButtons";
 export default function LiquorChoice({ setLiquorChoice, userFlavor }) {
   const [recipe, setRecipe] = useState();
   const [isLoading, setIsLoading] = useState(false);
+  const [selectedButton, setSelectedButton] = useState();
 
   const handleLiquorChoice = async (liquor) => {
     setLiquorChoice(liquor);
@@ -71,7 +72,11 @@ export default function LiquorChoice({ setLiquorChoice, userFlavor }) {
   return (
     <div className="mx-5">
       <h2>What liquor are you interested in using?</h2>
-      <LiquorButtons handleLiquorChoice={handleLiquorChoice} />
+      <LiquorButtons
+        selectedButton={selectedButton}
+        setSelectedButton={setSelectedButton}
+        handleLiquorChoice={handleLiquorChoice}
+      />
       <div className="">{recipe ? renderRecipe() : ""}</div>
       <div className="m-5 text-slate-500 text-xl">
         {isLoading ? <p>Shaking up your signature sip... </p> : ""}
