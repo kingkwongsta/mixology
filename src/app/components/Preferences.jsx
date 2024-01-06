@@ -56,6 +56,9 @@ export default function Preferences() {
             className="flavor-button p-2 m-5 border-solid border-2 border-sky-500 rounded-lg"
             onMouseEnter={() => setIsHovered(flavor.description)}
             onMouseLeave={() => setIsHovered(false)}
+            onClick={(e) => {
+              setUserFlavor(event.target.textContent);
+            }}
           >
             {flavor.profile}
           </button>
