@@ -24,6 +24,7 @@ export default function Home() {
               userFlavor={userFlavor}
               setLiquorChoice={setLiquorChoice}
             />
+            <Mood userMood={userMood} setUserMood={setUserMood} />
           </div>
         )}
         {/*----- DEBUG STATE -----*/}
@@ -33,11 +34,11 @@ export default function Home() {
         >
           Debug: get liquorChoice state
         </button>
-        <Mood userMood={userMood} setUserMood={setUserMood} />
       </div>
       <div className="right-bar">
         {userFlavor && <h3>User Flavor: {userFlavor}</h3>}
         {liquorChoice && <h3>Liquor Choice: {liquorChoice}</h3>}
+        {userMood && <h3>Mood: {userMood}</h3>}
       </div>
     </main>
   );
