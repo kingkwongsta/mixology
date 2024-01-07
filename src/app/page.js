@@ -3,12 +3,14 @@ import Image from "next/image";
 import LiquorChoice from "./components/LiquorChoice";
 import Welcome from "./components/Welcome";
 import Preferences from "./components/Preferences";
+import Mood from "./components/Mood";
 import { useState } from "react";
 
 export default function Home() {
   const [showWelcome, setshowWelcome] = useState(true);
   const [userFlavor, setUserFlavor] = useState();
   const [liquorChoice, setLiquorChoice] = useState();
+  const [userMood, setUserMood] = useState();
 
   return (
     <main className="flex flex-row space-x-3 m-3">
@@ -22,18 +24,22 @@ export default function Home() {
               userFlavor={userFlavor}
               setLiquorChoice={setLiquorChoice}
             />
+            <Mood userMood={userMood} setUserMood={setUserMood} />
           </div>
         )}
+        {/*----- DEBUG STATE -----*/}
         {/* <button
-        onClick={() => console.log(liquorChoice)}
-        className="p-2 m-5 border-solid border-2 border-sky-500 rounded-lg"
-      >
-        Debug: get liquorChoice state
-      </button> */}
+          onClick={() => console.log(userMood)}
+          className="p-2 m-5 border-solid border-2 border-sky-500 rounded-lg"
+        >
+          Debug: get liquorChoice state
+        </button> */}
+        {/*----- END DEBUG STATE -----*/}
       </div>
       <div className="right-bar">
         {userFlavor && <h3>User Flavor: {userFlavor}</h3>}
         {liquorChoice && <h3>Liquor Choice: {liquorChoice}</h3>}
+        {userMood && <h3>Mood: {userMood}</h3>}
       </div>
     </main>
   );
