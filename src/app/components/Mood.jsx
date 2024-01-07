@@ -22,6 +22,7 @@ export default function Mood({ userMood, setUserMood }) {
         buttonContent={moodSelections}
         selectedButton={selectedButton}
         setSelectedButton={setSelectedButton}
+        setUserMood={setUserMood}
       />
     </>
   );

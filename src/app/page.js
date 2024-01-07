@@ -26,12 +26,13 @@ export default function Home() {
             />
           </div>
         )}
-        {/* <button
-        onClick={() => console.log(liquorChoice)}
-        className="p-2 m-5 border-solid border-2 border-sky-500 rounded-lg"
-      >
-        Debug: get liquorChoice state
-      </button> */}
+        {/*----- DEBUG STATE -----*/}
+        <button
+          onClick={() => console.log(userMood)}
+          className="p-2 m-5 border-solid border-2 border-sky-500 rounded-lg"
+        >
+          Debug: get liquorChoice state
+        </button>
         <Mood userMood={userMood} setUserMood={setUserMood} />
       </div>
       <div className="right-bar">

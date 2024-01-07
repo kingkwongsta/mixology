@@ -2,9 +2,9 @@ export default function ButtonList({
   buttonContent,
   selectedButton,
   setSelectedButton,
+  setUserMood,
 }) {
-  const liquorOptions = ["Vodka", "Whiskey", "Rum", "Gin", "Tequila", "Brandy"];
-  return liquorOptions.map((liquor, index) => {
+  return buttonContent.map((content, index) => {
     return (
       <button
         key={index}
@@ -13,9 +13,10 @@ export default function ButtonList({
         }`}
         onClick={() => {
           setSelectedButton(index);
+          setUserMood(content);
         }}
       >
-        {liquor}
+        {content}
       </button>
     );
   });
