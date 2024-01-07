@@ -1,4 +1,8 @@
-export default function ButtonRender({ buttonContent }) {
+export default function ButtonList({
+  buttonContent,
+  selectedButton,
+  setSelectedButton,
+}) {
   const liquorOptions = ["Vodka", "Whiskey", "Rum", "Gin", "Tequila", "Brandy"];
   return liquorOptions.map((liquor, index) => {
     return (
@@ -8,7 +12,6 @@ export default function ButtonRender({ buttonContent }) {
           index === selectedButton && "bg-sky-500"
         }`}
         onClick={() => {
-          handleLiquorChoice(liquor);
           setSelectedButton(index);
         }}
       >
