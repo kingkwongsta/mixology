@@ -9,6 +9,7 @@ export default function Home() {
   const [showWelcome, setshowWelcome] = useState(true);
   const [userFlavor, setUserFlavor] = useState();
   const [liquorChoice, setLiquorChoice] = useState();
+  const [userMood, setUserMood] = useState();
 
   return (
     <main className="flex flex-row space-x-3 m-3">
