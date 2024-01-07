@@ -26,7 +26,11 @@ export default function Home() {
               setLiquorChoice={setLiquorChoice}
             />
             <Mood userMood={userMood} setUserMood={setUserMood} />
-            <GenerateCocktail />
+            <GenerateCocktail
+              userFlavor={userFlavor}
+              liquorChoice={liquorChoice}
+              userMood={userMood}
+            />
           </div>
         )}
         {/*----- DEBUG STATE -----*/}

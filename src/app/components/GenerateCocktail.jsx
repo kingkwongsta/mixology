@@ -1,7 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
 
-export default function GenerateCocktail() {
+export default function GenerateCocktail({
+  userFlavor,
+  liquorChoice,
+  userMood,
+}) {
   const [randomNum, setRandomNum] = useState();
   const [selected, setSelected] = useState(false);
 
