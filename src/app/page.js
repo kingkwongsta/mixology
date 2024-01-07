@@ -4,6 +4,7 @@ import LiquorChoice from "./components/LiquorChoice";
 import Welcome from "./components/Welcome";
 import Preferences from "./components/Preferences";
 import Mood from "./components/Mood";
+import GenerateCocktail from "./components/GenerateCocktail";
 import { useState } from "react";
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
               setLiquorChoice={setLiquorChoice}
             />
             <Mood userMood={userMood} setUserMood={setUserMood} />
+            <GenerateCocktail />
           </div>
         )}
         {/*----- DEBUG STATE -----*/}

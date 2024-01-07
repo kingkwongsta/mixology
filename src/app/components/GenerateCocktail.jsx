@@ -2,6 +2,9 @@
 import { useState, useEffect } from "react";
 
 export default function GenerateCocktail() {
+  const [randomNum, setRandomNum] = useState();
+  const [selected, setSelected] = useState(false);
+
   const generateNames = [
     "Shake It Up!",
     "Pour Me Something Perfect",
@@ -25,15 +28,23 @@ export default function GenerateCocktail() {
     "Shake Your Tailfeather (and My Cocktail)",
   ];
 
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * generateNames.length);
+    setRandomNum(randomIndex);
+  }, []);
+
   return (
-    <button
-      key={index}
-      className={`p-2 m-5 border-solid border-2 border-sky-500 rounded-lg ${
-        index === selectedButton && "bg-sky-500"
-      }`}
-      onClick={() => {
-        setSelectedButton(index);
-      }}
-    ></button>
+    <div className="my-4">
+      <button
+        className={`p-2 m-5 border-solid border-2 border-sky-500 rounded-lg ${
+          selected && "bg-sky-500"
+        }`}
+        onClick={() => {
+          setSelected(!selected);
+        }}
+      >
+        {generateNames[randomNum]}
+      </button>
+    </div>
   );
 }
