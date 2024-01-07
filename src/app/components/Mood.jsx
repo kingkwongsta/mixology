@@ -17,7 +17,11 @@ export default function Mood({ userMood, setUserMood }) {
 
   return (
     <>
-      <h2>hello</h2>
+      <h2 className="m-3">
+        A single sip takes people back to a cherished moment, sparking joy,
+        nostalgia, or bittersweet longing
+      </h2>
+      <h2 className="m-3">What kind of mood are you in?</h2>
       <ButtonList
         buttonContent={moodSelections}
         selectedButton={selectedButton}
