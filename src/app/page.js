@@ -3,6 +3,7 @@ import Image from "next/image";
 import LiquorChoice from "./components/LiquorChoice";
 import Welcome from "./components/Welcome";
 import Preferences from "./components/Preferences";
+import Mood from "./components/Mood";
 import { useState } from "react";
 
 export default function Home() {
@@ -31,6 +32,7 @@ export default function Home() {
       >
         Debug: get liquorChoice state
       </button> */}
+        <Mood userMood={userMood} setUserMood={setUserMood} />
       </div>
       <div className="right-bar">
         {userFlavor && <h3>User Flavor: {userFlavor}</h3>}
