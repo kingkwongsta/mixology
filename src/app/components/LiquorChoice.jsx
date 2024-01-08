@@ -21,14 +21,6 @@ export default function LiquorChoice({ setLiquorChoice }) {
         setSelectedButton={setSelectedButton}
         setLiquorChoice={setLiquorChoice}
       />
-
-      {/* --------- Debug State --------- */}
-      {/* <button
-        onClick={() => showState()}
-        className="rounded-xl p-2 m-5 border-solid border-2 border-green-500"
-      >
-        show recipe state
-      </button> */}
     </div>
   );
 }

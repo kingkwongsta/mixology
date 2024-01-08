@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 export default function GenerateCocktail({
   userFlavor,
-  liquorChoice,
+  userLiquor,
   userMood,
   recipe,
   setRecipe,
