@@ -1,7 +1,7 @@
 export default function LiquorButtons({
   selectedButton,
   setSelectedButton,
-  handleLiquorChoice,
+  setUserLiquor,
 }) {
   const liquorOptions = ["Vodka", "Whiskey", "Rum", "Gin", "Tequila", "Brandy"];
   return liquorOptions.map((liquor, index) => {
@@ -12,7 +12,7 @@ export default function LiquorButtons({
           index === selectedButton && "bg-sky-500"
         }`}
         onClick={() => {
-          handleLiquorChoice(liquor);
+          setUserLiquor(liquor);
           setSelectedButton(index);
         }}
       >
