@@ -67,6 +67,32 @@ export default function GenerateCocktail({
     }
   };
 
+  function renderRecipe() {
+    return (
+      <div>
+        <h2 className="my-3">Cocktail: {recipe.name}</h2>
+        <div className="my-3">
+          <strong>Ingredients:</strong>
+          <ul>
+            {recipe.ingredients.map((ingredient, index) => (
+              <li key={index}>
+                {ingredient.name}: {ingredient.quantity}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="my-3">
+          <strong>Instructions:</strong>
+          <ol>
+            {recipe.instructions.split("\n").map((instruction, index) => (
+              <li key={index}>{instruction.trim()}</li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="my-4">
       <button
@@ -82,6 +108,7 @@ export default function GenerateCocktail({
       <div className="m-5 text-slate-500 text-xl">
         {isLoading ? <p>Shaking up your signature sip... </p> : ""}
       </div>
+      <div className="">{recipe ? renderRecipe() : ""}</div>
     </div>
   );
 }
