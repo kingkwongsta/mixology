@@ -3,38 +3,38 @@
 import { useState } from "react";
 import LiquorButtons from "./LiquorButtons";
 
-export default function LiquorChoice({ setLiquorChoice, userFlavor }) {
+export default function LiquorChoice({ setLiquorChoice }) {
   const [recipe, setRecipe] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [selectedButton, setSelectedButton] = useState();
 
-  const handleLiquorChoice = async (liquor) => {
-    setLiquorChoice(liquor);
-    setIsLoading(true);
+  // const handleLiquorChoice = async (liquor) => {
+  //   setLiquorChoice(liquor);
+  //   setIsLoading(true);
 
-    try {
-      const response = await fetch("/api/gptrequest", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ liquor, userFlavor }),
-      });
+  //   try {
+  //     const response = await fetch("/api/gptrequest", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify({ liquor, userFlavor }),
+  //     });
 
-      const data = await response.json();
+  //     const data = await response.json();
 
-      if (data.data.choices && data.data.choices.length > 0) {
-        setRecipe(JSON.parse(data.data.choices[0].message.content));
-        console.log(data);
-      } else {
-        setRecipe("Error: Unexpected response structure");
-      }
-    } catch (error) {
-      console.error(error);
-      setRecipe("Error");
-      console.log(error.response);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  //     if (data.data.choices && data.data.choices.length > 0) {
+  //       setRecipe(JSON.parse(data.data.choices[0].message.content));
+  //       console.log(data);
+  //     } else {
+  //       setRecipe("Error: Unexpected response structure");
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //     setRecipe("Error");
+  //     console.log(error.response);
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
 
   function renderRecipe() {
     return (
@@ -75,7 +75,7 @@ export default function LiquorChoice({ setLiquorChoice, userFlavor }) {
       <LiquorButtons
         selectedButton={selectedButton}
         setSelectedButton={setSelectedButton}
-        handleLiquorChoice={handleLiquorChoice}
+        setLiquorChoice={setLiquorChoice}
       />
       <div className="">{recipe ? renderRecipe() : ""}</div>
       <div className="m-5 text-slate-500 text-xl">
