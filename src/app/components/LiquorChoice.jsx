@@ -4,8 +4,6 @@ import { useState } from "react";
 import LiquorButtons from "./LiquorButtons";
 
 export default function LiquorChoice({ setLiquorChoice }) {
-  const [recipe, setRecipe] = useState();
-  const [isLoading, setIsLoading] = useState(false);
   const [selectedButton, setSelectedButton] = useState();
 
   // const handleLiquorChoice = async (liquor) => {
@@ -78,9 +76,7 @@ export default function LiquorChoice({ setLiquorChoice }) {
         setLiquorChoice={setLiquorChoice}
       />
       <div className="">{recipe ? renderRecipe() : ""}</div>
-      <div className="m-5 text-slate-500 text-xl">
-        {isLoading ? <p>Shaking up your signature sip... </p> : ""}
-      </div>
+
       {/* --------- Debug State --------- */}
       {/* <button
         onClick={() => showState()}

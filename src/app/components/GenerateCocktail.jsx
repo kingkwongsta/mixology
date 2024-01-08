@@ -10,6 +10,7 @@ export default function GenerateCocktail({
 }) {
   const [randomNum, setRandomNum] = useState();
   const [selected, setSelected] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const generateNames = [
     "Shake It Up!",
@@ -78,6 +79,9 @@ export default function GenerateCocktail({
       >
         {generateNames[randomNum]}
       </button>
+      <div className="m-5 text-slate-500 text-xl">
+        {isLoading ? <p>Shaking up your signature sip... </p> : ""}
+      </div>
     </div>
   );
 }
