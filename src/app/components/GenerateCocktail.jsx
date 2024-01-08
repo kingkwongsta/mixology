@@ -5,6 +5,8 @@ export default function GenerateCocktail({
   userFlavor,
   liquorChoice,
   userMood,
+  recipe,
+  setRecipe,
 }) {
   const [randomNum, setRandomNum] = useState();
   const [selected, setSelected] = useState(false);
@@ -36,6 +38,33 @@ export default function GenerateCocktail({
     const randomIndex = Math.floor(Math.random() * generateNames.length);
     setRandomNum(randomIndex);
   }, []);
+
+  const getCocktail = async () => {
+    setIsLoading(true);
+
+    try {
+      const response = await fetch("/api/gptrequest", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ liquor, userFlavor }),
+      });
+
+      const data = await response.json();
+
+      if (data.data.choices && data.data.choices.length > 0) {
+        setRecipe(JSON.parse(data.data.choices[0].message.content));
+        console.log(data);
+      } else {
+        setRecipe("Error: Unexpected response structure");
+      }
+    } catch (error) {
+      console.error(error);
+      setRecipe("Error");
+      console.log(error.response);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <div className="my-4">

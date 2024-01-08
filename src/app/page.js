@@ -12,6 +12,7 @@ export default function Home() {
   const [userFlavor, setUserFlavor] = useState();
   const [liquorChoice, setLiquorChoice] = useState();
   const [userMood, setUserMood] = useState();
+  const [recipe, setRecipe] = useState();
 
   return (
     <main className="flex flex-row space-x-3 m-3">
@@ -30,6 +31,8 @@ export default function Home() {
               userFlavor={userFlavor}
               liquorChoice={liquorChoice}
               userMood={userMood}
+              recipe={recipe}
+              setRecipe={setRecipe}
             />
           </div>
         )}
