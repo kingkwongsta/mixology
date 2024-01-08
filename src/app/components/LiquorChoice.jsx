@@ -1,17 +1,9 @@
 "use client";
-
 import { useState } from "react";
 import LiquorButtons from "./LiquorButtons";
 
-export default function LiquorChoice({ setLiquorChoice }) {
+export default function LiquorChoice({ setUserLiquor }) {
   const [selectedButton, setSelectedButton] = useState();
-
-  function showState() {
-    console.log(recipe);
-    console.log(`Name: ${recipe.name}`);
-    console.log(`Ingredients: ${recipe.ingredients}`);
-    console.log(`Instructionss: ${recipe.instructions}`);
-  }
 
   return (
     <div className="mx-5">
@@ -19,7 +11,7 @@ export default function LiquorChoice({ setLiquorChoice }) {
       <LiquorButtons
         selectedButton={selectedButton}
         setSelectedButton={setSelectedButton}
-        setLiquorChoice={setLiquorChoice}
+        setUserLiquor={setUserLiquor}
       />
     </div>
   );

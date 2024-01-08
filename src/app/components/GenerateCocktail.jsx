@@ -47,7 +47,7 @@ export default function GenerateCocktail({
       const response = await fetch("/api/gptrequest", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ liquor, userFlavor }),
+        body: JSON.stringify({ userFlavor, userLiquor, userMood }),
       });
 
       const data = await response.json();
@@ -101,6 +101,7 @@ export default function GenerateCocktail({
         }`}
         onClick={() => {
           setSelected(!selected);
+          getCocktail();
         }}
       >
         {generateNames[randomNum]}
