@@ -7,7 +7,7 @@ export default async function createMessage(req, res) {
 
     const url = "https://api.openai.com/v1/chat/completions";
     const { userFlavor, userLiquor, userMood } = req.body;
-    console.log(`User's liquor choice is: ${liquor}`);
+    console.log(`User's liquor choice is: ${userLiquor}`);
 
     const prompt = `Create a creative/unique/advanced cocktail recipe with ${userLiquor} that emphasizes a ${userFlavor} flavor profile for a ${userMood} mood. JSON should contain name, ingredients (array of key-value pairs with name and quantity), and instructions.`;
     console.log(`Prmopt sent to OpenAI API: ${prompt}`);
