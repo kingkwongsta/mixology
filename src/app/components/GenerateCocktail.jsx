@@ -36,9 +36,11 @@ export default function GenerateCocktail({
   ];
 
   useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * generateNames.length);
+    const calculateRandomIndex = () =>
+      Math.floor(Math.random() * generateNames.length);
+    const randomIndex = calculateRandomIndex();
     setRandomNum(randomIndex);
-  }, [[generateNames]]);
+  }, [generateNames, generateNames.length]);
 
   const getCocktail = async () => {
     setIsLoading(true);

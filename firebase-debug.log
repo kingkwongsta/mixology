@@ -1,0 +1,156 @@
+[debug] [2024-01-09T03:52:06.149Z] ----------------------------------------------------------------------
+[debug] [2024-01-09T03:52:06.151Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\admin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-01-09T03:52:06.151Z] CLI Version:   13.0.2
+[debug] [2024-01-09T03:52:06.151Z] Platform:      win32
+[debug] [2024-01-09T03:52:06.151Z] Node Version:  v19.6.1
+[debug] [2024-01-09T03:52:06.151Z] Time:          Mon Jan 08 2024 19:52:06 GMT-0800 (Pacific Standard Time)
+[debug] [2024-01-09T03:52:06.151Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-01-09T03:52:06.194Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-09T03:52:06.195Z] > authorizing via signed-in user (bryant.j.kwong@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\admin\Downloads\Code\mixology
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[debug] [2024-01-09T03:54:20.854Z] ----------------------------------------------------------------------
+[debug] [2024-01-09T03:54:20.856Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\admin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-01-09T03:54:20.856Z] CLI Version:   13.0.2
+[debug] [2024-01-09T03:54:20.856Z] Platform:      win32
+[debug] [2024-01-09T03:54:20.856Z] Node Version:  v19.6.1
+[debug] [2024-01-09T03:54:20.857Z] Time:          Mon Jan 08 2024 19:54:20 GMT-0800 (Pacific Standard Time)
+[debug] [2024-01-09T03:54:20.857Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-01-09T03:54:20.903Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-09T03:54:20.904Z] > authorizing via signed-in user (bryant.j.kwong@gmail.com)
+[debug] [2024-01-09T03:54:20.904Z] [iam] checking project mix-master-6740c for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-01-09T03:54:20.905Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/mix-master-6740c:testIamPermissions [none]
+[debug] [2024-01-09T03:54:20.905Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/mix-master-6740c:testIamPermissions x-goog-quota-user=projects/mix-master-6740c
+[debug] [2024-01-09T03:54:20.905Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mix-master-6740c:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-09T03:54:21.348Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/mix-master-6740c:testIamPermissions 200
+[debug] [2024-01-09T03:54:21.348Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mix-master-6740c:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-09T03:54:21.350Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mix-master-6740c [none]
+[debug] [2024-01-09T03:54:21.751Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mix-master-6740c 200
+[debug] [2024-01-09T03:54:21.752Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mix-master-6740c {"projectId":"mix-master-6740c","projectNumber":"843705902407","displayName":"Mix Master","name":"projects/mix-master-6740c","resources":{"hostingSite":"mix-master-6740c"},"state":"ACTIVE","etag":"1_d40a8ba9-56af-4a85-8e32-e6c6c8a23f49"}
+[debug] [2024-01-09T03:54:24.414Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/mix-master-6740c/sites pageToken=&pageSize=10
+[debug] [2024-01-09T03:54:25.137Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/mix-master-6740c/sites 200
+[debug] [2024-01-09T03:54:25.137Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/mix-master-6740c/sites {"sites":[{"name":"projects/mix-master-6740c/sites/mix-master-6740c","defaultUrl":"https://mix-master-6740c.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2024-01-09T03:54:25.138Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/mix-master-6740c/sites 
+[debug] [2024-01-09T03:54:25.595Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/mix-master-6740c/sites 200
+[debug] [2024-01-09T03:54:25.595Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/mix-master-6740c/sites {"sites":[{"name":"projects/mix-master-6740c/sites/mix-master-6740c","defaultUrl":"https://mix-master-6740c.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2024-01-09T03:54:25.596Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mix-master-6740c/webApps/-/config [none]
+[debug] [2024-01-09T03:54:25.949Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mix-master-6740c/webApps/-/config 200
+[debug] [2024-01-09T03:54:25.949Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mix-master-6740c/webApps/-/config {"projectId":"mix-master-6740c","appId":"1:843705902407:web:d736aa6a6bc3a86c115862","storageBucket":"mix-master-6740c.appspot.com","apiKey":"AIzaSyAdDTirKMrxEJ9W1JX7iDTt5RybaqyuRBU","authDomain":"mix-master-6740c.firebaseapp.com","messagingSenderId":"843705902407","measurementId":"G-R5TLPYP06F"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2024-01-09T03:54:40.103Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/mix-master-6740c/sites/mix-master-6740c [none]
+[debug] [2024-01-09T03:54:40.679Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/mix-master-6740c/sites/mix-master-6740c 200
+[debug] [2024-01-09T03:54:40.679Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/mix-master-6740c/sites/mix-master-6740c {"name":"projects/mix-master-6740c/sites/mix-master-6740c","defaultUrl":"https://mix-master-6740c.web.app","type":"DEFAULT_SITE"}
+[info]    ▲ Next.js 14.0.4
+
+[info]    - Environments: .env.local
+
+   Creating an optimized production build ...
+
+[info]  ✓ Compiled successfully
+
+[info]    Linting and checking validity of types ...
+
+[info] 
+Failed to compile.
+
+./src/app/components/GenerateCocktail.jsx
+41:6  Warning: React Hook useEffect has a missing dependency: 'generateNames.length'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+41:7  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+
+./src/app/components/Preferences.jsx
+8:9  Warning: The 'introMessages' array makes the dependencies of useEffect Hook (at line 48) change on every render. To fix this, wrap the initialization of 'introMessages' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+81:14  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+
+[debug] [2024-01-09T03:54:44.645Z] Error: ENOENT: no such file or directory, open 'C:\Users\admin\Downloads\Code\mixology\.next\export-marker.json'
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-01-09T03:56:19.430Z] ----------------------------------------------------------------------
+[debug] [2024-01-09T03:56:19.432Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\admin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-01-09T03:56:19.432Z] CLI Version:   13.0.2
+[debug] [2024-01-09T03:56:19.432Z] Platform:      win32
+[debug] [2024-01-09T03:56:19.432Z] Node Version:  v19.6.1
+[debug] [2024-01-09T03:56:19.432Z] Time:          Mon Jan 08 2024 19:56:19 GMT-0800 (Pacific Standard Time)
+[debug] [2024-01-09T03:56:19.433Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-01-09T03:56:19.476Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-09T03:56:19.476Z] > authorizing via signed-in user (bryant.j.kwong@gmail.com)
+[debug] [2024-01-09T03:56:19.476Z] [iam] checking project mix-master-6740c for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-01-09T03:56:19.478Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/mix-master-6740c:testIamPermissions [none]
+[debug] [2024-01-09T03:56:19.478Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/mix-master-6740c:testIamPermissions x-goog-quota-user=projects/mix-master-6740c
+[debug] [2024-01-09T03:56:19.478Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mix-master-6740c:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-09T03:56:19.932Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/mix-master-6740c:testIamPermissions 200
+[debug] [2024-01-09T03:56:19.933Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mix-master-6740c:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-09T03:56:19.933Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mix-master-6740c [none]
+[debug] [2024-01-09T03:56:20.366Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mix-master-6740c 200
+[debug] [2024-01-09T03:56:20.366Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mix-master-6740c {"projectId":"mix-master-6740c","projectNumber":"843705902407","displayName":"Mix Master","name":"projects/mix-master-6740c","resources":{"hostingSite":"mix-master-6740c"},"state":"ACTIVE","etag":"1_d40a8ba9-56af-4a85-8e32-e6c6c8a23f49"}
+[debug] [2024-01-09T03:56:22.982Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/mix-master-6740c/sites pageToken=&pageSize=10
+[debug] [2024-01-09T03:56:23.703Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/mix-master-6740c/sites 200
+[debug] [2024-01-09T03:56:23.703Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/mix-master-6740c/sites {"sites":[{"name":"projects/mix-master-6740c/sites/mix-master-6740c","defaultUrl":"https://mix-master-6740c.web.app","appId":"1:843705902407:web:d736aa6a6bc3a86c115862","type":"DEFAULT_SITE"}]}
+[debug] [2024-01-09T03:56:23.706Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:843705902407:web:d736aa6a6bc3a86c115862/config [none]
+[debug] [2024-01-09T03:56:24.198Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:843705902407:web:d736aa6a6bc3a86c115862/config 200
+[debug] [2024-01-09T03:56:24.198Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:843705902407:web:d736aa6a6bc3a86c115862/config {"projectId":"mix-master-6740c","appId":"1:843705902407:web:d736aa6a6bc3a86c115862","storageBucket":"mix-master-6740c.appspot.com","apiKey":"AIzaSyAdDTirKMrxEJ9W1JX7iDTt5RybaqyuRBU","authDomain":"mix-master-6740c.firebaseapp.com","messagingSenderId":"843705902407","measurementId":"G-R5TLPYP06F"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2024-01-09T03:56:29.829Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/mix-master-6740c/sites/mix-master-6740c [none]
+[debug] [2024-01-09T03:56:30.434Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/mix-master-6740c/sites/mix-master-6740c 200
+[debug] [2024-01-09T03:56:30.435Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/mix-master-6740c/sites/mix-master-6740c {"name":"projects/mix-master-6740c/sites/mix-master-6740c","defaultUrl":"https://mix-master-6740c.web.app","appId":"1:843705902407:web:d736aa6a6bc3a86c115862","type":"DEFAULT_SITE"}
+[info]    ▲ Next.js 14.0.4
+
+[info]    - Environments: .env.local
+
+   Creating an optimized production build ...
+
+[info]  ✓ Compiled successfully
+
+[info]    Linting and checking validity of types ...
+
+[info] 
+Failed to compile.
+
+./src/app/components/GenerateCocktail.jsx
+41:6  Warning: React Hook useEffect has a missing dependency: 'generateNames.length'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+41:7  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+
+./src/app/components/Preferences.jsx
+8:9  Warning: The 'introMessages' array makes the dependencies of useEffect Hook (at line 48) change on every render. To fix this, wrap the initialization of 'introMessages' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+81:14  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+
+[debug] [2024-01-09T03:56:34.189Z] Error: ENOENT: no such file or directory, open 'C:\Users\admin\Downloads\Code\mixology\.next\export-marker.json'
+[error] 
+[error] Error: An unexpected error has occurred.
