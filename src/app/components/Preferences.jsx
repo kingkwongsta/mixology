@@ -45,7 +45,7 @@ export default function Preferences({ setUserFlavor }) {
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * introMessages.length);
     setrandomNum(randomIndex);
-  }, []);
+  }, [introMessages]);
 
   function renderFlavorProfiles() {
     return (
