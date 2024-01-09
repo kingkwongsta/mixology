@@ -1,6 +1,6 @@
 export default async function createMessage(req, res) {
   try {
-    const apiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
+    const apiKey = process.env.OPENAI_API_KEY;
     if (!apiKey) {
       throw new Error("Missing OPENAI_API_KEY environment variable");
     }
