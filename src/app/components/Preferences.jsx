@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 export default function Preferences({ setUserFlavor }) {
   const [randomNum, setrandomNum] = useState(0);
