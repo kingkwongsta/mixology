@@ -5,14 +5,18 @@ export default function Preferences({ setUserFlavor }) {
   const [randomNum, setrandomNum] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [selectedButton, setSelectedButton] = useState();
-  const introMessages = [
-    "Ready for a flavor adventure? Answer a few quick questions and we'll whip up a drink you'll love!",
-    "Forget bland beverages! Unmask your true cocktail personality with our fun and fiery quiz.",
-    "Can't decide on a cocktail? Let's unlock your taste buds with a personalized mixology journey!",
-    "Imagine sipping the perfect drink, tailored just for you. Take our quiz and make it a reality!",
-    "Ditch the guesswork, find your flavor bliss! Discover your signature cocktail in minutes.",
-    "Elevate your evenings with bespoke cocktails! Unleash your inner bartender with our taste profile quiz.",
-  ];
+
+  const introMessages = useMemo(
+    () => [
+      "Ready for a flavor adventure? Answer a few quick questions and we'll whip up a drink you'll love!",
+      "Forget bland beverages! Unmask your true cocktail personality with our fun and fiery quiz.",
+      "Can't decide on a cocktail? Let's unlock your taste buds with a personalized mixology journey!",
+      "Imagine sipping the perfect drink, tailored just for you. Take our quiz and make it a reality!",
+      "Ditch the guesswork, find your flavor bliss! Discover your signature cocktail in minutes.",
+      "Elevate your evenings with bespoke cocktails! Unleash your inner bartender with our taste profile quiz.",
+    ],
+    []
+  );
 
   const flavorProfiles = [
     {
@@ -78,7 +82,7 @@ export default function Preferences({ setUserFlavor }) {
   return (
     <div>
       <h1>{introMessages[randomNum]}</h1>
-      <h1>Let's start with the flavor profile</h1>
+      <h1>Let&rsquo;s start with the flavor profile</h1>{" "}
       <div>{renderFlavorProfiles()}</div>
     </div>
   );
