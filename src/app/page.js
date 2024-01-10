@@ -5,6 +5,7 @@ import Welcome from "./components/Welcome";
 import Preferences from "./components/Preferences";
 import Mood from "./components/Mood";
 import GenerateCocktail from "./components/GenerateCocktail";
+import { ModeToggle } from "./components/ModeToggle";
 import { useState } from "react";
 
 export default function Home() {
@@ -46,6 +47,7 @@ export default function Home() {
         {/*----- END DEBUG STATE -----*/}
       </div>
       <div className="right-bar">
+        <ModeToggle />
         {userFlavor && <h3>User Flavor: {userFlavor}</h3>}
         {userLiquor && <h3>Liquor Choice: {userLiquor}</h3>}
         {userMood && <h3>Mood: {userMood}</h3>}
