@@ -5,7 +5,8 @@ import Welcome from "./components/Welcome";
 import Preferences from "./components/Preferences";
 import Mood from "./components/Mood";
 import GenerateCocktail from "./components/GenerateCocktail";
-import { ModeToggle } from "./components/ModeToggle";
+import Header from "./components/Header";
+import ModeToggle from "./components/ModeToggle";
 import { useState } from "react";
 
 export default function Home() {
@@ -17,6 +18,8 @@ export default function Home() {
 
   return (
     <main className="m-3">
+      <Header />
+      <ModeToggle />
       {showWelcome ? (
         <Welcome display={() => setshowWelcome(false)} />
       ) : (
