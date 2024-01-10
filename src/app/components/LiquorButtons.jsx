@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+
 export default function LiquorButtons({
   selectedButton,
   setSelectedButton,
@@ -6,18 +8,16 @@ export default function LiquorButtons({
   const liquorOptions = ["Vodka", "Whiskey", "Rum", "Gin", "Tequila", "Brandy"];
   return liquorOptions.map((liquor, index) => {
     return (
-      <button
+      <Button
         key={index}
-        className={`p-2 m-5 border-solid border-2 border-sky-500 rounded-lg ${
-          index === selectedButton && "bg-sky-500"
-        }`}
+        className={`m-5 ${index === selectedButton && "bg-sky-500"}`}
         onClick={() => {
           setUserLiquor(liquor);
           setSelectedButton(index);
         }}
       >
         {liquor}
-      </button>
+      </Button>
     );
   });
 }
