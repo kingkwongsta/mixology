@@ -3,6 +3,7 @@ export default function ButtonListDropdown({
   selectedButton,
   setSelectedButton,
   isHovered,
+  setIsHovered,
   onButtonClick,
 }) {
   return (

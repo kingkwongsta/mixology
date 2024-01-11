@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useMemo } from "react";
+import ButtonListDropdown from "./ButtonListDropdown";
 
 export default function Preferences({ setUserFlavor }) {
   const [randomNum, setrandomNum] = useState(0);
@@ -83,7 +84,15 @@ export default function Preferences({ setUserFlavor }) {
     <div>
       <h1>{introMessages[randomNum]}</h1>
       <h1>Let&rsquo;s start with the flavor profile</h1>{" "}
-      <div>{renderFlavorProfiles()}</div>
+      <ButtonListDropdown
+        buttonContent={flavorProfiles}
+        selectedButton={selectedButton}
+        setSelectedButton={setSelectedButton}
+        isHovered={isHovered}
+        setIsHovered={setIsHovered}
+        onButtonClick={setUserFlavor}
+      />
+      {/* <div>{renderFlavorProfiles()}</div> */}
     </div>
   );
 }
