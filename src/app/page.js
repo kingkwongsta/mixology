@@ -2,8 +2,8 @@
 import Image from "next/image";
 import LiquorChoice from "./components/LiquorChoice";
 import Welcome from "./components/Welcome";
-import Preferences from "./components/Preferences";
-import Mood from "./components/Mood";
+import FlavorChoice from "./components/FlavorChoice";
+import MoodChoice from "./components/MoodChoice";
 import GenerateCocktail from "./components/GenerateCocktail";
 import Header from "./components/Header";
 import ModeToggle from "./components/ModeToggle";
@@ -24,9 +24,9 @@ export default function Home() {
         <Welcome display={() => setshowWelcome(false)} />
       ) : (
         <div>
-          <Preferences setUserFlavor={setUserFlavor} />
+          <FlavorChoice setUserFlavor={setUserFlavor} />
           <LiquorChoice userFlavor={userFlavor} setUserLiquor={setUserLiquor} />
-          <Mood userMood={userMood} setUserMood={setUserMood} />
+          <MoodChoice userMood={userMood} setUserMood={setUserMood} />
           <GenerateCocktail
             userFlavor={userFlavor}
             userLiquor={userLiquor}

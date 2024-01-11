@@ -2,7 +2,7 @@
 import { useState } from "react";
 import ButtonList from "./ButtonList";
 
-export default function Mood({ userMood, setUserMood }) {
+export default function MoodChoice({ userMood, setUserMood }) {
   const [selectedButton, setSelectedButton] = useState();
 
   const moodSelections = [

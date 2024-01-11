@@ -2,7 +2,7 @@
 import { useState, useEffect, useMemo } from "react";
 import ButtonListDropdown from "./ButtonListDropdown";
 
-export default function Preferences({ setUserFlavor }) {
+export default function FlavorChoice({ setUserFlavor }) {
   const [randomNum, setrandomNum] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [selectedButton, setSelectedButton] = useState();
