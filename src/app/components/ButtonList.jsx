@@ -1,23 +1,23 @@
+import { Button } from "@/components/ui/button";
+
 export default function ButtonList({
   buttonContent,
   selectedButton,
   setSelectedButton,
-  setUserMood,
+  onButtonClick,
 }) {
   return buttonContent.map((content, index) => {
     return (
-      <button
+      <Button
         key={index}
-        className={`p-2 m-5 border-solid border-2 border-sky-500 rounded-lg ${
-          index === selectedButton && "bg-sky-500"
-        }`}
+        className={`m-5 ${index === selectedButton && "bg-sky-500"}`}
         onClick={() => {
           setSelectedButton(index);
-          setUserMood(content);
+          onButtonClick(content);
         }}
       >
         {content}
-      </button>
+      </Button>
     );
   });
 }

@@ -1,17 +1,19 @@
 "use client";
 import { useState } from "react";
-import LiquorButtons from "./LiquorButtons";
+import ButtonList from "./ButtonList";
 
 export default function LiquorChoice({ setUserLiquor }) {
   const [selectedButton, setSelectedButton] = useState();
+  const liquorOptions = ["Vodka", "Whiskey", "Rum", "Gin", "Tequila", "Brandy"];
 
   return (
     <div className="mx-5">
       <h2>What liquor are you interested in using?</h2>
-      <LiquorButtons
+      <ButtonList
+        buttonContent={liquorOptions}
         selectedButton={selectedButton}
         setSelectedButton={setSelectedButton}
-        setUserLiquor={setUserLiquor}
+        onButtonClick={setUserLiquor}
       />
     </div>
   );
