@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import LiquorButtons from "./LiquorButtons";
 import ButtonList from "./ButtonList";
 
 export default function LiquorChoice({ setUserLiquor }) {
