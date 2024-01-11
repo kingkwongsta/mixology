@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+
 export default function ButtonListDropdown({
   buttonContent,
   selectedButton,
@@ -10,11 +12,9 @@ export default function ButtonListDropdown({
     <>
       <div className="button-container min-h-[200px]">
         {buttonContent.map((content, index) => (
-          <button
+          <Button
             key={index}
-            className={`flavor-button p-2 m-5 border-solid border-2 border-sky-500 rounded-lg ${
-              index === selectedButton && "bg-sky-500"
-            }`}
+            className={`m-5 ${index === selectedButton && "bg-sky-500"}`}
             onMouseEnter={() => setIsHovered(content.description)}
             onMouseLeave={() => setIsHovered(false)}
             onClick={(e) => {
@@ -23,7 +23,7 @@ export default function ButtonListDropdown({
             }}
           >
             {content.profile}
-          </button>
+          </Button>
         ))}
         {isHovered && (
           <div className="hover-description mx-5 my-2 max-w-[400px]">
