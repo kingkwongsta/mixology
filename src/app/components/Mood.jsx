@@ -15,10 +15,6 @@ export default function Mood({ userMood, setUserMood }) {
     "Creative",
   ];
 
-  const handleButtonClick = (content) => {
-    setUserMood(content);
-  };
-
   return (
     <>
       <h2 className="m-3">
