@@ -4,7 +4,7 @@ export default function ButtonList({
   buttonContent,
   selectedButton,
   setSelectedButton,
-  setUserMood,
+  onButtonClick,
 }) {
   return buttonContent.map((content, index) => {
     return (
@@ -13,7 +13,7 @@ export default function ButtonList({
         className={`m-5 ${index === selectedButton && "bg-sky-500"}`}
         onClick={() => {
           setSelectedButton(index);
-          setUserMood(content);
+          onButtonClick(content);
         }}
       >
         {content}
