@@ -76,11 +76,13 @@ export default function GenerateCocktail({
         <div className="my-3">
           <strong>Ingredients:</strong>
           <ul>
-            {recipe.ingredients.map((ingredient, index) => (
-              <li key={index}>
-                {ingredient.name}: {ingredient.quantity}
-              </li>
-            ))}
+            {recipe.ingredients
+              .filter((item) => item.name !== "Ice cubes")
+              .map((ingredient, index) => (
+                <li key={index}>
+                  {ingredient.quantity} {ingredient.name}
+                </li>
+              ))}
           </ul>
         </div>
         <div className="my-3">
