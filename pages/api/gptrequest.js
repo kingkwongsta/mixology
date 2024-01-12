@@ -9,12 +9,13 @@ export default async function createMessage(req, res) {
     const { userFlavor, userLiquor, userMood } = req.body;
 
     // const prompt = `Create a creative/unique/advanced cocktail recipe with ${userLiquor} that emphasizes a ${userFlavor} flavor profile for a ${userMood} mood. JSON should contain name, ingredients (array of key-value pairs with name and quantity), and instructions.`;
-    const userPreferences = `Create a creative/unique/advanced cocktail recipe with ${userLiquor} that emphasizes a ${userFlavor} flavor profile for a ${userMood} mood`;
+    const userPreferences = `contains ${userLiquor} and emphasizes a ${userFlavor} flavor profile for a ${userMood} mood`;
 
     const instructions =
-      "create a unique advance cocktail based on the user preferences in the text delimited by triple backticks";
+      "create a unique advance cocktail based on the user preferences in the text delimited by triple periods";
     const output_format =
-      "JSON ouput should look like; JSON should contain name, ingredients (array of key-value pairs with name and quantity), and instructions.";
+      "JSON output should contain: name, ingredients (array of key-value pairs with name and quantity), instructions.";
+    const prompt = instructions + output_format + `...${userPreferences}...`;
     const messages = [
       {
         role: "system",
@@ -26,6 +27,7 @@ export default async function createMessage(req, res) {
     const body = JSON.stringify({
       messages,
       model: "gpt-3.5-turbo",
+      // response_format: "json_object",
       stream: false,
     });
 
