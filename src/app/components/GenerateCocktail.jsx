@@ -80,7 +80,7 @@ export default function GenerateCocktail({
               .filter((item) => item.name !== "Ice cubes")
               .map((ingredient, index) => (
                 <li key={index}>
-                  {ingredient.quantity} {ingredient.name}
+                  {ingredient.quantity} {ingredient.name.toLowerCase()}
                 </li>
               ))}
           </ul>
