@@ -11,10 +11,10 @@ export default function GenerateCocktail({
   const [randomNum, setRandomNum] = useState();
   const [selected, setSelected] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [generateButton, setGenerateButton] = useState();
+  const [buttonName, setButtonName] = useState("");
 
-  const generateNames = useMemo(() => {
-    [
+  const buttonNameList = useMemo(
+    () => [
       "Shake It Up!",
       "Pour Me Something Perfect",
       "Surprise Me, Bartender!",
@@ -24,7 +24,7 @@ export default function GenerateCocktail({
       "Reveal My Drink Destiny",
       "Craft My Cocktail Lab Experiment",
       "Spin the Cocktail Wheel of Fortune",
-      "Deal Me a Delicious Drink", // Emoji included
+      "Deal Me a Delicious Drink",
       "Find My Flavor Match",
       "Unlock My Ultimate Cocktail",
       "Quench My Thirst for Something New",
@@ -35,21 +35,16 @@ export default function GenerateCocktail({
       "Blast Off to Flavortown",
       "Escape to Cocktail Island",
       "Shake Your Tailfeather (and My Cocktail)",
-    ];
-  });
-
-  // useEffect(() => {
-  //   const calculateRandomIndex = () =>
-  //     Math.floor(Math.random() * generateNames.length);
-  //   const randomIndex = calculateRandomIndex();
-  //   setRandomNum(randomIndex);
-  // }, [generateNames, generateNames.length]);
+    ],
+    []
+  );
 
   useEffect(() => {
+    // Generate a random index only once on component mount
     const calculateRandomIndex = () =>
-      Math.floor(Math.random() * generateNames.length);
+      Math.floor(Math.random() * buttonNameList.length);
     const randomIndex = calculateRandomIndex();
-    setRandomNum(randomIndex);
+    setButtonName(buttonNameList[randomIndex]);
   }, []);
 
   const getCocktail = async () => {
@@ -118,7 +113,7 @@ export default function GenerateCocktail({
           getCocktail();
         }}
       >
-        {generateNames[randomNum]}
+        {buttonName}
       </button>
       <div className="m-5 text-slate-500 text-xl">
         {isLoading ? <p>Shaking up your signature sip... </p> : ""}
