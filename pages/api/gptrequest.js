@@ -7,11 +7,14 @@ export default async function createMessage(req, res) {
 
     const url = "https://api.openai.com/v1/chat/completions";
     const { userFlavor, userLiquor, userMood } = req.body;
-    console.log(`User's liquor choice is: ${userLiquor}`);
 
-    const prompt = `Create a creative/unique/advanced cocktail recipe with ${userLiquor} that emphasizes a ${userFlavor} flavor profile for a ${userMood} mood. JSON should contain name, ingredients (array of key-value pairs with name and quantity), and instructions.`;
-    console.log(`Prmopt sent to OpenAI API: ${prompt}`);
+    // const prompt = `Create a creative/unique/advanced cocktail recipe with ${userLiquor} that emphasizes a ${userFlavor} flavor profile for a ${userMood} mood. JSON should contain name, ingredients (array of key-value pairs with name and quantity), and instructions.`;
+    const userPreferences = `Create a creative/unique/advanced cocktail recipe with ${userLiquor} that emphasizes a ${userFlavor} flavor profile for a ${userMood} mood`;
 
+    const instructions =
+      "create a unique advance cocktail based on the user preferences in the text delimited by triple backticks";
+    const output_format =
+      "JSON ouput should look like; JSON should contain name, ingredients (array of key-value pairs with name and quantity), and instructions.";
     const messages = [
       {
         role: "system",
@@ -25,6 +28,10 @@ export default async function createMessage(req, res) {
       model: "gpt-3.5-turbo",
       stream: false,
     });
+
+    //  <<<<< DEBUG >>>>>
+    console.log(`User's liquor choice is: ${userLiquor}`);
+    console.log(`Prmopt sent to OpenAI API: ${prompt}`);
 
     const response = await fetch(url, {
       method: "POST",
