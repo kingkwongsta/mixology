@@ -38,10 +38,10 @@ export default function Home() {
       )}
       {/*----- DEBUG STATE -----*/}
       <button
-        onClick={() => console.log(userMood)}
+        onClick={() => console.log(recipe)}
         className="p-2 m-5 border-solid border-2 border-sky-500 rounded-lg"
       >
-        Debug: get userMood state
+        Debug: get recipe state
       </button>
       {/*----- END DEBUG STATE -----*/}
     </main>
