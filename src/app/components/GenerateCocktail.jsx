@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 export default function GenerateCocktail({
   userFlavor,
@@ -11,36 +11,41 @@ export default function GenerateCocktail({
   const [randomNum, setRandomNum] = useState();
   const [selected, setSelected] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [buttonName, setButtonName] = useState("");
 
-  const generateNames = [
-    "Shake It Up!",
-    "Pour Me Something Perfect",
-    "Surprise Me, Bartender!",
-    "Let's Get This Party Started",
-    "Mix Me a Masterpiece",
-    "What's My Cocktail Personality?",
-    "Reveal My Drink Destiny",
-    "Craft My Cocktail Lab Experiment",
-    "Spin the Cocktail Wheel of Fortune",
-    "Deal Me a Delicious Drink", // Emoji included
-    "Find My Flavor Match",
-    "Unlock My Ultimate Cocktail",
-    "Quench My Thirst for Something New",
-    "Nail My Next Drink",
-    "Celebrate with a Custom Cocktail",
-    "Mix My Magic Potion",
-    "Create My Cocktail Kingdom",
-    "Blast Off to Flavortown",
-    "Escape to Cocktail Island",
-    "Shake Your Tailfeather (and My Cocktail)",
-  ];
+  const buttonNameList = useMemo(
+    () => [
+      "Shake It Up!",
+      "Pour Me Something Perfect",
+      "Surprise Me, Bartender!",
+      "Let's Get This Party Started",
+      "Mix Me a Masterpiece",
+      "What's My Cocktail Personality?",
+      "Reveal My Drink Destiny",
+      "Craft My Cocktail Lab Experiment",
+      "Spin the Cocktail Wheel of Fortune",
+      "Deal Me a Delicious Drink",
+      "Find My Flavor Match",
+      "Unlock My Ultimate Cocktail",
+      "Quench My Thirst for Something New",
+      "Nail My Next Drink",
+      "Celebrate with a Custom Cocktail",
+      "Mix My Magic Potion",
+      "Create My Cocktail Kingdom",
+      "Blast Off to Flavortown",
+      "Escape to Cocktail Island",
+      "Shake Your Tailfeather (and My Cocktail)",
+    ],
+    []
+  );
 
   useEffect(() => {
+    // Generate a random index only once on component mount
     const calculateRandomIndex = () =>
-      Math.floor(Math.random() * generateNames.length);
+      Math.floor(Math.random() * buttonNameList.length);
     const randomIndex = calculateRandomIndex();
-    setRandomNum(randomIndex);
-  }, [generateNames, generateNames.length]);
+    setButtonName(buttonNameList[randomIndex]);
+  }, []);
 
   const getCocktail = async () => {
     setIsLoading(true);
@@ -76,11 +81,13 @@ export default function GenerateCocktail({
         <div className="my-3">
           <strong>Ingredients:</strong>
           <ul>
-            {recipe.ingredients.map((ingredient, index) => (
-              <li key={index}>
-                {ingredient.name}: {ingredient.quantity}
-              </li>
-            ))}
+            {recipe.ingredients
+              .filter((item) => item.name !== "Ice cubes")
+              .map((ingredient, index) => (
+                <li key={index}>
+                  {ingredient.quantity} {ingredient.name.toLowerCase()}
+                </li>
+              ))}
           </ul>
         </div>
         <div className="my-3">
@@ -106,7 +113,7 @@ export default function GenerateCocktail({
           getCocktail();
         }}
       >
-        {generateNames[randomNum]}
+        {buttonName}
       </button>
       <div className="m-5 text-slate-500 text-xl">
         {isLoading ? <p>Shaking up your signature sip... </p> : ""}

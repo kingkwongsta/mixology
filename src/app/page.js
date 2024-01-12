@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <main className="m-3">
-      <Header />
+      {/* <Header /> */}
       <ModeToggle />
       {showWelcome ? (
         <Welcome display={() => setshowWelcome(false)} />
@@ -37,12 +37,12 @@ export default function Home() {
         </div>
       )}
       {/*----- DEBUG STATE -----*/}
-      <button
-        onClick={() => console.log(userMood)}
+      {/* <button
+        onClick={() => console.log(recipe)}
         className="p-2 m-5 border-solid border-2 border-sky-500 rounded-lg"
       >
-        Debug: get userMood state
-      </button>
+        Debug: get recipe state
+      </button> */}
       {/*----- END DEBUG STATE -----*/}
     </main>
   );
