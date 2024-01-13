@@ -1,6 +1,8 @@
+"use client";
 import React, { useState } from "react";
 
 export default function Test() {
+  const { data, setData } = useState();
   const prompt = "Why is the sky blue? Give me a detailed scientific answer";
 
   const handleSubmit = async (e) => {
@@ -23,6 +25,7 @@ export default function Test() {
   return (
     <>
       <div>HELLO</div>
+      <button onClick={handleSubmit()}>Click Me</button>
     </>
   );
 }
