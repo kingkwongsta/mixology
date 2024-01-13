@@ -24,8 +24,10 @@ export default function Test() {
 
   return (
     <>
-      <div>HELLO</div>
-      <button onClick={handleSubmit()}>Click Me</button>
+      <div className="space-x-4">
+        <button onClick={handleSubmit()}>Click Me</button>
+        <button onClick={() => console.log(data)}>Click Me</button>
+      </div>
     </>
   );
 }
