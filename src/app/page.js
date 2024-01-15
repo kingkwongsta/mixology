@@ -12,8 +12,7 @@ import userStore from "./../lib/userStore";
 
 export default function Home() {
   const [showWelcome, setshowWelcome] = useState(true);
-  const { userFlavor, userLiquor, userMood } = userStore();
-  const [recipe, setRecipe] = useState();
+  const { userFlavor, userLiquor, userMood, drinkRecipe } = userStore();
 
   return (
     <main className="m-3">
@@ -24,21 +23,15 @@ export default function Home() {
           <FlavorChoice />
           <LiquorChoice />
           <MoodChoice />
-          <GenerateCocktail
-            userFlavor={userFlavor}
-            userLiquor={userLiquor}
-            userMood={userMood}
-            recipe={recipe}
-            setRecipe={setRecipe}
-          />
+          <GenerateCocktail />
         </div>
       )}
       {/*----- DEBUG STATE -----*/}
       <button
-        onClick={() => console.log(userMood)}
+        onClick={() => console.log(drinkRecipe)}
         className="p-2 m-5 border-solid border-2 border-sky-500 rounded-lg"
       >
-        Debug: get user Mood
+        Debug: get user Recipe
       </button>{" "}
     </main>
   );
