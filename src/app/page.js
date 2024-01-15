@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <main className="m-3">
-      <ModeToggle />
+      {/* <ModeToggle /> */}
       {showWelcome ? (
         <Welcome display={() => setshowWelcome(false)} />
       ) : (
