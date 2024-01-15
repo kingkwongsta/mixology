@@ -5,16 +5,18 @@ export default function Test() {
   const { data, setData } = useState();
   const prompt = "Why is the sky blue? Give me a detailed scientific answer";
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    // ...
-
+  const handleSubmit = async () => {
     try {
-      const responseData = await fetch("/api/openai", {
+      const response = await fetch("/api/openai", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt }),
       });
+      const responseData = await response.json();
+      if (responseData) {
+        setData(responseData);
+        console.log(responseData);
+      }
 
       // ... Handle response
     } catch (error) {
@@ -25,8 +27,8 @@ export default function Test() {
   return (
     <>
       <div className="space-x-4">
-        <button onClick={handleSubmit()}>Click Me</button>
-        <button onClick={() => console.log(data)}>Click Me</button>
+        <button onClick={handleSubmit}>Get Data</button>
+        <button onClick={() => console.log(data)}>Display Data</button>
       </div>
     </>
   );
