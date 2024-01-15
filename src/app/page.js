@@ -43,7 +43,6 @@ export default function Home() {
       >
         Debug: get user Flavor
       </button>{" "}
-      */
     </main>
   );
 }
