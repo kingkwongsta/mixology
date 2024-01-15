@@ -5,8 +5,7 @@ import ModeToggle from "./ModeToggle";
 export default function Header() {
   return (
     <>
-      <h2>HELLLO WORLD</h2>
-      {/* <ModeToggle /> */}
+      <ModeToggle />
     </>
   );
 }
