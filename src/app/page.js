@@ -16,16 +16,7 @@ export default function Home() {
 
   return (
     <main className="m-3">
-      {showWelcome ? (
-        <Welcome display={() => setshowWelcome(false)} />
-      ) : (
-        <div>
-          <FlavorChoice />
-          <LiquorChoice />
-          <MoodChoice />
-          <GenerateCocktail />
-        </div>
-      )}
+      <Welcome />
       {/*----- DEBUG STATE -----*/}
       <button
         onClick={() => console.log(drinkRecipe)}

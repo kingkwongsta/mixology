@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export default function Welcome({ display }) {
@@ -7,7 +8,9 @@ export default function Welcome({ display }) {
         <h1 className="text-2xl">Crafted for Your Palate</h1>
         <h2 className="text-xl">Discover a world of exquisite cocktails</h2>
         <div className="my-[200px] mt-10">
-          <Button onClick={display}>Start Mixing</Button>
+          <Link href="/flavor">
+            <Button onClick={display}>Start Mixing</Button>
+          </Link>
         </div>
       </div>
     </div>
