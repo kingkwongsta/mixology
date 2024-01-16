@@ -93,7 +93,7 @@ export default function FlavorChoice() {
         isHovered={isHovered}
         setIsHovered={setIsHovered}
         onButtonClick={setUserFlavor}
-        updateQuestionIndex={() => setQuestionIndex(2)}
+        updateQuestionIndex={() => setQuestionIndex((index) => index++)}
       />
       {/* <div>{renderFlavorProfiles()}</div> */}
     </div>

@@ -19,6 +19,8 @@ export default function Home() {
     <main className="m-3">
       <Welcome />
       {questionIndex === 1 && <FlavorChoice />}
+      {questionIndex === 2 && <LiquorChoice />}
+      {questionIndex === 3 && <MoodChoice />}
       {/*----- DEBUG STATE -----*/}
       <button
         onClick={() => console.log(questionIndex)}

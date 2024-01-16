@@ -5,6 +5,7 @@ export default function ButtonList({
   selectedButton,
   setSelectedButton,
   onButtonClick,
+  updateQuestionIndex,
 }) {
   return buttonContent.map((content, index) => {
     return (
@@ -14,6 +15,7 @@ export default function ButtonList({
         onClick={() => {
           setSelectedButton(index);
           onButtonClick(content);
+          updateQuestionIndex();
         }}
       >
         {content}

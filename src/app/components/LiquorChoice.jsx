@@ -4,7 +4,7 @@ import ButtonList from "./ButtonList";
 import userStore from "@/lib/userStore";
 
 export default function LiquorChoice() {
-  const { setUserLiquor } = userStore();
+  const { setUserLiquor, setQuestionIndex } = userStore();
   const [selectedButton, setSelectedButton] = useState();
   const liquorOptions = ["Vodka", "Whiskey", "Rum", "Gin", "Tequila", "Brandy"];
 
@@ -16,6 +16,7 @@ export default function LiquorChoice() {
         selectedButton={selectedButton}
         setSelectedButton={setSelectedButton}
         onButtonClick={setUserLiquor}
+        updateQuestionIndex={setQuestionIndex((index) => index++)}
       />
     </div>
   );
