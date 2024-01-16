@@ -1,10 +1,17 @@
 "use client";
 import { useState, useEffect, useMemo } from "react";
 import userStore from "@/lib/userStore";
+import { Button } from "@/components/ui/button";
 
 export default function GenerateCocktail({}) {
-  const { userFlavor, userLiquor, userMood, drinkRecipe, setDrinkRecipe } =
-    userStore();
+  const {
+    userFlavor,
+    userLiquor,
+    userMood,
+    drinkRecipe,
+    setDrinkRecipe,
+    setQuestionIndex,
+  } = userStore();
 
   const [randomNum, setRandomNum] = useState();
   const [selected, setSelected] = useState(false);
@@ -113,6 +120,9 @@ export default function GenerateCocktail({}) {
         {isLoading ? <p>Shaking up your signature sip... </p> : ""}
       </div>
       <div className="">{drinkRecipe ? renderRecipe() : ""}</div>
+      <div>
+        <Button onClick={() => setQuestionIndex(-4)}>Start Over</Button>
+      </div>
     </div>
   );
 }

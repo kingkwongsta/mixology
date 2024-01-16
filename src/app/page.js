@@ -19,12 +19,12 @@ export default function Home() {
       {questionIndex === 3 && <MoodChoice />}
       {questionIndex === 4 && <GenerateCocktail />}
       {/*----- DEBUG STATE -----*/}
-      <button
+      {/* <button
         onClick={() => console.log(questionIndex)}
         className="p-2 m-5 border-solid border-2 border-sky-500 rounded-lg"
       >
         Debug: get Question Index
-      </button>{" "}
+      </button>{" "} */}
     </main>
   );
 }
