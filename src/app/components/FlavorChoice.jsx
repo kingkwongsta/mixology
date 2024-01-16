@@ -1,11 +1,13 @@
 "use client";
 import { useState, useEffect, useMemo } from "react";
 import ButtonListDropdown from "./ButtonListDropdown";
+import userStore from "@/lib/userStore";
 
-export default function FlavorChoice({ setUserFlavor }) {
+export default function FlavorChoice() {
   const [randomNum, setrandomNum] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [selectedButton, setSelectedButton] = useState();
+  const { setUserFlavor, setQuestionIndex } = userStore();
 
   const introMessages = useMemo(
     () => [

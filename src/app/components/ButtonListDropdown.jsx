@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import userStore from "@/lib/userStore";
 
 export default function ButtonListDropdown({
   buttonContent,
@@ -8,6 +9,8 @@ export default function ButtonListDropdown({
   setIsHovered,
   onButtonClick,
 }) {
+  const { setQuestionIndex } = userStore();
+
   return (
     <>
       <div className="button-container min-h-[200px]">
@@ -20,6 +23,7 @@ export default function ButtonListDropdown({
             onClick={(e) => {
               onButtonClick(event.target.textContent);
               setSelectedButton(index);
+              setQuestionIndex(1);
             }}
           >
             {content.profile}

@@ -1,8 +1,10 @@
 "use client";
 import { useState } from "react";
 import ButtonList from "./ButtonList";
+import userStore from "@/lib/userStore";
 
-export default function LiquorChoice({ setUserLiquor }) {
+export default function LiquorChoice() {
+  const { setUserLiquor, setQuestionIndex } = userStore();
   const [selectedButton, setSelectedButton] = useState();
   const liquorOptions = ["Vodka", "Whiskey", "Rum", "Gin", "Tequila", "Brandy"];
 

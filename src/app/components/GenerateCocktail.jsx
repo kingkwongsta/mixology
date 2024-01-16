@@ -1,13 +1,18 @@
 "use client";
 import { useState, useEffect, useMemo } from "react";
+import userStore from "@/lib/userStore";
+import { Button } from "@/components/ui/button";
 
-export default function GenerateCocktail({
-  userFlavor,
-  userLiquor,
-  userMood,
-  recipe,
-  setRecipe,
-}) {
+export default function GenerateCocktail({}) {
+  const {
+    userFlavor,
+    userLiquor,
+    userMood,
+    drinkRecipe,
+    setDrinkRecipe,
+    setQuestionIndex,
+  } = userStore();
+
   const [randomNum, setRandomNum] = useState();
   const [selected, setSelected] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -56,7 +61,7 @@ export default function GenerateCocktail({
       const data = await response.json();
 
       if (data.data.choices && data.data.choices.length > 0) {
-        setRecipe(JSON.parse(data.data.choices[0].message.content));
+        setDrinkRecipe(JSON.parse(data.data.choices[0].message.content));
         console.log(data);
       } else {
         setRecipe("Error: Unexpected response structure");
@@ -73,11 +78,11 @@ export default function GenerateCocktail({
   function renderRecipe() {
     return (
       <div>
-        <h2 className="my-3">Cocktail: {recipe.name}</h2>
+        <h2 className="my-3">Cocktail: {drinkRecipe.name}</h2>
         <div className="my-3">
           <strong>Ingredients:</strong>
           <ul>
-            {recipe.ingredients
+            {drinkRecipe.ingredients
               .filter((item) => item.name !== "Ice cubes")
               .map((ingredient, index) => (
                 <li key={index}>
@@ -89,7 +94,7 @@ export default function GenerateCocktail({
         <div className="my-3">
           <strong>Instructions:</strong>
           <ol>
-            {recipe.instructions.split("\n").map((instruction, index) => (
+            {drinkRecipe.instructions.split("\n").map((instruction, index) => (
               <li key={index}>{instruction.trim()}</li>
             ))}
           </ol>
@@ -114,7 +119,10 @@ export default function GenerateCocktail({
       <div className="m-5 text-slate-500 text-xl">
         {isLoading ? <p>Shaking up your signature sip... </p> : ""}
       </div>
-      <div className="">{recipe ? renderRecipe() : ""}</div>
+      <div className="">{drinkRecipe ? renderRecipe() : ""}</div>
+      <div>
+        <Button onClick={() => setQuestionIndex(-4)}>Start Over</Button>
+      </div>
     </div>
   );
 }
