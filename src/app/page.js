@@ -5,19 +5,15 @@ import Welcome from "./components/Welcome";
 import FlavorChoice from "./components/FlavorChoice";
 import MoodChoice from "./components/MoodChoice";
 import GenerateCocktail from "./components/GenerateCocktail";
-import ModeToggle from "./components/ModeToggle";
-import Test from "./components/test";
-import { useState } from "react";
 import userStore from "./../lib/userStore";
 
 export default function Home() {
-  const [showWelcome, setshowWelcome] = useState(true);
   const { userFlavor, userLiquor, userMood, drinkRecipe, questionIndex } =
     userStore();
 
   return (
     <main className="m-3">
-      <Welcome />
+      {questionIndex === 0 && <Welcome />}
       {questionIndex === 1 && <FlavorChoice />}
       {questionIndex === 2 && <LiquorChoice />}
       {questionIndex === 3 && <MoodChoice />}
