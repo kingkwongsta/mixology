@@ -12,11 +12,13 @@ import userStore from "./../lib/userStore";
 
 export default function Home() {
   const [showWelcome, setshowWelcome] = useState(true);
-  const { userFlavor, userLiquor, userMood, drinkRecipe } = userStore();
+  const { userFlavor, userLiquor, userMood, drinkRecipe, questionIndex } =
+    userStore();
 
   return (
     <main className="m-3">
       <Welcome />
+      {questionIndex === 1 && <FlavorChoice />}
       {/*----- DEBUG STATE -----*/}
       <button
         onClick={() => console.log(drinkRecipe)}
