@@ -1,12 +1,13 @@
 import { Button } from "@/components/ui/button";
+import userStore from "@/lib/userStore";
 
 export default function ButtonList({
   buttonContent,
   selectedButton,
   setSelectedButton,
   onButtonClick,
-  updateQuestionIndex,
 }) {
+  const { setQuestionIndex } = userStore();
   return buttonContent.map((content, index) => {
     return (
       <Button
@@ -15,7 +16,7 @@ export default function ButtonList({
         onClick={() => {
           setSelectedButton(index);
           onButtonClick(content);
-          updateQuestionIndex();
+          setQuestionIndex(1);
         }}
       >
         {content}

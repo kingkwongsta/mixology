@@ -16,7 +16,6 @@ export default function LiquorChoice() {
         selectedButton={selectedButton}
         setSelectedButton={setSelectedButton}
         onButtonClick={setUserLiquor}
-        updateQuestionIndex={setQuestionIndex((index) => index++)}
       />
     </div>
   );

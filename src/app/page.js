@@ -21,6 +21,7 @@ export default function Home() {
       {questionIndex === 1 && <FlavorChoice />}
       {questionIndex === 2 && <LiquorChoice />}
       {questionIndex === 3 && <MoodChoice />}
+      {questionIndex === 4 && <GenerateCocktail />}
       {/*----- DEBUG STATE -----*/}
       <button
         onClick={() => console.log(questionIndex)}

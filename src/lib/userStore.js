@@ -11,8 +11,11 @@ const userStore = create((set) => ({
   setUserMood: (mood) => set((state) => ({ ...state, userMood: mood })),
   setDrinkRecipe: (recipe) =>
     set((state) => ({ ...state, drinkRecipe: recipe })),
-  setQuestionIndex: (index) =>
-    set((state) => ({ ...state, questionIndex: index })),
+  setQuestionIndex: (amount) =>
+    set((state) => ({
+      ...state,
+      questionIndex: state.questionIndex + amount,
+    })),
 }));
 
 export default userStore;
