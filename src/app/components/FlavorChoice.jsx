@@ -7,7 +7,7 @@ export default function FlavorChoice() {
   const [randomNum, setrandomNum] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [selectedButton, setSelectedButton] = useState();
-  const { setUserFlavor } = userStore();
+  const { setUserFlavor, setQuestionIndex } = userStore();
 
   const introMessages = useMemo(
     () => [
@@ -93,6 +93,7 @@ export default function FlavorChoice() {
         isHovered={isHovered}
         setIsHovered={setIsHovered}
         onButtonClick={setUserFlavor}
+        updateQuestionIndex={() => setQuestionIndex(2)}
       />
       {/* <div>{renderFlavorProfiles()}</div> */}
     </div>

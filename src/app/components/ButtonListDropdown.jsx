@@ -7,6 +7,7 @@ export default function ButtonListDropdown({
   isHovered,
   setIsHovered,
   onButtonClick,
+  updateQuestionIndex,
 }) {
   return (
     <>
@@ -20,6 +21,7 @@ export default function ButtonListDropdown({
             onClick={(e) => {
               onButtonClick(event.target.textContent);
               setSelectedButton(index);
+              updateQuestionIndex();
             }}
           >
             {content.profile}

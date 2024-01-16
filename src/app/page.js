@@ -21,10 +21,10 @@ export default function Home() {
       {questionIndex === 1 && <FlavorChoice />}
       {/*----- DEBUG STATE -----*/}
       <button
-        onClick={() => console.log(drinkRecipe)}
+        onClick={() => console.log(questionIndex)}
         className="p-2 m-5 border-solid border-2 border-sky-500 rounded-lg"
       >
-        Debug: get user Recipe
+        Debug: get Question Index
       </button>{" "}
     </main>
   );
