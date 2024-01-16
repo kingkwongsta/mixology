@@ -6,6 +6,7 @@ import FlavorChoice from "./components/FlavorChoice";
 import MoodChoice from "./components/MoodChoice";
 import GenerateCocktail from "./components/GenerateCocktail";
 import userStore from "./../lib/userStore";
+import Transition from "@/lib/transition";
 
 export default function Home() {
   const { userFlavor, userLiquor, userMood, drinkRecipe, questionIndex } =
@@ -13,11 +14,31 @@ export default function Home() {
 
   return (
     <main className="m-3">
-      {questionIndex === 0 && <Welcome />}
-      {questionIndex === 1 && <FlavorChoice />}
-      {questionIndex === 2 && <LiquorChoice />}
-      {questionIndex === 3 && <MoodChoice />}
-      {questionIndex === 4 && <GenerateCocktail />}
+      {questionIndex === 0 && (
+        <Transition>
+          <Welcome />
+        </Transition>
+      )}
+      {questionIndex === 1 && (
+        <Transition>
+          <FlavorChoice />
+        </Transition>
+      )}
+      {questionIndex === 2 && (
+        <Transition>
+          <LiquorChoice />
+        </Transition>
+      )}
+      {questionIndex === 3 && (
+        <Transition>
+          <MoodChoice />
+        </Transition>
+      )}
+      {questionIndex === 4 && (
+        <Transition>
+          <GenerateCocktail />
+        </Transition>
+      )}
       {/*----- DEBUG STATE -----*/}
       {/* <button
         onClick={() => console.log(questionIndex)}
