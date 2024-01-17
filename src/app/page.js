@@ -26,7 +26,8 @@ export default function Home() {
           <RightImage>
             <FlavorChoice
               imageSrc={flavorImg}
-              imageAlt={"pictures of flavor"}
+              imageAlt="pictures of flavor"
+              imagePosition="right"
             />
           </RightImage>
         </Transition>

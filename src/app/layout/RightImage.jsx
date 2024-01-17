@@ -5,11 +5,9 @@ export default function RightImage({ children }) {
 
   return (
     <div className="flex flex-row">
-      <div className="border-solid border-2 border-sky-500 basis-3/5 min-h-[600px]">
-        {children}
-      </div>
-      <div className="border-solid border-2 border-sky-500 basis-2/5 min-h-[600px]">
-        <Image src={imageSrc} alt={imageAlt} />
+      <div className=" basis-3/5 min-h-[500px]">{children}</div>
+      <div className="basis-2/5 min-h-[500px]">
+        <Image className="rounded-xl my-8" src={imageSrc} alt={imageAlt} />
       </div>
     </div>
   );
