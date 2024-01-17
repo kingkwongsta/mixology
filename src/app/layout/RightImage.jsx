@@ -1,4 +1,4 @@
-import FlavorChoice from "../components/FlavorChoice";
+import Image from "next/image";
 
 export default function RightImage({ children }) {
   const { imageSrc, imageAlt } = children.props;
@@ -9,7 +9,7 @@ export default function RightImage({ children }) {
         {children}
       </div>
       <div className="border-solid border-2 border-sky-500 basis-2/5 min-h-[600px]">
-        Nice Guy
+        <Image src={imageSrc} alt={imageAlt} />
       </div>
     </div>
   );

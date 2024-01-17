@@ -8,6 +8,7 @@ import GenerateCocktail from "./components/GenerateCocktail";
 import userStore from "./../lib/userStore";
 import Transition from "@/lib/transition";
 import RightImage from "./layout/RightImage";
+import flavorImg from "./../../public/images/flavor.jpg";
 
 export default function Home() {
   const { userFlavor, userLiquor, userMood, drinkRecipe, questionIndex } =
@@ -16,7 +17,7 @@ export default function Home() {
   return (
     <main className="m-3">
       <RightImage>
-        <FlavorChoice />
+        <FlavorChoice imageSrc={flavorImg} imageAlt={"pictures of flavor"} />
       </RightImage>
       {/* {questionIndex === 0 && (
         <Transition>
