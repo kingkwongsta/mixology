@@ -7,6 +7,7 @@ import MoodChoice from "./components/MoodChoice";
 import GenerateCocktail from "./components/GenerateCocktail";
 import userStore from "./../lib/userStore";
 import Transition from "@/lib/transition";
+import RightImage from "./layout/RightImage";
 
 export default function Home() {
   const { userFlavor, userLiquor, userMood, drinkRecipe, questionIndex } =
@@ -14,7 +15,8 @@ export default function Home() {
 
   return (
     <main className="m-3">
-      {questionIndex === 0 && (
+      <RightImage />
+      {/* {questionIndex === 0 && (
         <Transition>
           <Welcome />
         </Transition>
@@ -38,7 +40,7 @@ export default function Home() {
         <Transition>
           <GenerateCocktail />
         </Transition>
-      )}
+      )} */}
       {/*----- DEBUG STATE -----*/}
       {/* <button
         onClick={() => console.log(questionIndex)}
