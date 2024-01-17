@@ -15,7 +15,9 @@ export default function Home() {
 
   return (
     <main className="m-3">
-      <RightImage />
+      <RightImage>
+        <FlavorChoice />
+      </RightImage>
       {/* {questionIndex === 0 && (
         <Transition>
           <Welcome />
