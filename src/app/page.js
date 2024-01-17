@@ -7,7 +7,7 @@ import MoodChoice from "./components/MoodChoice";
 import GenerateCocktail from "./components/GenerateCocktail";
 import userStore from "./../lib/userStore";
 import Transition from "@/lib/transition";
-import RightImage from "./layout/RightImage";
+import QuestionLayout from "./layout/QuestionLayout";
 import flavorImg from "./../../public/images/flavor.jpg";
 
 export default function Home() {
@@ -23,13 +23,13 @@ export default function Home() {
       )}
       {questionIndex === 1 && (
         <Transition>
-          <RightImage>
+          <QuestionLayout>
             <FlavorChoice
               imageSrc={flavorImg}
               imageAlt="pictures of flavor"
               imagePosition="right"
             />
-          </RightImage>
+          </QuestionLayout>
         </Transition>
       )}
       {/*
