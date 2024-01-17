@@ -16,19 +16,22 @@ export default function Home() {
 
   return (
     <main className="m-3">
-      <RightImage>
-        <FlavorChoice imageSrc={flavorImg} imageAlt={"pictures of flavor"} />
-      </RightImage>
-      {/* {questionIndex === 0 && (
+      {questionIndex === 0 && (
         <Transition>
           <Welcome />
         </Transition>
       )}
       {questionIndex === 1 && (
         <Transition>
-          <FlavorChoice />
+          <RightImage>
+            <FlavorChoice
+              imageSrc={flavorImg}
+              imageAlt={"pictures of flavor"}
+            />
+          </RightImage>
         </Transition>
       )}
+      {/*
       {questionIndex === 2 && (
         <Transition>
           <LiquorChoice />

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { useMemo, useEffect } from "react";
+import { useMemo, useEffect, useState } from "react";
 import userStore from "@/lib/userStore";
 
 export default function Welcome({ display }) {
