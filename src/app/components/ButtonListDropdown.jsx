@@ -13,27 +13,33 @@ export default function ButtonListDropdown({
 
   return (
     <>
-      <div className="button-container min-h-[200px]">
-        {buttonContent.map((content, index) => (
-          <Button
-            key={index}
-            className={`m-5 ${index === selectedButton && "bg-sky-500"}`}
-            onMouseEnter={() => setIsHovered(content.description)}
-            onMouseLeave={() => setIsHovered(false)}
-            onClick={(e) => {
-              onButtonClick(event.target.textContent);
-              setSelectedButton(index);
-              setQuestionIndex(1);
-            }}
-          >
-            {content.profile}
-          </Button>
-        ))}
-        {isHovered && (
-          <div className="hover-description mx-5 my-2 max-w-[400px]">
-            {isHovered}
-          </div>
-        )}
+      <div className="flex flex-row">
+        <div>
+          {buttonContent.map((content, index) => (
+            <Button
+              key={index}
+              className={`m-5 max-w-[150px] ${
+                index === selectedButton && "bg-sky-500"
+              }`}
+              onMouseEnter={() => setIsHovered(content.description)}
+              onMouseLeave={() => setIsHovered(false)}
+              onClick={(e) => {
+                onButtonClick(event.target.textContent);
+                setSelectedButton(index);
+                setQuestionIndex(1);
+              }}
+            >
+              {content.profile}
+            </Button>
+          ))}
+        </div>
+        <div>
+          {isHovered && (
+            <div className="hover-description mx-5 my-2 max-w-[400px]">
+              {isHovered}
+            </div>
+          )}
+        </div>
       </div>
     </>
   );

@@ -83,9 +83,9 @@ export default function FlavorChoice() {
   }
 
   return (
-    <div>
+    <div className="m-8 text-center">
       <h1>{introMessages[randomNum]}</h1>
-      <h1>Let&rsquo;s start with the flavor profile</h1>{" "}
+      <h1 className="my-10">Pick a flavor profile that you are looking for:</h1>
       <ButtonListDropdown
         buttonContent={flavorProfiles}
         selectedButton={selectedButton}
