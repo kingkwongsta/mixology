@@ -4,22 +4,9 @@ import ButtonListDropdown from "./ButtonListDropdown";
 import userStore from "@/lib/userStore";
 
 export default function FlavorChoice() {
-  const [randomNum, setrandomNum] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
-  const [selectedButton, setSelectedButton] = useState();
+  const [selectedButton, setSelectedButton] = useState(0);
   const { setUserFlavor, setQuestionIndex } = userStore();
-
-  const introMessages = useMemo(
-    () => [
-      "Ready for a flavor adventure? Answer a few quick questions and we'll whip up a drink you'll love!",
-      "Forget bland beverages! Unmask your true cocktail personality with our fun and fiery quiz.",
-      "Can't decide on a cocktail? Let's unlock your taste buds with a personalized mixology journey!",
-      "Imagine sipping the perfect drink, tailored just for you. Take our quiz and make it a reality!",
-      "Ditch the guesswork, find your flavor bliss! Discover your signature cocktail in minutes.",
-      "Elevate your evenings with bespoke cocktails! Unleash your inner bartender with our taste profile quiz.",
-    ],
-    []
-  );
 
   const flavorProfiles = [
     {
@@ -48,11 +35,6 @@ export default function FlavorChoice() {
         "Fresh fruits, fruit juices, and infused spirits can add vibrant fruit flavors. Consider your favorite fruits or whether you prefer a tropical or citrusy twist.",
     },
   ];
-
-  useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * introMessages.length);
-    setrandomNum(randomIndex);
-  }, [introMessages]);
 
   function renderFlavorProfiles() {
     return (
@@ -84,7 +66,6 @@ export default function FlavorChoice() {
 
   return (
     <div className="m-8 text-center">
-      <h1>{introMessages[randomNum]}</h1>
       <h1 className="my-10">Pick a flavor profile that you are looking for:</h1>
       <ButtonListDropdown
         buttonContent={flavorProfiles}
