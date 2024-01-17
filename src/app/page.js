@@ -32,12 +32,19 @@ export default function Home() {
           </QuestionLayout>
         </Transition>
       )}
-      {/*
+
       {questionIndex === 2 && (
         <Transition>
-          <LiquorChoice />
+          <QuestionLayout>
+            <LiquorChoice
+              imageSrc={flavorImg}
+              imageAlt="pictures of flavor"
+              imagePosition="left"
+            />
+          </QuestionLayout>
         </Transition>
       )}
+      {/*
       {questionIndex === 3 && (
         <Transition>
           <MoodChoice />
