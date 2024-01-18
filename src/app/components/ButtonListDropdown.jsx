@@ -57,9 +57,8 @@ export default function ButtonListDropdown({
   setSelectedButton,
   isHovered,
   setIsHovered,
-  onButtonClick,
 }) {
-  const { setQuestionIndex } = userStore();
+  const { setQuestionIndex, setUserFlavor } = userStore();
   const [colorCount, setColorCount] = useState(0);
   const intervalRef = useRef(null);
 
@@ -91,7 +90,7 @@ export default function ButtonListDropdown({
                 onMouseEnter={() => setIsHovered(content.description)}
                 onMouseLeave={() => setIsHovered(false)}
                 onClick={(e) => {
-                  onButtonClick(event.target.textContent);
+                  setUserFlavor(event.target.textContent);
                   setSelectedButton(index);
                   handleClick();
                   setTimeout(() => {

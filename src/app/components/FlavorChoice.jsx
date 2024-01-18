@@ -45,7 +45,6 @@ export default function FlavorChoice() {
         setSelectedButton={setSelectedButton}
         isHovered={isHovered}
         setIsHovered={setIsHovered}
-        onButtonClick={setUserFlavor}
       />
       {/* <div>{renderFlavorProfiles()}</div> */}
     </div>
