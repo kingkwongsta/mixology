@@ -44,17 +44,22 @@ export default function Home() {
           </QuestionLayout>
         </Transition>
       )}
-      {/*
       {questionIndex === 3 && (
         <Transition>
-          <MoodChoice />
+          <QuestionLayout>
+            <MoodChoice
+              imageSrc={flavorImg}
+              imageAlt="pictures of flavor"
+              imagePosition="right"
+            />
+          </QuestionLayout>
         </Transition>
       )}
       {questionIndex === 4 && (
         <Transition>
           <GenerateCocktail />
         </Transition>
-      )} */}
+      )}
       {/*----- DEBUG STATE -----*/}
       {/* <button
         onClick={() => console.log(questionIndex)}
