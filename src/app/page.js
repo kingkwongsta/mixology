@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import LiquorChoice from "./components/LiquorChoice";
 import Welcome from "./components/Welcome";
 import FlavorChoice from "./components/FlavorChoice";
@@ -13,6 +14,8 @@ import flavorImg from "./../../public/images/flavor.jpg";
 export default function Home() {
   const { userFlavor, userLiquor, userMood, drinkRecipe, questionIndex } =
     userStore();
+  const [delayedQuestionIndex, setDelayedQuestionIndex] =
+    useState(questionIndex);
 
   return (
     <main className="m-3">
