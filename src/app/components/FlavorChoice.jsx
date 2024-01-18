@@ -4,8 +4,10 @@ import ButtonListDropdown from "./ButtonListDropdown";
 import userStore from "@/lib/userStore";
 
 export default function FlavorChoice() {
-  const [isHovered, setIsHovered] = useState(false);
-  const [selectedButton, setSelectedButton] = useState(0);
+  const [isHovered, setIsHovered] = useState(
+    "Do you prefer your cocktails sweet, tart, or balanced? Popular sweeteners include simple syrup, liqueurs, fruit juices, and flavored syrups."
+  );
+  const [selectedButton, setSelectedButton] = useState();
   const { setUserFlavor, setQuestionIndex } = userStore();
 
   const flavorProfiles = [

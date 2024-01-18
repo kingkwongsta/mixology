@@ -74,7 +74,7 @@ export default function ButtonListDropdown({
     }, 800); // Stop after 3 seconds (6 color changes)
   };
 
-  const backgroundColor = colorCount % 2 === 0 ? "bg-blue-500" : "bg-green-500";
+  const backgroundColor = colorCount % 2 === 0 ? "bg-slate-600" : "bg-gray-100";
 
   return (
     <>
@@ -98,7 +98,6 @@ export default function ButtonListDropdown({
                   }, 1000);
                 }}
               >
-                {index}
                 {content.profile}
               </Button>
             ))}
