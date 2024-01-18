@@ -3,24 +3,6 @@ import { Button } from "@/components/ui/button";
 import { useMemo, useEffect, useState } from "react";
 import userStore from "@/lib/userStore";
 
-import { motion } from "framer-motion";
-
-const Option = ({ label, value, selected, onSelect }) => {
-  return (
-    <motion.div
-      className={`option ${selected ? "selected" : ""}`}
-      animate={{
-        scale: selected ? 1.1 : 1,
-        backgroundColor: selected ? "#f0f0f0" : "white",
-        transition: { duration: 0.2 },
-      }}
-      onClick={() => onSelect(value)}
-    >
-      {label}
-    </motion.div>
-  );
-};
-
 export default function Welcome({ display }) {
   const [randomNum, setrandomNum] = useState(0);
   const { setQuestionIndex } = userStore();
@@ -48,7 +30,6 @@ export default function Welcome({ display }) {
         <div className="my-[200px] mt-10">
           <Button onClick={() => setQuestionIndex(1)}>Start Mixing</Button>
         </div>
-        <Option label={label} />
       </div>
     </div>
   );
