@@ -29,7 +29,7 @@ export default function ButtonListDropdown({
                   setSelectedButton(index);
                   setTimeout(() => {
                     setQuestionIndex(1);
-                  }, 1000);
+                  }, 500);
                 }}
               >
                 {index}
