@@ -8,12 +8,16 @@ import userStore from "./../lib/userStore";
 import Transition from "@/lib/transition";
 import QuestionLayout from "./layout/QuestionLayout";
 import flavorImg from "./../../public/images/flavor.jpg";
+import ButtonTest from "./components/buttontest";
 
 export default function Home() {
   const { userFlavor, userLiquor, userMood, drinkRecipe, questionIndex } =
     userStore();
   return (
     <main className="m-3">
+      <div>
+        <ButtonTest />
+      </div>
       {questionIndex === 0 && (
         <Transition>
           <Welcome />
