@@ -36,34 +36,6 @@ export default function FlavorChoice() {
     },
   ];
 
-  function renderFlavorProfiles() {
-    return (
-      <div className="button-container min-h-[200px]">
-        {flavorProfiles.map((flavor, index) => (
-          <button
-            key={index}
-            className={`flavor-button p-2 m-5 border-solid border-2 border-sky-500 rounded-lg ${
-              index === selectedButton && "bg-sky-500"
-            }`}
-            onMouseEnter={() => setIsHovered(flavor.description)}
-            onMouseLeave={() => setIsHovered(false)}
-            onClick={(e) => {
-              setUserFlavor(event.target.textContent);
-              setSelectedButton(index);
-            }}
-          >
-            {flavor.profile}
-          </button>
-        ))}
-        {isHovered && (
-          <div className="hover-description mx-5 my-2 max-w-[400px]">
-            {isHovered}
-          </div>
-        )}
-      </div>
-    );
-  }
-
   return (
     <div className="m-8 text-center">
       <h1 className="my-10">Pick a flavor profile that you are looking for:</h1>
