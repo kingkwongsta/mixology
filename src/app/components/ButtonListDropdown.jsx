@@ -27,7 +27,9 @@ export default function ButtonListDropdown({
                 onClick={(e) => {
                   onButtonClick(event.target.textContent);
                   setSelectedButton(index);
-                  setQuestionIndex(1);
+                  setTimeout(() => {
+                    setQuestionIndex(1);
+                  }, 1000);
                 }}
               >
                 {index}
