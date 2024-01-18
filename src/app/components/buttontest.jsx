@@ -1,22 +1,31 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
-export default function ButtonTest() {
-  const [selected, setSelected] = useState(false);
+function ColorSwitchingButton() {
+  const [colorCount, setColorCount] = useState(0);
+  const intervalRef = useRef(null);
+
+  const handleClick = () => {
+    clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
+      setColorCount((prevCount) => prevCount + 1);
+    }, 200); // Change color every 0.5 seconds
+
+    setTimeout(() => {
+      clearInterval(intervalRef.current); // Stop after 3 cycles
+      setColorCount(0);
+    }, 800); // Stop after 3 seconds (6 color changes)
+  };
+
+  const backgroundColor = colorCount % 2 === 0 ? "bg-blue-500" : "bg-green-500";
 
   return (
-    <>
-      <motion.div
-        className={`option ${selected ? "selected" : ""}`}
-        animate={{
-          scale: selected ? 1.1 : 1,
-          backgroundColor: selected ? "#f0f0f0" : "white",
-          transition: { duration: 0.2 },
-        }}
-        onClick={() => onSelect(value)}
-      >
-        <button className="border-2 border-sky-500">HELLLO</button>
-      </motion.div>
-    </>
+    <button
+      className={`px-4 py-2 rounded-md ${backgroundColor} text-white hover:bg-opacity-75`}
+      onClick={handleClick}
+    >
+      Click Me
+    </button>
   );
 }
+
+export default ColorSwitchingButton;
