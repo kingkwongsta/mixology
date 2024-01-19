@@ -40,7 +40,12 @@ export default function FlavorChoice() {
 
   return (
     <div className="m-8 text-center">
-      <h1 className="my-10">Pick a flavor profile that you are looking for:</h1>
+      <h1
+        className="my-10 text-2xl
+"
+      >
+        Pick a flavor profile that you are looking for:
+      </h1>
       <ButtonListDropdown
         buttonContent={flavorProfiles}
         selectedButton={selectedButton}
