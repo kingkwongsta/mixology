@@ -8,7 +8,7 @@ export default function ButtonList({
   setSelectedButton,
   onButtonClick,
 }) {
-  const { setQuestionIndex } = userStore();
+  const { setQuestionIndex, setUserLiquor } = userStore();
   const [colorCount, setColorCount] = useState(0);
   const intervalRef = useRef(null);
 
@@ -32,10 +32,17 @@ export default function ButtonList({
         {buttonContent.map((content, index) => (
           <Button
             key={index}
-            className={`my-2 max-w-[140px]  hover:bg-opacity-75 ${
+            className={`bg-primary my-2 max-w-[140px]  hover:bg-opacity-75 ${
               index === selectedButton && backgroundColor
             }`}
-            // ... other props
+            onClick={(e) => {
+              setUserLiquor(event.target.textContent);
+              setSelectedButton(index);
+              handleClick();
+              setTimeout(() => {
+                setQuestionIndex(1);
+              }, 1000);
+            }}
           >
             {content}
           </Button>
