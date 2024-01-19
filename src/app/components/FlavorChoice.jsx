@@ -4,22 +4,11 @@ import ButtonListDropdown from "./ButtonListDropdown";
 import userStore from "@/lib/userStore";
 
 export default function FlavorChoice() {
-  const [randomNum, setrandomNum] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState(
+    "Do you prefer your cocktails sweet, tart, or balanced? Popular sweeteners include simple syrup, liqueurs, fruit juices, and flavored syrups."
+  );
   const [selectedButton, setSelectedButton] = useState();
   const { setUserFlavor, setQuestionIndex } = userStore();
-
-  const introMessages = useMemo(
-    () => [
-      "Ready for a flavor adventure? Answer a few quick questions and we'll whip up a drink you'll love!",
-      "Forget bland beverages! Unmask your true cocktail personality with our fun and fiery quiz.",
-      "Can't decide on a cocktail? Let's unlock your taste buds with a personalized mixology journey!",
-      "Imagine sipping the perfect drink, tailored just for you. Take our quiz and make it a reality!",
-      "Ditch the guesswork, find your flavor bliss! Discover your signature cocktail in minutes.",
-      "Elevate your evenings with bespoke cocktails! Unleash your inner bartender with our taste profile quiz.",
-    ],
-    []
-  );
 
   const flavorProfiles = [
     {
@@ -49,50 +38,20 @@ export default function FlavorChoice() {
     },
   ];
 
-  useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * introMessages.length);
-    setrandomNum(randomIndex);
-  }, [introMessages]);
-
-  function renderFlavorProfiles() {
-    return (
-      <div className="button-container min-h-[200px]">
-        {flavorProfiles.map((flavor, index) => (
-          <button
-            key={index}
-            className={`flavor-button p-2 m-5 border-solid border-2 border-sky-500 rounded-lg ${
-              index === selectedButton && "bg-sky-500"
-            }`}
-            onMouseEnter={() => setIsHovered(flavor.description)}
-            onMouseLeave={() => setIsHovered(false)}
-            onClick={(e) => {
-              setUserFlavor(event.target.textContent);
-              setSelectedButton(index);
-            }}
-          >
-            {flavor.profile}
-          </button>
-        ))}
-        {isHovered && (
-          <div className="hover-description mx-5 my-2 max-w-[400px]">
-            {isHovered}
-          </div>
-        )}
-      </div>
-    );
-  }
-
   return (
-    <div>
-      <h1>{introMessages[randomNum]}</h1>
-      <h1>Let&rsquo;s start with the flavor profile</h1>{" "}
+    <div className="m-8">
+      <h1
+        className="my-10 text-2xl
+"
+      >
+        Pick a flavor profile that you are looking for:
+      </h1>
       <ButtonListDropdown
         buttonContent={flavorProfiles}
         selectedButton={selectedButton}
         setSelectedButton={setSelectedButton}
         isHovered={isHovered}
         setIsHovered={setIsHovered}
-        onButtonClick={setUserFlavor}
       />
       {/* <div>{renderFlavorProfiles()}</div> */}
     </div>

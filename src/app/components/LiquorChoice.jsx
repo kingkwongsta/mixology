@@ -9,8 +9,8 @@ export default function LiquorChoice() {
   const liquorOptions = ["Vodka", "Whiskey", "Rum", "Gin", "Tequila", "Brandy"];
 
   return (
-    <div className="mx-5">
-      <h2>What liquor are you interested in using?</h2>
+    <div className="m-8">
+      <h2 className="text-2xl">What liquor are you interested in using?</h2>
       <ButtonList
         buttonContent={liquorOptions}
         selectedButton={selectedButton}
