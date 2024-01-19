@@ -8,19 +8,24 @@ export default function ButtonList({
   onButtonClick,
 }) {
   const { setQuestionIndex } = userStore();
-  return buttonContent.map((content, index) => {
-    return (
-      <Button
-        key={index}
-        className={`m-5 ${index === selectedButton && "bg-sky-500"}`}
-        onClick={() => {
-          setSelectedButton(index);
-          onButtonClick(content);
-          setQuestionIndex(1);
-        }}
-      >
-        {content}
-      </Button>
-    );
-  });
+
+  return (
+    <div className="flex flex-row m-8">
+      {buttonContent.map((content, index) => (
+        <Button
+          key={index}
+          className={`min-w-[140px] ${
+            index === selectedButton && "bg-sky-500"
+          }`}
+          onClick={() => {
+            setSelectedButton(index);
+            onButtonClick(content);
+            setQuestionIndex(1);
+          }}
+        >
+          {content}
+        </Button>
+      ))}
+    </div>
+  );
 }
