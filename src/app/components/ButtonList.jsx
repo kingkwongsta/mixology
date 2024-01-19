@@ -24,18 +24,20 @@ export default function ButtonList({
     }, 800); // Stop after 3 seconds (6 color changes)
   };
 
+  const backgroundColor = colorCount % 2 === 0 ? "bg-slate-600" : "bg-gray-100";
+
   return (
-    <div className="basis-2/5">
+    <div className="">
       <div className="flex flex-col">
         {buttonContent.map((content, index) => (
           <Button
             key={index}
-            className={`my-2 max-w-[140px] hover:bg-opacity-75 ${
+            className={`my-2 max-w-[140px]  hover:bg-opacity-75 ${
               index === selectedButton && backgroundColor
             }`}
             // ... other props
           >
-            {content.profile}
+            {content}
           </Button>
         ))}
       </div>
