@@ -41,7 +41,7 @@ export default function FlavorChoice() {
   return (
     <div className="m-8">
       <h1
-        className="my-10 text-3xl
+        className="my-10 text-2xl
 "
       >
         Pick a flavor profile that you are looking for:
