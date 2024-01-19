@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import userStore from "@/lib/userStore";
+import React, { useState, useRef } from "react";
 
 export default function ButtonList({
   buttonContent,
@@ -8,6 +9,8 @@ export default function ButtonList({
   onButtonClick,
 }) {
   const { setQuestionIndex } = userStore();
+  const [colorCount, setColorCount] = useState(0);
+  const intervalRef = useRef(null);
 
   return (
     <div className="basis-2/5">
