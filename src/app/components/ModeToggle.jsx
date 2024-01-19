@@ -3,6 +3,7 @@
 import * as React from "react";
 import { MoonIcon, SunIcon, HomeIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
+import userStore from "@/lib/userStore";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
@@ -29,6 +30,7 @@ export default function ModeToggle() {
       <Button
         variant="outline"
         size="icon"
+        onClick={() => setTheme(isDarkMode ? "light" : "dark")}
         className={`${isDarkMode ? "dark:text-white" : ""}`}
       >
         <HomeIcon className="h-[1.2rem] w-[1.2rem]" />
