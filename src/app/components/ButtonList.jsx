@@ -12,6 +12,18 @@ export default function ButtonList({
   const [colorCount, setColorCount] = useState(0);
   const intervalRef = useRef(null);
 
+  const handleClick = () => {
+    clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
+      setColorCount((prevCount) => prevCount + 1);
+    }, 200); // Change color every 0.5 seconds
+
+    setTimeout(() => {
+      clearInterval(intervalRef.current); // Stop after 3 cycles
+      setColorCount(0);
+    }, 800); // Stop after 3 seconds (6 color changes)
+  };
+
   return (
     <div className="basis-2/5">
       <div className="flex flex-col">
