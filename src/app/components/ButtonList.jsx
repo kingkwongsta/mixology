@@ -10,22 +10,20 @@ export default function ButtonList({
   const { setQuestionIndex } = userStore();
 
   return (
-    <div className="flex flex-row m-8">
-      {buttonContent.map((content, index) => (
-        <Button
-          key={index}
-          className={`min-w-[140px] ${
-            index === selectedButton && "bg-sky-500"
-          }`}
-          onClick={() => {
-            setSelectedButton(index);
-            onButtonClick(content);
-            setQuestionIndex(1);
-          }}
-        >
-          {content}
-        </Button>
-      ))}
+    <div className="basis-2/5">
+      <div className="flex flex-col">
+        {buttonContent.map((content, index) => (
+          <Button
+            key={index}
+            className={`my-2 max-w-[140px] hover:bg-opacity-75 ${
+              index === selectedButton && backgroundColor
+            }`}
+            // ... other props
+          >
+            {content.profile}
+          </Button>
+        ))}
+      </div>
     </div>
   );
 }
