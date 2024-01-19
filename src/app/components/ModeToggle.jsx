@@ -11,13 +11,16 @@ import { Button } from "@/components/ui/button";
 export default function ModeToggle() {
   const { theme, setTheme } = useTheme();
   const isDarkMode = theme === "dark";
-  const { questionIndex, setQuestionIndex } = userStore();
+  const { questionIndex, setQuestionIndex, setDrinkRecipe } = userStore();
   return (
     <>
       <Button
         variant="outline"
         size="icon"
-        onClick={() => setQuestionIndex(-questionIndex)}
+        onClick={() => {
+          setQuestionIndex(-questionIndex);
+          setDrinkRecipe("");
+        }}
         className={`${isDarkMode ? "dark:text-white" : ""}`}
       >
         <HomeIcon className="h-[1.2rem] w-[1.2rem]" />
