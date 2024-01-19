@@ -11,9 +11,17 @@ import { Button } from "@/components/ui/button";
 export default function ModeToggle() {
   const { theme, setTheme } = useTheme();
   const isDarkMode = theme === "dark";
-
+  const { questionIndex, setQuestionIndex } = userStore();
   return (
     <>
+      <Button
+        variant="outline"
+        size="icon"
+        onClick={() => setQuestionIndex(-questionIndex)}
+        className={`${isDarkMode ? "dark:text-white" : ""}`}
+      >
+        <HomeIcon className="h-[1.2rem] w-[1.2rem]" />
+      </Button>
       <Button
         variant="outline"
         size="icon"
@@ -26,15 +34,6 @@ export default function ModeToggle() {
           <MoonIcon className="h-[1.2rem] w-[1.2rem]" />
         )}
         <span className="sr-only">Toggle theme</span>
-      </Button>
-      <Button
-        variant="outline"
-        size="icon"
-        onClick={() => setTheme(isDarkMode ? "light" : "dark")}
-        className={`${isDarkMode ? "dark:text-white" : ""}`}
-      >
-        <HomeIcon className="h-[1.2rem] w-[1.2rem]" />
-        <span className="sr-only">AWERAWER</span>
       </Button>
     </>
   );
