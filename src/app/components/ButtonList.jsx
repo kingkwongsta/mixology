@@ -36,7 +36,7 @@ export default function ButtonList({
               index === selectedButton && backgroundColor
             }`}
             onClick={(e) => {
-              setUserLiquor(event.target.textContent);
+              onButtonClick(event.target.textContent);
               setSelectedButton(index);
               handleClick();
               setTimeout(() => {
