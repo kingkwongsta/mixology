@@ -19,9 +19,6 @@ Discover a world of exquisite cocktails
 - Website Asset Generation
 - Fune-Tuned LLM
 
+
 ## Tech Stack
-
-**Client:** Next.js, Zustand, TailwindCSS, Shadcn
-
-**Server:** Node, Express
-
+- Next.js, Zustand, TailwindCSS, Shadcn
