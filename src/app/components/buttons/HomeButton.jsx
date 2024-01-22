@@ -1,6 +1,6 @@
 import userStore from "@/lib/userStore";
 import { Button } from "@/components/ui/button";
-import { MoonIcon, SunIcon, HomeIcon } from "@radix-ui/react-icons";
+import { HomeIcon } from "@radix-ui/react-icons";
 
 export default function HomeButton() {
   const { questionIndex, setQuestionIndex, setDrinkRecipe } = userStore();
