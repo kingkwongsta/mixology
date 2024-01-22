@@ -9,15 +9,3 @@ export default function Header() {
     </div>
   );
 }
-
-// export default function Header() {
-//   return (
-//     <header className="header">
-//       <nav>
-//         <Link href="/">Home</Link>
-//         <Link href="/about">About</Link>
-//         <ModeToggle />
-//       </nav>
-//     </header>
-//   );
-// }
