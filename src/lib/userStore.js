@@ -16,8 +16,6 @@ const userStore = create((set) => ({
       ...state,
       questionIndex: state.questionIndex + amount,
     })),
-  theme: "light",
-  setTheme: (newTheme) => set((state) => ({ ...state, theme: newTheme })),
 }));
 
 export default userStore;
