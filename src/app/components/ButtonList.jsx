@@ -41,7 +41,7 @@ export default function ButtonList({
               handleClick();
               setTimeout(() => {
                 setQuestionIndex(1);
-              }, 1000);
+              }, 800);
             }}
           >
             {content}

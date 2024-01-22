@@ -13,7 +13,6 @@ export default function HomeButton() {
         setQuestionIndex(-questionIndex);
         setDrinkRecipe("");
       }}
-      //   className={`${isDarkMode ? "dark:text-white" : ""}`}
     >
       <HomeIcon className="h-[1.2rem] w-[1.2rem]" />
     </Button>
