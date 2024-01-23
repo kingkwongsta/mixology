@@ -22,3 +22,4 @@ Discover a world of exquisite cocktails
 
 ## Tech Stack
 - Next.js, Zustand, TailwindCSS, Shadcn
+- OpenAI GPT API
