@@ -4,9 +4,13 @@ import ModeToggle from "./buttons/ModeToggle";
 
 export default function Header() {
   return (
-    <div className="flex flex-row justify-center">
-      <HomeButton />
-      <ModeToggle />
+    <div className="flex items-center justify-center">
+      <div className="flex-grow ">
+        <HomeButton className="" />
+      </div>
+      <div className="flex-none ">
+        <ModeToggle className="" />
+      </div>
     </div>
   );
 }
