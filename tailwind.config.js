@@ -17,6 +17,13 @@ module.exports = {
       },
     },
     extend: {
+      button: {
+        variants: ["bk"],
+        bk: {
+          background: "",
+          border: "hsl(var(--primary))",
+        },
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

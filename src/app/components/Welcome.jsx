@@ -29,7 +29,9 @@ export default function Welcome({ display }) {
         <h2 className="text-xl">Discover a world of exquisite cocktails</h2>
         {/* <h1>{introMessages[randomNum]}</h1> */}
         <div className="my-[200px] mt-10">
-          <Button onClick={() => setQuestionIndex(1)}>Start Mixing</Button>
+          <Button variant="bk" onClick={() => setQuestionIndex(1)}>
+            Start Mixing
+          </Button>
         </div>
       </div>
     </div>
