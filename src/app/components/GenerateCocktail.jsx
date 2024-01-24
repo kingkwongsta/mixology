@@ -11,6 +11,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
+import Image from "next/image";
 
 export default function GenerateCocktail({}) {
   const {
@@ -102,7 +103,7 @@ export default function GenerateCocktail({}) {
           {drinkRecipe.name}
         </h2>
 
-        <div className="flex flex-row space-x-10">
+        <div className="flex flex-col space-y-8">
           <Card className="w-[350px]">
             <CardHeader>
               <CardTitle className="text-[#9BF2F2]">Ingredients</CardTitle>

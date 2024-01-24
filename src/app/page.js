@@ -7,7 +7,6 @@ import GenerateCocktail from "./components/GenerateCocktail";
 import userStore from "./../lib/userStore";
 import Transition from "@/lib/transition";
 import QuestionLayout from "./layout/QuestionLayout";
-import flavorImg from "./../../public/images/flavor.jpg";
 
 export default function Home() {
   const { userFlavor, userLiquor, userMood, drinkRecipe, questionIndex } =
