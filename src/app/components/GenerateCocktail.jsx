@@ -26,7 +26,7 @@ export default function GenerateCocktail({}) {
   const [selected, setSelected] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [buttonName, setButtonName] = useState("");
-  const [progress, setProgress] = useState(13);
+  const [progress, setProgress] = useState(10);
 
   const buttonNameList = useMemo(
     () => [
@@ -58,8 +58,15 @@ export default function GenerateCocktail({}) {
     setButtonName(buttonNameList[randomIndex]);
   }, []);
   useEffect(() => {
-    const timer = setTimeout(() => setProgress(66), 500);
-    return () => clearTimeout(timer);
+    let timerId;
+
+    const incrementProgress = () => {
+      setProgress((prevProgress) => Math.min(prevProgress + 5, 100)); // Increment by 10%, capped at 100%
+    };
+
+    timerId = setInterval(incrementProgress, 900); // Update every 500ms
+
+    return () => clearInterval(timerId); // Clear interval on unmount
   }, []);
 
   const getCocktail = async () => {
@@ -139,7 +146,14 @@ export default function GenerateCocktail({}) {
         {buttonName}
       </Button>
       <div className="m-10 text-slate-500 text-xl">
-        {isLoading ? <p>Shaking up your signature sip... </p> : ""}
+        {isLoading ? (
+          <div>
+            <p>Shaking up your signature sip... </p>
+            <Progress value={progress} className="w-[60%]" />
+          </div>
+        ) : (
+          ""
+        )}
       </div>
       <div className="min-h-[300px]">{drinkRecipe ? renderRecipe() : ""}</div>
       <div>
