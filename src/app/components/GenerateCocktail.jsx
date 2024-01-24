@@ -94,9 +94,14 @@ export default function GenerateCocktail({}) {
         <div className="my-3">
           <strong>Instructions:</strong>
           <ol>
-            {drinkRecipe.instructions.split("\n").map((instruction, index) => (
-              <li key={index}>{instruction.trim()}</li>
-            ))}
+            {drinkRecipe.instructions
+              .split(/\.(?=\s)/) // Split by periods followed by spaces
+              .map((instruction, index) => (
+                <li key={index}>
+                  {`${index + 1}. `}
+                  {instruction.trim()}
+                </li>
+              ))}
           </ol>
         </div>
       </div>
