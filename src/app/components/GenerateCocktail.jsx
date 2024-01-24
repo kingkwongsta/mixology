@@ -85,7 +85,7 @@ export default function GenerateCocktail({}) {
 
   function renderRecipe() {
     return (
-      <div>
+      <div className="flex flex-row space-x-10">
         <Card className="w-[350px]">
           <CardHeader>
             <CardTitle>Ingredients</CardTitle>
@@ -125,18 +125,16 @@ export default function GenerateCocktail({}) {
   }
 
   return (
-    <div className="my-4">
-      <button
-        className={`p-2 m-5 border-solid border-2 border-sky-500 rounded-lg ${
-          selected && "bg-sky-500"
-        }`}
+    <div className="mt-10 flex flex-col">
+      <Button
+        className={`max-w-[180px] ${selected && "bg-sky-500"}`}
         onClick={() => {
           setSelected(!selected);
           getCocktail();
         }}
       >
         {buttonName}
-      </button>
+      </Button>
       <div className="m-5 text-slate-500 text-xl">
         {isLoading ? <p>Shaking up your signature sip... </p> : ""}
       </div>
