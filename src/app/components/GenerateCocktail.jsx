@@ -110,12 +110,9 @@ export default function GenerateCocktail({}) {
           <CardContent>
             <ol>
               {drinkRecipe.instructions
-                .split(/\.(?=\s)/) // Split by periods followed by spaces
+                .split("\n")
                 .map((instruction, index) => (
-                  <li key={index}>
-                    {`${index + 1}. `}
-                    {instruction.trim()}
-                  </li>
+                  <li key={index}>{instruction.trim()}</li>
                 ))}
             </ol>
           </CardContent>
@@ -127,7 +124,7 @@ export default function GenerateCocktail({}) {
   return (
     <div className="mt-10 flex flex-col items-center">
       <Button
-        className={`max-w-[180px] ${selected && "bg-sky-500"}`}
+        className={`max-w-[250px] mt-12 ${selected && "bg-[#2E83F2]"}`}
         onClick={() => {
           setSelected(!selected);
           getCocktail();
@@ -135,14 +132,18 @@ export default function GenerateCocktail({}) {
       >
         {buttonName}
       </Button>
-      <div className="m-5 text-slate-500 text-xl">
+      <div className="m-10 text-slate-500 text-xl">
         {isLoading ? <p>Shaking up your signature sip... </p> : ""}
       </div>
-      <div className="">{drinkRecipe ? renderRecipe() : ""}</div>
+      <div className="min-h-[300px]">{drinkRecipe ? renderRecipe() : ""}</div>
       <div>
-        <Button className="mt-[100px]" onClick={() => setQuestionIndex(-4)}>
-          Start Over
-        </Button>
+        {drinkRecipe ? (
+          <Button className="mt-[100px]" onClick={() => setQuestionIndex(-4)}>
+            Start Over
+          </Button>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );
