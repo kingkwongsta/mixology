@@ -22,7 +22,6 @@ export default function GenerateCocktail({}) {
     setQuestionIndex,
   } = userStore();
 
-  const [randomNum, setRandomNum] = useState();
   const [selected, setSelected] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [buttonName, setButtonName] = useState("");
@@ -158,7 +157,13 @@ export default function GenerateCocktail({}) {
       <div className="min-h-[300px]">{drinkRecipe ? renderRecipe() : ""}</div>
       <div>
         {drinkRecipe ? (
-          <Button className="mt-[100px]" onClick={() => setQuestionIndex(-4)}>
+          <Button
+            className="mt-[100px]"
+            onClick={() => {
+              setQuestionIndex(-4);
+              setDrinkRecipe("");
+            }}
+          >
             Start Over
           </Button>
         ) : (
