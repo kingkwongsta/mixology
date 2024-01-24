@@ -86,19 +86,6 @@ export default function GenerateCocktail({}) {
   function renderRecipe() {
     return (
       <div>
-        <h2 className="my-3">Cocktail: {drinkRecipe.name}</h2>
-        <div className="my-3">
-          <strong>Ingredients:</strong>
-          <ul>
-            {drinkRecipe.ingredients
-              .filter((item) => item.name !== "Ice cubes")
-              .map((ingredient, index) => (
-                <li key={index}>
-                  {ingredient.quantity} {ingredient.name.toLowerCase()}
-                </li>
-              ))}
-          </ul>
-        </div>
         <Card className="w-[350px]">
           <CardHeader>
             <CardTitle>Ingredients</CardTitle>
@@ -116,19 +103,23 @@ export default function GenerateCocktail({}) {
           </CardContent>
         </Card>
 
-        <div className="my-3">
-          <strong>Instructions:</strong>
-          <ol>
-            {drinkRecipe.instructions
-              .split(/\.(?=\s)/) // Split by periods followed by spaces
-              .map((instruction, index) => (
-                <li key={index}>
-                  {`${index + 1}. `}
-                  {instruction.trim()}
-                </li>
-              ))}
-          </ol>
-        </div>
+        <Card className="w-[500px]">
+          <CardHeader>
+            <CardTitle>Instructions</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ol>
+              {drinkRecipe.instructions
+                .split(/\.(?=\s)/) // Split by periods followed by spaces
+                .map((instruction, index) => (
+                  <li key={index}>
+                    {`${index + 1}. `}
+                    {instruction.trim()}
+                  </li>
+                ))}
+            </ol>
+          </CardContent>
+        </Card>
       </div>
     );
   }
