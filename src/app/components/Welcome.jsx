@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useMemo, useEffect, useState } from "react";
 import userStore from "@/lib/userStore";
-import CardTest from "./Card";
 
 export default function Welcome({ display }) {
   const { setQuestionIndex } = userStore();
@@ -35,7 +34,6 @@ export default function Welcome({ display }) {
           </Button>
         </div>
       </div>
-      <CardTest />
     </div>
   );
 }
