@@ -26,7 +26,7 @@ export default function GenerateCocktail({}) {
   const [selected, setSelected] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [buttonName, setButtonName] = useState("");
-  const [progress, setProgress] = useState(10);
+  const [progress, setProgress] = useState(0);
 
   const buttonNameList = useMemo(
     () => [
@@ -64,7 +64,7 @@ export default function GenerateCocktail({}) {
       setProgress((prevProgress) => Math.min(prevProgress + 5, 100)); // Increment by 10%, capped at 100%
     };
 
-    timerId = setInterval(incrementProgress, 900); // Update every 500ms
+    timerId = setInterval(incrementProgress, 1000); // Update every 500ms
 
     return () => clearInterval(timerId); // Clear interval on unmount
   }, []);
