@@ -125,7 +125,7 @@ export default function GenerateCocktail({}) {
   }
 
   return (
-    <div className="mt-10 flex flex-col">
+    <div className="mt-10 flex flex-col items-center">
       <Button
         className={`max-w-[180px] ${selected && "bg-sky-500"}`}
         onClick={() => {
@@ -140,7 +140,9 @@ export default function GenerateCocktail({}) {
       </div>
       <div className="">{drinkRecipe ? renderRecipe() : ""}</div>
       <div>
-        <Button onClick={() => setQuestionIndex(-4)}>Start Over</Button>
+        <Button className="mt-[100px]" onClick={() => setQuestionIndex(-4)}>
+          Start Over
+        </Button>
       </div>
     </div>
   );
