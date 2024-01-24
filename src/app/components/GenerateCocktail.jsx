@@ -140,7 +140,7 @@ export default function GenerateCocktail({}) {
           <div>
             <Image
               className="rounded-xl my-8 self-stretch"
-              src="/images/flavor.jpg"
+              src="/images/drink.jpg"
               alt="drink"
               width={400}
               height={500}

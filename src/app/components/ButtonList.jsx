@@ -32,7 +32,7 @@ export default function ButtonList({
         {buttonContent.map((content, index) => (
           <Button
             key={index}
-            className={`bg-primary my-2 max-w-[140px]  hover:bg-opacity-75 ${
+            className={`bg-[#6AAED9] my-2 max-w-[140px]  hover:bg-opacity-75 ${
               index === selectedButton && backgroundColor
             }`}
             onClick={(e) => {
