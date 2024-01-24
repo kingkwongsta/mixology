@@ -10,6 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
 
 export default function GenerateCocktail({}) {
   const {
@@ -25,6 +26,7 @@ export default function GenerateCocktail({}) {
   const [selected, setSelected] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [buttonName, setButtonName] = useState("");
+  const [progress, setProgress] = useState(13);
 
   const buttonNameList = useMemo(
     () => [
@@ -54,6 +56,10 @@ export default function GenerateCocktail({}) {
       Math.floor(Math.random() * buttonNameList.length);
     const randomIndex = calculateRandomIndex();
     setButtonName(buttonNameList[randomIndex]);
+  }, []);
+  useEffect(() => {
+    const timer = setTimeout(() => setProgress(66), 500);
+    return () => clearTimeout(timer);
   }, []);
 
   const getCocktail = async () => {
