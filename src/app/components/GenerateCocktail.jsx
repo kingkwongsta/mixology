@@ -97,56 +97,66 @@ export default function GenerateCocktail({}) {
 
   function renderRecipe() {
     return (
-      <div className="flex flex-row space-x-10">
-        <Card className="w-[350px]">
-          <CardHeader>
-            <CardTitle>Ingredients</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul>
-              {drinkRecipe.ingredients
-                .filter((item) => item.name !== "Ice cubes")
-                .map((ingredient, index) => (
-                  <li key={index}>
-                    {ingredient.quantity} {ingredient.name.toLowerCase()}
-                  </li>
-                ))}
-            </ul>
-          </CardContent>
-        </Card>
+      <div>
+        <h2 className="text-center text-3xl font-semibold text-[#F2ADA7] mb-10">
+          {drinkRecipe.name}
+        </h2>
 
-        <Card className="w-[500px]">
-          <CardHeader>
-            <CardTitle>Instructions</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ol>
-              {drinkRecipe.instructions
-                .split("\n")
-                .map((instruction, index) => (
-                  <li key={index}>{instruction.trim()}</li>
-                ))}
-            </ol>
-          </CardContent>
-        </Card>
+        <div className="flex flex-row space-x-10">
+          <Card className="w-[350px]">
+            <CardHeader>
+              <CardTitle className="text-[#9BF2F2]">Ingredients</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul>
+                {drinkRecipe.ingredients
+                  .filter((item) => item.name !== "Ice cubes")
+                  .map((ingredient, index) => (
+                    <li key={index}>
+                      {ingredient.quantity} {ingredient.name.toLowerCase()}
+                    </li>
+                  ))}
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card className="w-[500px]">
+            <CardHeader>
+              <CardTitle className="text-[#9BF2F2]">Instructions</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ol>
+                {drinkRecipe.instructions
+                  .split("\n")
+                  .map((instruction, index) => (
+                    <li key={index}>{instruction.trim()}</li>
+                  ))}
+              </ol>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     );
   }
 
   return (
     <div className="mt-10 flex flex-col items-center">
-      <Button
-        className={`max-w-[250px] mt-12 ${selected && "bg-[#2E83F2]"}`}
-        onClick={() => {
-          setSelected(!selected);
-          getCocktail();
-        }}
-      >
-        {buttonName}
-      </Button>
+      {drinkRecipe ? (
+        ""
+      ) : (
+        <Button
+          className={`max-w-[250px] mt-12 ${selected && "bg-[#2E83F2]"}`}
+          onClick={() => {
+            setSelected(!selected);
+            getCocktail();
+          }}
+        >
+          {buttonName}
+        </Button>
+      )}
       <div className="m-10 text-slate-500 text-xl">
         {isLoading ? (
-          <div>
+          <div className="flex flex-col items-center space-y-8 mt-8">
             <p>Shaking up your signature sip... </p>
             <Progress value={progress} className="w-[60%]" />
           </div>
