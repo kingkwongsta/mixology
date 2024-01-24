@@ -143,7 +143,7 @@ export default function GenerateCocktail({}) {
               src="/images/flavor.jpg"
               alt="drink"
               width={400}
-              height={400}
+              height={500}
             />
           </div>
         </div>
@@ -176,6 +176,7 @@ export default function GenerateCocktail({}) {
           ""
         )}
       </div>
+      {/* <<<<<< RENDER RECIPE >>>>> */}
       <div className="min-h-[300px]">{drinkRecipe ? renderRecipe() : ""}</div>
       <div>
         {drinkRecipe ? (
