@@ -24,12 +24,18 @@ export default function Welcome({ display }) {
   // }, [introMessages]);
   return (
     <div>
-      <div className="text-center space-y-8 mt-10">
-        <h1 className="text-2xl">Crafted for Your Palate</h1>
-        <h2 className="text-xl">Discover a world of exquisite cocktails</h2>
+      <div className="text-center mt-10">
+        <h1 className="text-2xl text-[#F2ADA7] font-bold m-7">
+          Crafted for Your Palate
+        </h1>
+        <h2 className="text-xl font-medium	">
+          Discover a world of exquisite cocktails
+        </h2>
         {/* <h1>{introMessages[randomNum]}</h1> */}
-        <div className="my-[200px] mt-10">
-          <Button onClick={() => setQuestionIndex(1)}>Start Mixing</Button>
+        <div className="m-20">
+          <Button className="bg-[#2E83F2]" onClick={() => setQuestionIndex(1)}>
+            Start Mixing
+          </Button>
         </div>
       </div>
     </div>

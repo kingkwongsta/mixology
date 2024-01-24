@@ -1,23 +1,16 @@
 "use client";
-import Link from "next/link";
-import ModeToggle from "./ModeToggle";
+import HomeButton from "./buttons/HomeButton";
+import ModeToggle from "./buttons/ModeToggle";
 
 export default function Header() {
   return (
-    <>
-      <ModeToggle />
-    </>
+    <div className="flex items-center justify-center mx-1">
+      <div className="flex-grow ">
+        <HomeButton className="" />
+      </div>
+      <div className="flex-none ">
+        <ModeToggle className="" />
+      </div>
+    </div>
   );
 }
-
-// export default function Header() {
-//   return (
-//     <header className="header">
-//       <nav>
-//         <Link href="/">Home</Link>
-//         <Link href="/about">About</Link>
-//         <ModeToggle />
-//       </nav>
-//     </header>
-//   );
-// }

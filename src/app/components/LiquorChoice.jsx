@@ -10,7 +10,9 @@ export default function LiquorChoice() {
 
   return (
     <div className="m-8">
-      <h2 className="text-2xl">What liquor are you interested in using?</h2>
+      <h2 className="text-2xl mb-10">
+        What liquor are you interested in using?
+      </h2>
       <ButtonList
         buttonContent={liquorOptions}
         selectedButton={selectedButton}
