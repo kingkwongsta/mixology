@@ -10,13 +10,25 @@ export default function RightImage({ children }) {
         <div className="flex flex-row">
           <div className="basis-3/5 min-h-[500px]">{children}</div>
           <div className="basis-2/5 min-h-[500px]">
-            <Image className="rounded-xl my-8" src={imageSrc} alt={imageAlt} />
+            <Image
+              className="rounded-xl my-8"
+              src={imageSrc}
+              alt={imageAlt}
+              width={500}
+              height={500}
+            />
           </div>
         </div>
       ) : (
         <div className="flex flex-row">
           <div className="basis-2/5 min-h-[500px]">
-            <Image className="rounded-xl my-8" src={imageSrc} alt={imageAlt} />
+            <Image
+              className="rounded-xl my-8"
+              src={imageSrc}
+              alt={imageAlt}
+              width={500}
+              height={500}
+            />
           </div>
           <div className="basis-3/5 min-h-[500px]">{children}</div>
         </div>

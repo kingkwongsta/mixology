@@ -23,7 +23,7 @@ export default function Home() {
         <Transition>
           <QuestionLayout>
             <FlavorChoice
-              imageSrc={flavorImg}
+              imageSrc="/images/flavor.jpg"
               imageAlt="pictures of flavor"
               imagePosition="right"
             />
@@ -46,7 +46,7 @@ export default function Home() {
         <Transition>
           <QuestionLayout>
             <MoodChoice
-              imageSrc={flavorImg}
+              imageSrc="/images/mood.jpg"
               imageAlt="pictures of flavor"
               imagePosition="right"
             />
