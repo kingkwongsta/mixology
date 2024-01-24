@@ -2,6 +2,14 @@
 import { useState, useEffect, useMemo } from "react";
 import userStore from "@/lib/userStore";
 import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 export default function GenerateCocktail({}) {
   const {
@@ -91,6 +99,23 @@ export default function GenerateCocktail({}) {
               ))}
           </ul>
         </div>
+        <Card className="w-[350px]">
+          <CardHeader>
+            <CardTitle>Ingredients</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul>
+              {drinkRecipe.ingredients
+                .filter((item) => item.name !== "Ice cubes")
+                .map((ingredient, index) => (
+                  <li key={index}>
+                    {ingredient.quantity} {ingredient.name.toLowerCase()}
+                  </li>
+                ))}
+            </ul>
+          </CardContent>
+        </Card>
+
         <div className="my-3">
           <strong>Instructions:</strong>
           <ol>
