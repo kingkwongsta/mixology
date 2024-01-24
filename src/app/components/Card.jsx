@@ -9,7 +9,7 @@ import {
 
 export default function CardTest() {
   return (
-    <Card>
+    <Card className="w-[350px]">
       <CardHeader>
         <CardTitle>Card Title</CardTitle>
         <CardDescription>Card Description</CardDescription>
