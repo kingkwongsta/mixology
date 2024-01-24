@@ -168,7 +168,7 @@ export default function GenerateCocktail({}) {
       <div>
         {drinkRecipe ? (
           <Button
-            className="mt-[100px]"
+            className="mt-[100px] bg-[#2E83F2]"
             onClick={() => {
               setQuestionIndex(-4);
               setDrinkRecipe("");
