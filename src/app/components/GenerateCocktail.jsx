@@ -103,38 +103,49 @@ export default function GenerateCocktail({}) {
           {drinkRecipe.name}
         </h2>
 
-        <div className="flex flex-col space-y-8">
-          <Card className="w-[350px]">
-            <CardHeader>
-              <CardTitle className="text-[#9BF2F2]">Ingredients</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul>
-                {drinkRecipe.ingredients
-                  .filter((item) => item.name !== "Ice cubes")
-                  .map((ingredient, index) => (
-                    <li key={index}>
-                      {ingredient.quantity} {ingredient.name.toLowerCase()}
-                    </li>
-                  ))}
-              </ul>
-            </CardContent>
-          </Card>
+        <div className="flex flex-row space-x-5">
+          <div className="flex flex-col space-y-8">
+            <Card className="w-[500px]">
+              <CardHeader>
+                <CardTitle className="text-[#9BF2F2]">Ingredients</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul>
+                  {drinkRecipe.ingredients
+                    .filter((item) => item.name !== "Ice cubes")
+                    .map((ingredient, index) => (
+                      <li key={index}>
+                        {ingredient.quantity} {ingredient.name.toLowerCase()}
+                      </li>
+                    ))}
+                </ul>
+              </CardContent>
+            </Card>
 
-          <Card className="w-[500px]">
-            <CardHeader>
-              <CardTitle className="text-[#9BF2F2]">Instructions</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ol>
-                {drinkRecipe.instructions
-                  .split("\n")
-                  .map((instruction, index) => (
-                    <li key={index}>{instruction.trim()}</li>
-                  ))}
-              </ol>
-            </CardContent>
-          </Card>
+            <Card className="w-[500px]">
+              <CardHeader>
+                <CardTitle className="text-[#9BF2F2]">Instructions</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ol>
+                  {drinkRecipe.instructions
+                    .split("\n")
+                    .map((instruction, index) => (
+                      <li key={index}>{instruction.trim()}</li>
+                    ))}
+                </ol>
+              </CardContent>
+            </Card>
+          </div>
+          <div>
+            <Image
+              className="rounded-xl my-8"
+              src="/images/flavor.jpg"
+              alt="drink"
+              width={400}
+              height={400}
+            />
+          </div>
         </div>
       </div>
     );
