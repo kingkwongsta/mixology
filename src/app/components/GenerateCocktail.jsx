@@ -103,9 +103,9 @@ export default function GenerateCocktail({}) {
           {drinkRecipe.name}
         </h2>
 
-        <div className="flex flex-row space-x-5">
+        <div className="flex flex-row space-x-5 items-stretch">
           <div className="flex flex-col space-y-8">
-            <Card className="w-[500px]">
+            <Card className="w-[500px] border-none">
               <CardHeader>
                 <CardTitle className="text-[#9BF2F2]">Ingredients</CardTitle>
               </CardHeader>
@@ -122,7 +122,7 @@ export default function GenerateCocktail({}) {
               </CardContent>
             </Card>
 
-            <Card className="w-[500px]">
+            <Card className="w-[500px] border-none">
               <CardHeader>
                 <CardTitle className="text-[#9BF2F2]">Instructions</CardTitle>
               </CardHeader>
@@ -139,7 +139,7 @@ export default function GenerateCocktail({}) {
           </div>
           <div>
             <Image
-              className="rounded-xl my-8"
+              className="rounded-xl my-8 self-stretch"
               src="/images/flavor.jpg"
               alt="drink"
               width={400}
