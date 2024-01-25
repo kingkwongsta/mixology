@@ -11,8 +11,7 @@ export default async function createMessage(req, res) {
     // const prompt = `Create a creative/unique/advanced cocktail recipe with ${userLiquor} that emphasizes a ${userFlavor} flavor profile for a ${userMood} mood. JSON should contain name, ingredients (array of key-value pairs with name and quantity), and instructions.`;
     const userPreferences = `contains ${userLiquor} and emphasizes a ${userFlavor} flavor profile for a ${userMood} mood`;
 
-    const instructions =
-      "create a unique advance cocktail based on the user preferences in the text delimited by triple periods";
+    const instructions = `create a unique cocktail based on the user preferences in the text delimited by triple periods, ensure the drink name doesn't use the same/similar words to ${userMood},${userFlavor},${userLiquor}, `;
     const output_format =
       "JSON output should contain: name, ingredients (array of key-value pairs with name and quantity), instructions.";
     const prompt = instructions + output_format + `...${userPreferences}...`;
