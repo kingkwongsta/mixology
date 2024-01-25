@@ -56,7 +56,7 @@ export default function ButtonListDropdown({
         </div>
         <div className="basis-3/5">
           {isHovered && (
-            <div className="hover-description mx-5 my-2 max-w-[400px]">
+            <div className="hover-description mx-5 my-2 max-w-[400px] text-[#2E83F2]">
               {isHovered}
             </div>
           )}

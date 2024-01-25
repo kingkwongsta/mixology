@@ -40,7 +40,7 @@ export default function FlavorChoice() {
 
   return (
     <div className="m-8">
-      <h1 className="my-10 text-2xl text-[#F2ADA7]">
+      <h1 className="my-10 text-2xl text-[#FFFFFF]">
         Pick a flavor profile that you are looking for:
       </h1>
       <ButtonListDropdown
