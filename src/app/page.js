@@ -12,7 +12,7 @@ export default function Home() {
   const { userFlavor, userLiquor, userMood, drinkRecipe, questionIndex } =
     userStore();
   return (
-    <main className="m-3">
+    <main className="m-3 ">
       {questionIndex === 0 && (
         <Transition>
           <Welcome />

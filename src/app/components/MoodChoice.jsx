@@ -23,7 +23,9 @@ export default function MoodChoice() {
         A single sip takes people back to a cherished moment, sparking joy,
         nostalgia, or bittersweet longing
       </h2>
-      <h2 className="text-xl mb-7">What kind of mood are you in?</h2>
+      <h2 className="text-xl mb-7 text-[#F2ADA7]">
+        What kind of mood are you in?
+      </h2>
       <ButtonList
         buttonContent={moodSelections}
         selectedButton={selectedButton}

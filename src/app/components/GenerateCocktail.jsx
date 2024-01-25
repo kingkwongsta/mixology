@@ -2,16 +2,8 @@
 import { useState, useEffect, useMemo } from "react";
 import userStore from "@/lib/userStore";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import Image from "next/image";
+import RecipeCard from "./RecipeCard";
 
 export default function GenerateCocktail({}) {
   const {
@@ -49,14 +41,14 @@ export default function GenerateCocktail({}) {
     ],
     []
   );
-
+  // Create random number to set button text
   useEffect(() => {
-    // Generate a random index only once on component mount
     const calculateRandomIndex = () =>
       Math.floor(Math.random() * buttonNameList.length);
     const randomIndex = calculateRandomIndex();
     setButtonName(buttonNameList[randomIndex]);
   }, []);
+  // Progress bar generator
   useEffect(() => {
     let timerId;
 
@@ -68,7 +60,6 @@ export default function GenerateCocktail({}) {
 
     return () => clearInterval(timerId); // Clear interval on unmount
   }, []);
-
   const getCocktail = async () => {
     setIsLoading(true);
 
@@ -95,64 +86,27 @@ export default function GenerateCocktail({}) {
       setIsLoading(false);
     }
   };
-
-  function renderRecipe() {
-    return (
-      <div>
-        <h2 className="text-center text-3xl font-semibold text-[#F2ADA7] mb-10">
-          {drinkRecipe.name}
-        </h2>
-
-        <div className="flex flex-row space-x-5 items-stretch">
-          <div className="flex flex-col space-y-8">
-            <Card className="w-[500px] border-none">
-              <CardHeader>
-                <CardTitle className="text-[#9BF2F2]">Ingredients</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul>
-                  {drinkRecipe.ingredients
-                    .filter((item) => item.name !== "Ice cubes")
-                    .map((ingredient, index) => (
-                      <li key={index}>
-                        {ingredient.quantity} {ingredient.name.toLowerCase()}
-                      </li>
-                    ))}
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="w-[500px] border-none">
-              <CardHeader>
-                <CardTitle className="text-[#9BF2F2]">Instructions</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ol>
-                  {drinkRecipe.instructions
-                    .split("\n")
-                    .map((instruction, index) => (
-                      <li key={index}>{instruction.trim()}</li>
-                    ))}
-                </ol>
-              </CardContent>
-            </Card>
-          </div>
-          <div>
-            <Image
-              className="rounded-xl my-8 self-stretch"
-              src="/images/drink.jpg"
-              alt="drink"
-              width={400}
-              height={500}
-            />
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="mt-10 flex flex-col items-center">
+      <div className="shadow-xs p-2 rounded-lg">
+        <p className="text-lg">
+          You are in a{" "}
+          <span
+            onClick={() => setQuestionIndex(-3)}
+            className="text-xl font-semibold text-[#2E83F2] lowercase "
+          >
+            {userMood}
+          </span>{" "}
+          mood and are looking for{" "}
+          <span className="text-xl font-semibold text-[#2E83F2] lowercase ">
+            {userFlavor}
+          </span>{" "}
+          drink with{" "}
+          <span className="text-xl font-semibold text-[#2E83F2] lowercase ">
+            {userLiquor}
+          </span>{" "}
+        </p>
+      </div>
       {drinkRecipe ? (
         ""
       ) : (
@@ -166,7 +120,7 @@ export default function GenerateCocktail({}) {
           {buttonName}
         </Button>
       )}
-      <div className="m-10 text-slate-500 text-xl">
+      <div className=" text-slate-500 text-xl">
         {isLoading ? (
           <div className="flex flex-col items-center space-y-8 mt-8">
             <p>Shaking up your signature sip... </p>
@@ -177,11 +131,13 @@ export default function GenerateCocktail({}) {
         )}
       </div>
       {/* <<<<<< RENDER RECIPE >>>>> */}
-      <div className="min-h-[300px]">{drinkRecipe ? renderRecipe() : ""}</div>
+      <div className="min-h-[300px]">
+        {drinkRecipe ? <RecipeCard drinkRecipe={drinkRecipe} /> : ""}
+      </div>
       <div>
         {drinkRecipe ? (
           <Button
-            className="mt-[100px] bg-[#2E83F2]"
+            className="mt-[80px] bg-transparent border-2 border-slate-500 opacity-80 shadow-lg"
             onClick={() => {
               setQuestionIndex(-4);
               setDrinkRecipe("");

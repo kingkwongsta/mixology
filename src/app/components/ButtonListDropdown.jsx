@@ -30,12 +30,12 @@ export default function ButtonListDropdown({
   return (
     <>
       <div className="flex flex-row m-8">
-        <div className="basis-2/5 flex">
+        <div className="flex">
           <div className="flex flex-col">
             {buttonContent.map((content, index) => (
               <Button
                 key={index}
-                className={`bg-[#6AAED9] my-2 max-w-[140px] hover:bg-opacity-75 ${
+                className={`bg-[#6AAED9] my-2 min-w-[100px] max-w-[160px] hover:bg-opacity-75 ${
                   index === selectedButton && backgroundColor
                 }`}
                 onMouseEnter={() => setIsHovered(content.description)}
@@ -54,9 +54,9 @@ export default function ButtonListDropdown({
             ))}
           </div>
         </div>
-        <div className="basis-3/5">
+        <div className="mx-10">
           {isHovered && (
-            <div className="hover-description mx-5 my-2 max-w-[400px]">
+            <div className="hover-description my-2 max-w-[400px] text-[#2E83F2] text-md font-medium">
               {isHovered}
             </div>
           )}
