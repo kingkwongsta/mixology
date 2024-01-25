@@ -88,7 +88,7 @@ export default function GenerateCocktail({}) {
   };
   return (
     <div className="mt-10 flex flex-col items-center">
-      <div>
+      <div className="shadow-sm p-2 rounded-lg">
         <p className="text-lg">
           You are in a{" "}
           <span
@@ -137,7 +137,7 @@ export default function GenerateCocktail({}) {
       <div>
         {drinkRecipe ? (
           <Button
-            className="mt-[50px] bg-[#2E83F2]"
+            className="mt-[80px] bg-transparent border-2 border-slate-500 opacity-80 shadow-lg"
             onClick={() => {
               setQuestionIndex(-4);
               setDrinkRecipe("");
