@@ -22,28 +22,58 @@ export default function Welcome({ display }) {
   //   const randomIndex = Math.floor(Math.random() * introMessages.length);
   //   setrandomNum(randomIndex);
   // }, [introMessages]);
+  // return (
+  //   <div>
+  //     <div className=" flex flex-col items-center text-center mt-10">
+  //       <h1 className="text-2xl text-[#F2ADA7] font-bold m-7">
+  //         Crafted for Your Palate
+  //       </h1>
+  //       <h2 className="text-xl font-medium	">
+  //         Discover a world of exquisite cocktails
+  //       </h2>
+  //       {/* <h1>{introMessages[randomNum]}</h1> */}
+  //       <Button
+  //         className="bg-[#2E83F2] m-10"
+  //         onClick={() => setQuestionIndex(1)}
+  //       >
+  //         Start Mixing
+  //       </Button>
+  //       <Image
+  //         className="mt-10 opacity-60"
+  //         src="/images/welcome.jpg"
+  //         alt="welcome"
+  //         width={500}
+  //         height={300}
+  //       />
+  //     </div>
+  //   </div>
+  // );
   return (
-    <div>
-      <div className=" flex flex-col items-center text-center mt-10">
-        <h1 className="text-2xl text-[#F2ADA7] font-bold m-7">
-          Crafted for Your Palate
-        </h1>
-        <h2 className="text-xl font-medium	">
-          Discover a world of exquisite cocktails
-        </h2>
-        {/* <h1>{introMessages[randomNum]}</h1> */}
+    <div className="flex items-center justify-center">
+      <div className="relative">
         <Image
+          className="w-full h-full object-cover"
           src="/images/welcome.jpg"
           alt="welcome"
           width={500}
           height={300}
         />
-        <Button
-          className="bg-[#2E83F2] m-20"
-          onClick={() => setQuestionIndex(1)}
-        >
-          Start Mixing
-        </Button>
+        <div className="absolute inset-0 flex flex-col items-center justify-center">
+          {" "}
+          {/* Key adjustments here */}
+          <h1 className="text-white text-3xl font-bold">
+            Crafted for Your Palate
+          </h1>
+          <h2 className="text-white text-xl font-medium">
+            Discover a world of exquisite cocktails
+          </h2>
+          <Button
+            className="bg-blue-500 text-white px-4 py-2 rounded mt-4"
+            onClick={() => setQuestionIndex(1)}
+          >
+            Start Mixing
+          </Button>
+        </div>
       </div>
     </div>
   );
