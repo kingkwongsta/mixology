@@ -93,7 +93,10 @@ export default function GenerateCocktail({}) {
       <div>
         <p className="text-lg">
           You are in a{" "}
-          <span className="text-xl font-semibold text-[#F2ADA7] lowercase ">
+          <span
+            onClick={() => setQuestionIndex(-3)}
+            className="text-xl font-semibold text-[#F2ADA7] lowercase "
+          >
             {userMood}
           </span>{" "}
           mood and are looking for{" "}
