@@ -95,16 +95,16 @@ export default function GenerateCocktail({}) {
           You are in a{" "}
           <span
             onClick={() => setQuestionIndex(-3)}
-            className="text-xl font-semibold text-[#F2ADA7] lowercase "
+            className="text-xl font-semibold text-[#2E83F2] lowercase "
           >
             {userMood}
           </span>{" "}
           mood and are looking for{" "}
-          <span className="text-xl font-semibold text-[#F2ADA7] lowercase ">
+          <span className="text-xl font-semibold text-[#2E83F2] lowercase ">
             {userFlavor}
           </span>{" "}
           drink with{" "}
-          <span className="text-xl font-semibold text-[#F2ADA7] lowercase ">
+          <span className="text-xl font-semibold text-[#2E83F2] lowercase ">
             {userLiquor}
           </span>{" "}
         </p>
