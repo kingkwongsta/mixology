@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   Card,
   CardContent,
@@ -6,7 +7,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-export default function RecipeCard({}) {
+
+export default function RecipeCard({ drinkRecipe }) {
   return (
     <div>
       <h2 className="text-center text-3xl font-semibold text-[#F2ADA7] mb-10">

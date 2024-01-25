@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import Image from "next/image";
+import RecipeCard from "./RecipeCard";
 
 export default function GenerateCocktail({}) {
   const {
@@ -177,7 +178,9 @@ export default function GenerateCocktail({}) {
         )}
       </div>
       {/* <<<<<< RENDER RECIPE >>>>> */}
-      <div className="min-h-[300px]">{drinkRecipe ? renderRecipe() : ""}</div>
+      <div className="min-h-[300px]">
+        {drinkRecipe ? <RecipeCard drinkRecipe={drinkRecipe} /> : ""}
+      </div>
       <div>
         {drinkRecipe ? (
           <Button
