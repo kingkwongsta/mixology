@@ -26,13 +26,13 @@ export default function Welcome({ display }) {
     <div className="flex items-center justify-center ">
       <div className="relative">
         <Image
-          className="w-full h-full object-cover opacity-70 rounded-md"
+          className="w-screen h-full object-cover opacity-70 rounded-md"
           src="/images/welcome.jpg"
           alt="welcome"
           width={1200}
           height={300}
         />
-        <div className="absolute inset-0 flex flex-col items-center justify-center">
+        <div className="absolute inset-0 flex flex-col items-center justify-start mt-[150px]">
           <h1 className="text-4xl text-[#F2ADA7] font-bold mb-7">
             Crafted for Your Palate
           </h1>

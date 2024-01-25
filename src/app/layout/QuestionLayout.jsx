@@ -7,7 +7,7 @@ export default function RightImage({ children }) {
   return (
     <div className="m-10">
       {isImageOnRight ? (
-        <div className="flex flex-row">
+        <div className="flex flex-row space-x-5">
           <div className="basis-3/5 min-h-[500px]">{children}</div>
           <div className="basis-2/5 min-h-[500px]">
             <Image
@@ -20,7 +20,7 @@ export default function RightImage({ children }) {
           </div>
         </div>
       ) : (
-        <div className="flex flex-row">
+        <div className="flex flex-row space-x-5">
           <div className="basis-2/5 min-h-[500px]">
             <Image
               className="rounded-xl my-8 opacity-70"
