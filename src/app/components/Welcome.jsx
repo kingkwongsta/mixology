@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useMemo, useEffect, useState } from "react";
 import userStore from "@/lib/userStore";
@@ -24,7 +24,7 @@ export default function Welcome({ display }) {
   // }, [introMessages]);
   return (
     <div>
-      <div className="text-center mt-10">
+      <div className=" flex flex-col items-center text-center mt-10">
         <h1 className="text-2xl text-[#F2ADA7] font-bold m-7">
           Crafted for Your Palate
         </h1>
@@ -32,11 +32,18 @@ export default function Welcome({ display }) {
           Discover a world of exquisite cocktails
         </h2>
         {/* <h1>{introMessages[randomNum]}</h1> */}
-        <div className="m-20">
-          <Button className="bg-[#2E83F2]" onClick={() => setQuestionIndex(1)}>
-            Start Mixing
-          </Button>
-        </div>
+        <Image
+          src="/images/welcome.jpg"
+          alt="welcome"
+          width={500}
+          height={300}
+        />
+        <Button
+          className="bg-[#2E83F2] m-20"
+          onClick={() => setQuestionIndex(1)}
+        >
+          Start Mixing
+        </Button>
       </div>
     </div>
   );

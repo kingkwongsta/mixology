@@ -5,6 +5,33 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import RecipeCard from "./RecipeCard";
 
+const getCocktail = async () => {
+  setIsLoading(true);
+
+  try {
+    const response = await fetch("/api/gptrequest", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ userFlavor, userLiquor, userMood }),
+    });
+
+    const data = await response.json();
+
+    if (data.data.choices && data.data.choices.length > 0) {
+      setDrinkRecipe(JSON.parse(data.data.choices[0].message.content));
+      console.log(data);
+    } else {
+      setRecipe("Error: Unexpected response structure");
+    }
+  } catch (error) {
+    console.error(error);
+    setRecipe("Error");
+    console.log(error.response);
+  } finally {
+    setIsLoading(false);
+  }
+};
+
 export default function GenerateCocktail({}) {
   const {
     userFlavor,
@@ -41,14 +68,14 @@ export default function GenerateCocktail({}) {
     ],
     []
   );
-
+  // Create random number to set button text
   useEffect(() => {
-    // Generate a random index only once on component mount
     const calculateRandomIndex = () =>
       Math.floor(Math.random() * buttonNameList.length);
     const randomIndex = calculateRandomIndex();
     setButtonName(buttonNameList[randomIndex]);
   }, []);
+  // Progress bar generator
   useEffect(() => {
     let timerId;
 
@@ -60,33 +87,6 @@ export default function GenerateCocktail({}) {
 
     return () => clearInterval(timerId); // Clear interval on unmount
   }, []);
-
-  const getCocktail = async () => {
-    setIsLoading(true);
-
-    try {
-      const response = await fetch("/api/gptrequest", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ userFlavor, userLiquor, userMood }),
-      });
-
-      const data = await response.json();
-
-      if (data.data.choices && data.data.choices.length > 0) {
-        setDrinkRecipe(JSON.parse(data.data.choices[0].message.content));
-        console.log(data);
-      } else {
-        setRecipe("Error: Unexpected response structure");
-      }
-    } catch (error) {
-      console.error(error);
-      setRecipe("Error");
-      console.log(error.response);
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   return (
     <div className="mt-10 flex flex-col items-center">
