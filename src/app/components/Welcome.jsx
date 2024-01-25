@@ -49,26 +49,25 @@ export default function Welcome({ display }) {
   //   </div>
   // );
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center ">
       <div className="relative">
         <Image
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover opacity-40 rounded-md"
           src="/images/welcome.jpg"
           alt="welcome"
-          width={500}
+          width={1200}
           height={300}
         />
-        <div className="absolute inset-0 flex flex-col items-center justify-center">
-          {" "}
-          {/* Key adjustments here */}
-          <h1 className="text-white text-3xl font-bold">
+        <div className="absolute inset-0 flex flex-col items-center justify-start">
+          <h1 className="text-2xl text-[#F2ADA7] font-bold mt-14 mb-7">
             Crafted for Your Palate
           </h1>
-          <h2 className="text-white text-xl font-medium">
+          <h2 className="text-xl font-medium	">
             Discover a world of exquisite cocktails
           </h2>
+          {/* <h1>{introMessages[randomNum]}</h1> */}
           <Button
-            className="bg-blue-500 text-white px-4 py-2 rounded mt-4"
+            className="bg-[#2E83F2] mt-[100px]"
             onClick={() => setQuestionIndex(1)}
           >
             Start Mixing
