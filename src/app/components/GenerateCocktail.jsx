@@ -90,6 +90,15 @@ export default function GenerateCocktail({}) {
 
   return (
     <div className="mt-10 flex flex-col items-center">
+      <div>
+        <p>
+          You are in a{" "}
+          <span className="text-lg font-semibold text-[#F2ADA7] lowercase ">
+            {userMood}
+          </span>{" "}
+          mood and are looking for {userFlavor} drink with {userLiquor}
+        </p>
+      </div>
       {drinkRecipe ? (
         ""
       ) : (
