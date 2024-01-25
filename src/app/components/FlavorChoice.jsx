@@ -12,27 +12,27 @@ export default function FlavorChoice() {
 
   const flavorProfiles = [
     {
-      profile: "Sweetness",
+      profile: "Sweet",
       description:
         "Do you prefer your cocktails sweet, tart, or balanced? Popular sweeteners include simple syrup, liqueurs, fruit juices, and flavored syrups.",
     },
     {
-      profile: "Sourness",
+      profile: "Sour",
       description:
         "Citrus fruits, fresh herbs, and some liqueurs add a delightful tartness. Consider how much citrusy punch you want.",
     },
     {
-      profile: "Bitterness",
+      profile: "Bitter",
       description:
         "Bitters, aperitifs, and dark-colored spirits like whiskey can add a complex bitterness. Some enjoy it, while others prefer to avoid it.",
     },
     {
-      profile: "Spice",
+      profile: "Spicey",
       description:
         "Ginger, chili peppers, and spices like cinnamon or nutmeg can add a unique kick. Decide if you want a fiery cocktail or a smooth sip.",
     },
     {
-      profile: "Fruitiness",
+      profile: "Fruity",
       description:
         "Fresh fruits, fruit juices, and infused spirits can add vibrant fruit flavors. Consider your favorite fruits or whether you prefer a tropical or citrusy twist.",
     },
