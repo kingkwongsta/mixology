@@ -122,7 +122,7 @@ export default function GenerateCocktail({}) {
           {buttonName}
         </Button>
       )}
-      <div className="m-10 text-slate-500 text-xl">
+      <div className=" text-slate-500 text-xl">
         {isLoading ? (
           <div className="flex flex-col items-center space-y-8 mt-8">
             <p>Shaking up your signature sip... </p>
@@ -139,7 +139,7 @@ export default function GenerateCocktail({}) {
       <div>
         {drinkRecipe ? (
           <Button
-            className="mt-[100px] bg-[#2E83F2]"
+            className="mt-[50px] bg-[#2E83F2]"
             onClick={() => {
               setQuestionIndex(-4);
               setDrinkRecipe("");
