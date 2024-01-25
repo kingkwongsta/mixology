@@ -11,7 +11,7 @@ export default function RightImage({ children }) {
           <div className="basis-3/5 min-h-[500px]">{children}</div>
           <div className="basis-2/5 min-h-[500px]">
             <Image
-              className="rounded-xl my-8"
+              className="rounded-xl my-8 opacity-70"
               src={imageSrc}
               alt={imageAlt}
               width={500}
@@ -23,7 +23,7 @@ export default function RightImage({ children }) {
         <div className="flex flex-row">
           <div className="basis-2/5 min-h-[500px]">
             <Image
-              className="rounded-xl my-8"
+              className="rounded-xl my-8 opacity-70"
               src={imageSrc}
               alt={imageAlt}
               width={500}

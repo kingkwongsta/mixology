@@ -88,7 +88,7 @@ export default function GenerateCocktail({}) {
   };
   return (
     <div className="mt-10 flex flex-col items-center">
-      <div className="shadow-sm p-2 rounded-lg">
+      <div className="shadow-xs p-2 rounded-lg">
         <p className="text-lg">
           You are in a{" "}
           <span
