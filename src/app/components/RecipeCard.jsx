@@ -15,11 +15,11 @@ export default function RecipeCard({ drinkRecipe }) {
         {drinkRecipe.name}
       </h2>
 
-      <div className="flex flex-row space-x-5 items-stretch">
+      <div className="flex flex-row space-x-10 items-center">
         <div className="flex flex-col space-y-8">
-          <Card className="w-[500px] border-none">
+          <Card className="w-[500px] border-[#2E83F2] border-none shadow-xl bg-transparent">
             <CardHeader>
-              <CardTitle className="text-[#9BF2F2]">Ingredients</CardTitle>
+              <CardTitle className="text-[#9BF2F2] ">Ingredients</CardTitle>
             </CardHeader>
             <CardContent>
               <ul>
@@ -34,9 +34,9 @@ export default function RecipeCard({ drinkRecipe }) {
             </CardContent>
           </Card>
 
-          <Card className="w-[500px] border-none">
+          <Card className="w-[500px] border-none shadow-xl bg-transparent">
             <CardHeader>
-              <CardTitle className="text-[#9BF2F2]">Instructions</CardTitle>
+              <CardTitle className="text-[#9BF2F2] ">Instructions</CardTitle>
             </CardHeader>
             <CardContent>
               <ol>
@@ -49,13 +49,13 @@ export default function RecipeCard({ drinkRecipe }) {
             </CardContent>
           </Card>
         </div>
-        <div>
+        <div className="shadow-xl rounded-xl">
           <Image
-            className="rounded-xl my-8 self-stretch"
+            className="rounded-xl opacity-40"
             src="/images/drink.jpg"
             alt="drink"
-            width={400}
-            height={500}
+            width={350}
+            height={400}
           />
         </div>
       </div>
