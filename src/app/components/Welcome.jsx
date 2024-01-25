@@ -58,19 +58,19 @@ export default function Welcome({ display }) {
           width={1200}
           height={300}
         />
-        <div className="absolute inset-0 flex flex-col items-center justify-start">
-          <h1 className="text-2xl text-[#F2ADA7] font-bold mt-14 mb-7 shadow-lg">
+        <div className="absolute inset-0 flex flex-col items-center justify-center">
+          <h1 className="text-4xl text-[#F2ADA7] font-bold mb-7 shadow-lg">
             Crafted for Your Palate
           </h1>
-          <h2 className="text-xl font-medium shadow-lg">
+          <h2 className="text-xl font-semibold shadow-lg">
             Discover a world of exquisite cocktails
           </h2>
           {/* <h1>{introMessages[randomNum]}</h1> */}
           <Button
-            className="bg-[#2E83F2] mt-[100px] shadow-lg"
+            className="bg-[#9BF2F2] m-[100px] min-w-[200px] shadow-lg text-lg"
             onClick={() => setQuestionIndex(1)}
           >
-            Start Mixing
+            <span className="">Start Mixing</span>
           </Button>
         </div>
       </div>
