@@ -22,52 +22,26 @@ export default function Welcome({ display }) {
   //   const randomIndex = Math.floor(Math.random() * introMessages.length);
   //   setrandomNum(randomIndex);
   // }, [introMessages]);
-  // return (
-  //   <div>
-  //     <div className=" flex flex-col items-center text-center mt-10">
-  //       <h1 className="text-2xl text-[#F2ADA7] font-bold m-7">
-  //         Crafted for Your Palate
-  //       </h1>
-  //       <h2 className="text-xl font-medium	">
-  //         Discover a world of exquisite cocktails
-  //       </h2>
-  //       {/* <h1>{introMessages[randomNum]}</h1> */}
-  //       <Button
-  //         className="bg-[#2E83F2] m-10"
-  //         onClick={() => setQuestionIndex(1)}
-  //       >
-  //         Start Mixing
-  //       </Button>
-  //       <Image
-  //         className="mt-10 opacity-60"
-  //         src="/images/welcome.jpg"
-  //         alt="welcome"
-  //         width={500}
-  //         height={300}
-  //       />
-  //     </div>
-  //   </div>
-  // );
   return (
     <div className="flex items-center justify-center ">
       <div className="relative">
         <Image
-          className="w-full h-full object-cover opacity-80 rounded-md"
+          className="w-full h-full object-cover opacity-70 rounded-md"
           src="/images/welcome.jpg"
           alt="welcome"
           width={1200}
           height={300}
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <h1 className="text-4xl text-[#F2ADA7] font-bold mb-7 shadow-lg">
+          <h1 className="text-4xl text-[#F2ADA7] font-bold mb-7">
             Crafted for Your Palate
           </h1>
-          <h2 className="text-xl font-semibold shadow-lg">
+          <h2 className="text-xl font-semibold">
             Discover a world of exquisite cocktails
           </h2>
           {/* <h1>{introMessages[randomNum]}</h1> */}
           <Button
-            className="bg-[#9BF2F2] m-[100px] min-w-[200px] shadow-lg text-lg"
+            className="bg-[#9BF2F2] m-[100px] min-w-[200px] shadow-md text-lg text-slate-700"
             onClick={() => setQuestionIndex(1)}
           >
             <span className="">Start Mixing</span>
