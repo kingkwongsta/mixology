@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import userStore from "@/lib/userStore";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -20,8 +20,9 @@ export default function GenerateCocktail({}) {
   const [buttonName, setButtonName] = useState("");
   const [progress, setProgress] = useState(0);
 
-  const buttonNameList = useMemo(
-    () => [
+  // Create random number to set button text
+  useEffect(() => {
+    const buttonNameList = [
       "Shake It Up!",
       "Pour Me Something Perfect",
       "Surprise Me, Bartender!",
@@ -38,11 +39,7 @@ export default function GenerateCocktail({}) {
       "Create My Cocktail Kingdom",
       "Blast Off to Flavortown",
       "Escape to Cocktail Island",
-    ],
-    []
-  );
-  // Create random number to set button text
-  useEffect(() => {
+    ];
     const calculateRandomIndex = () =>
       Math.floor(Math.random() * buttonNameList.length);
     const randomIndex = calculateRandomIndex();
