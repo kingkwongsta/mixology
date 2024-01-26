@@ -17,12 +17,12 @@ export default function RecipeCard({ drinkRecipe }) {
 
       <div className="flex flex-row space-x-10 items-center">
         <div className="flex flex-col space-y-8">
-          <Card className="w-[500px] border-[#2E83F2] border-none shadow-xl bg-[#F2ADA7]">
+          <Card className="w-[500px] border-[#2E83F2] border-none shadow-xl bg-slate-100">
             <CardHeader>
               <CardTitle className="text-[#9BF2F2] ">Ingredients</CardTitle>
             </CardHeader>
             <CardContent>
-              <ul>
+              <ul className="text-slate-800">
                 {drinkRecipe.ingredients
                   .filter((item) => item.name !== "Ice cubes")
                   .map((ingredient, index) => (
