@@ -50,6 +50,7 @@ export default function RecipeCard({ drinkRecipe }) {
             </CardContent>
           </Card>
         </div>
+        {/* IMAGE FOR RECIPE */}
         <div className="shadow-xl rounded-xl">
           <Image
             className="rounded-xl opacity-60"
