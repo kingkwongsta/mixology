@@ -17,6 +17,7 @@ export default function RecipeCard({ drinkRecipe }) {
 
       <div className="flex flex-row space-x-10">
         <div className="flex flex-col space-y-8">
+          {/* <<<<<INGREDIENTS CARD>>>>> */}
           <Card className="w-[500px] border-[#2E83F2] border-none shadow-xl bg-slate-100 p-3">
             <CardHeader>
               <CardTitle className="text-slate-900 ">Ingredients</CardTitle>
@@ -33,7 +34,7 @@ export default function RecipeCard({ drinkRecipe }) {
               </ul>
             </CardContent>
           </Card>
-
+          {/* <<<<<INSTRUCTIONS CARD>>>>> */}
           <Card className="w-[500px] border-none shadow-xl bg-slate-200 p-3">
             <CardHeader>
               <CardTitle className="text-slate-900 ">Instructions</CardTitle>
