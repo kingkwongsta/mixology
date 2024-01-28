@@ -37,7 +37,7 @@ export default function Home() {
               <LiquorChoice
                 imageSrc="/images/liquor.jpg"
                 imageAlt="picture liquor"
-                imagePosition="left"
+                imagePosition="right"
               />
             </QuestionLayout>
           </Transition>
