@@ -12,7 +12,7 @@ export default function Home() {
   const { userFlavor, userLiquor, userMood, drinkRecipe, questionIndex } =
     userStore();
   return (
-    <section className="py-24">
+    <section className="py-7">
       <main className="container">
         {questionIndex === 0 && (
           <Transition>
