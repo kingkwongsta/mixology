@@ -1,21 +1,11 @@
 "use client";
 import Image from "next/image";
-import HomeButton from "./buttons/HomeButton";
-import ModeToggle from "./buttons/ModeToggle";
 import userStore from "@/lib/userStore";
 
 export default function Header() {
   const { questionIndex, setQuestionIndex } = userStore();
   return (
-    // <div className="flex items-center justify-center mx-1 bg-gradient-to-r from-[#F2ADA7] to-[#9BF2F2] ">
-    //   <div className="flex-grow ">
-    //     <HomeButton className="" />
-    //   </div>
-    //   <div className="flex-none ">
-    //     <ModeToggle className="" />
-    //   </div>
-    // </div>
-    <div className="flex items-center justify-center mx-1 ">
+    <div className="mx-1 flex items-center justify-center ">
       <div className="">
         <Image
           className="mt-2"
