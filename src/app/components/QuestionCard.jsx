@@ -9,7 +9,7 @@ import {
 
 export default function QuestionCard({ question, content }) {
   return (
-    <Card className="w-[350px]">
+    <Card className="flex-grow-1 h-full bg-slate-600">
       <CardHeader>
         <CardTitle>{question}</CardTitle>
       </CardHeader>

@@ -1,10 +1,10 @@
-import Image from 'next/image'
-import { Button } from '@/components/ui/button'
-import { useMemo, useEffect, useState } from 'react'
-import userStore from '@/lib/userStore'
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { useMemo, useEffect, useState } from "react";
+import userStore from "@/lib/userStore";
 
 export default function Welcome({ display }) {
-  const { setQuestionIndex } = userStore()
+  const { setQuestionIndex } = userStore();
   // const [randomNum, setrandomNum] = useState(0);
 
   // const introMessages = useMemo(
@@ -23,31 +23,31 @@ export default function Welcome({ display }) {
   //   setrandomNum(randomIndex);
   // }, [introMessages]);
   return (
-    <div className='flex items-center justify-center '>
-      <div className='relative'>
+    <div className="flex items-center justify-center ">
+      <div className="relative">
         <Image
-          className='h-full w-screen rounded-md object-cover opacity-70'
-          src='/images/welcome.jpg'
-          alt='welcome'
+          className="h-full w-screen rounded-md object-cover opacity-70"
+          src="/images/welcome.jpg"
+          alt="welcome"
           width={1200}
           height={300}
         />
-        <div className='absolute inset-0 mt-[150px] flex flex-col items-center justify-start'>
-          <h1 className='mb-7 text-4xl font-bold text-[#F2ADA7]'>
+        <div className="absolute inset-0 mt-[150px] flex flex-col items-center justify-start">
+          <h1 className="mb-7 text-4xl font-bold text-[#F2ADA7]">
             Crafted for Your Palate
           </h1>
-          <h2 className='text-xl font-semibold'>
+          <h2 className="text-xl font-semibold">
             Discover a world of exquisite cocktails
           </h2>
           {/* <h1>{introMessages[randomNum]}</h1> */}
           <Button
-            className='m-[100px] min-w-[200px] bg-[#9BF2F2] text-lg text-slate-700 shadow-md'
+            className="m-[100px] min-w-[200px] bg-[#9BF2F2] text-lg text-slate-700 shadow-md"
             onClick={() => setQuestionIndex(1)}
           >
-            <span className=''>Start Mixing</span>
+            <span className="">Start Mixing</span>
           </Button>
         </div>
       </div>
     </div>
-  )
+  );
 }
