@@ -18,12 +18,12 @@ export default function MoodChoice() {
   ];
 
   return (
-    <>
-      <h2 className="text-2xl mb-10 mt-8">
+    <div className="shadow-lg">
+      <h2 className="mb-10 mt-8 text-2xl">
         A single sip takes people back to a cherished moment, sparking joy,
         nostalgia, or bittersweet longing
       </h2>
-      <h2 className="text-xl mb-7 text-[#F2ADA7]">
+      <h2 className="mb-7 text-xl text-[#F2ADA7]">
         What kind of mood are you in?
       </h2>
       <ButtonList
@@ -32,6 +32,6 @@ export default function MoodChoice() {
         setSelectedButton={setSelectedButton}
         onButtonClick={setUserMood}
       />
-    </>
+    </div>
   );
 }

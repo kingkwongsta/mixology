@@ -7,11 +7,11 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-export default function CardTest() {
+export default function QuestionCard({ question }) {
   return (
     <Card className="w-[350px]">
       <CardHeader>
-        <CardTitle>Card Title</CardTitle>
+        <CardTitle>{question}</CardTitle>
         <CardDescription>Card Description</CardDescription>
       </CardHeader>
       <CardContent>
