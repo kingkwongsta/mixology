@@ -43,15 +43,19 @@ export default function FlavorChoice() {
 
   return (
     <div className="m-8">
-      <QuestionCard question={question} />
-      <h1 className="my-10 text-2xl text-[#FFFFFF]"></h1>
-      <ButtonListDropdown
-        buttonContent={flavorProfiles}
-        selectedButton={selectedButton}
-        setSelectedButton={setSelectedButton}
-        isHovered={isHovered}
-        setIsHovered={setIsHovered}
+      <QuestionCard
+        question={question}
+        content={
+          <ButtonListDropdown
+            buttonContent={flavorProfiles}
+            selectedButton={selectedButton}
+            setSelectedButton={setSelectedButton}
+            isHovered={isHovered}
+            setIsHovered={setIsHovered}
+          />
+        }
       />
+      <h1 className="my-10 text-2xl text-[#FFFFFF]"></h1>
       {/* <div>{renderFlavorProfiles()}</div> */}
     </div>
   );
