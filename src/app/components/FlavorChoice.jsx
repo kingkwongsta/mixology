@@ -2,10 +2,11 @@
 import { useState, useEffect, useMemo } from "react";
 import ButtonListDropdown from "./ButtonListDropdown";
 import userStore from "@/lib/userStore";
+import QuestionCard from "./QuestionCard";
 
 export default function FlavorChoice() {
   const [isHovered, setIsHovered] = useState(
-    "Do you prefer your cocktails sweet, tart, or balanced? Popular sweeteners include simple syrup, liqueurs, fruit juices, and flavored syrups."
+    "Do you prefer your cocktails sweet, tart, or balanced? Popular sweeteners include simple syrup, liqueurs, fruit juices, and flavored syrups.",
   );
   const [selectedButton, setSelectedButton] = useState();
   const { setUserFlavor, setQuestionIndex } = userStore();
@@ -38,11 +39,12 @@ export default function FlavorChoice() {
     },
   ];
 
+  const question = "Pick a flavor profile that you are looking for:";
+
   return (
     <div className="m-8">
-      <h1 className="my-10 text-2xl text-[#FFFFFF]">
-        Pick a flavor profile that you are looking for:
-      </h1>
+      <QuestionCard question={question} />
+      <h1 className="my-10 text-2xl text-[#FFFFFF]"></h1>
       <ButtonListDropdown
         buttonContent={flavorProfiles}
         selectedButton={selectedButton}

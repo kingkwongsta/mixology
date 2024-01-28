@@ -7,19 +7,13 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-export default function QuestionCard({ question }) {
+export default function QuestionCard({ question, content }) {
   return (
     <Card className="w-[350px]">
       <CardHeader>
         <CardTitle>{question}</CardTitle>
-        <CardDescription>Card Description</CardDescription>
       </CardHeader>
-      <CardContent>
-        <p>Card Content</p>
-      </CardContent>
-      <CardFooter>
-        <p>Card Footer</p>
-      </CardFooter>
+      <CardContent>{content}</CardContent>
     </Card>
   );
 }
