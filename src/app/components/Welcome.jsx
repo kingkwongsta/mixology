@@ -26,14 +26,14 @@ export default function Welcome({ display }) {
     <div className="flex items-center justify-center ">
       <div className="relative">
         <Image
-          className="w-screen h-full object-cover opacity-70 rounded-md"
+          className="h-full w-screen rounded-md object-cover opacity-70"
           src="/images/welcome.jpg"
           alt="welcome"
           width={1200}
           height={300}
         />
-        <div className="absolute inset-0 flex flex-col items-center justify-start mt-[150px]">
-          <h1 className="text-4xl text-[#F2ADA7] font-bold mb-7">
+        <div className="absolute inset-0 mt-[150px] flex flex-col items-center justify-start">
+          <h1 className="mb-7 text-4xl font-bold text-[#F2ADA7]">
             Crafted for Your Palate
           </h1>
           <h2 className="text-xl font-semibold">
@@ -41,7 +41,7 @@ export default function Welcome({ display }) {
           </h2>
           {/* <h1>{introMessages[randomNum]}</h1> */}
           <Button
-            className="bg-[#9BF2F2] m-[100px] min-w-[200px] shadow-md text-lg text-slate-700"
+            className="m-[100px] min-w-[200px] bg-[#9BF2F2] text-lg text-slate-700 shadow-md"
             onClick={() => setQuestionIndex(1)}
           >
             <span className="">Start Mixing</span>

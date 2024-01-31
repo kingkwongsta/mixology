@@ -11,18 +11,19 @@ import {
 export default function RecipeCard({ drinkRecipe }) {
   return (
     <div>
-      <h2 className="text-center text-3xl font-semibold text-[#F2ADA7] mt-10 mb-3">
+      <h2 className="text-center text-3xl font-semibold text-slate-900 mt-7 mb-6">
         {drinkRecipe.name}
       </h2>
 
-      <div className="flex flex-row space-x-10 items-center">
+      <div className="flex flex-row space-x-10">
         <div className="flex flex-col space-y-8">
-          <Card className="w-[500px] border-[#2E83F2] border-none shadow-xl bg-transparent">
+          {/* <<<<<INGREDIENTS CARD>>>>> */}
+          <Card className="w-[500px] border-[#2E83F2] border-none shadow-xl bg-slate-100 p-3">
             <CardHeader>
-              <CardTitle className="text-[#9BF2F2] ">Ingredients</CardTitle>
+              <CardTitle className="text-slate-900 ">Ingredients</CardTitle>
             </CardHeader>
             <CardContent>
-              <ul>
+              <ul className="text-slate-800">
                 {drinkRecipe.ingredients
                   .filter((item) => item.name !== "Ice cubes")
                   .map((ingredient, index) => (
@@ -33,13 +34,13 @@ export default function RecipeCard({ drinkRecipe }) {
               </ul>
             </CardContent>
           </Card>
-
-          <Card className="w-[500px] border-none shadow-xl bg-transparent">
+          {/* <<<<<INSTRUCTIONS CARD>>>>> */}
+          <Card className="w-[500px] border-none shadow-xl bg-slate-200 p-3">
             <CardHeader>
-              <CardTitle className="text-[#9BF2F2] ">Instructions</CardTitle>
+              <CardTitle className="text-slate-900 ">Instructions</CardTitle>
             </CardHeader>
             <CardContent>
-              <ol>
+              <ol className="text-slate-800">
                 {drinkRecipe.instructions
                   .split("\n")
                   .map((instruction, index) => (
@@ -49,9 +50,10 @@ export default function RecipeCard({ drinkRecipe }) {
             </CardContent>
           </Card>
         </div>
+        {/* IMAGE FOR RECIPE */}
         <div className="shadow-xl rounded-xl">
           <Image
-            className="rounded-xl opacity-50"
+            className="rounded-xl opacity-60"
             src="/images/drink.jpg"
             alt="drink"
             width={350}
