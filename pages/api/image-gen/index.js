@@ -10,8 +10,8 @@ export default async function handler(req, res) {
       prompt: modifiedPrompt,
       negative_prompt:
         "Blurry photo, distortion, low-res, poor quality, multiple cocktail glasses",
-      width: 1024,
-      height: 1024,
+      width: 832,
+      height: 1216,
       num_images: 1,
       sampler: "DDIM",
       steps: 30,

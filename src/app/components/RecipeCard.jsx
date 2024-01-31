@@ -17,7 +17,7 @@ export default function RecipeCard({ drinkRecipe }) {
         {drinkRecipe.name}
       </h2>
 
-      <div className="flex flex-row space-x-10 items-center max-w-[1000px]">
+      <div className="flex flex-row space-x-10 items-center max-w-[1000px] max-h-[800px]">
         <div className="flex flex-col space-y-8">
           <Card className="w-[450px] border-[#2E83F2] border-none shadow-xl bg-transparent">
             <CardHeader>
@@ -57,8 +57,8 @@ export default function RecipeCard({ drinkRecipe }) {
               className="rounded-xl object-cover"
               src={drinkImage.imageURL}
               alt="drink"
-              width={600}
-              height={600}
+              width={400}
+              height={800}
             />
           ) : (
             ""
