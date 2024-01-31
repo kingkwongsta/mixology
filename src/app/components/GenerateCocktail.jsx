@@ -86,9 +86,8 @@ export default function GenerateCocktail({}) {
     const gptData = await gptResponse.json();
     const { images } = await imageResponse.json();
 
-    if (data.data.choices && data.data.choices.length > 0) {
-      setDrinkRecipe(JSON.parse(data.data.choices[0].message.content));
-      console.log(data);
+    if (gptData.data.choices && gptData.data.choices.length > 0) {
+      setDrinkRecipe(JSON.parse(gptData.data.choices[0].message.content));
     } else {
       setRecipe("Error: Unexpected response structure");
     }
@@ -167,7 +166,26 @@ export default function GenerateCocktail({}) {
       <div className="min-h-[300px]">
         {drinkRecipe ? <RecipeCard drinkRecipe={drinkRecipe} /> : ""}
       </div>
-      <div>{drinkImage ? <Image /> : ""}</div>
+      <div>
+        <button
+          onClick={() => console.log(drinkImage.imageURL)}
+          className="border-2 border-sky-600"
+        >
+          Get Image data
+        </button>
+      </div>
+      <div>
+        {drinkImage ? (
+          <Image
+            src={drinkImage.imageURL}
+            width={500}
+            height={500}
+            alt="cocktail visual"
+          />
+        ) : (
+          ""
+        )}
+      </div>
       <div>
         {drinkRecipe ? (
           <Button

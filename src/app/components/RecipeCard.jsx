@@ -7,8 +7,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import userStore from "@/lib/userStore";
 
 export default function RecipeCard({ drinkRecipe }) {
+  const { drinkImage } = userStore();
   return (
     <div>
       <h2 className="text-center text-3xl font-semibold text-[#F2ADA7] mt-10 mb-3">
