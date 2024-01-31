@@ -52,13 +52,17 @@ export default function RecipeCard({ drinkRecipe }) {
           </Card>
         </div>
         <div className="shadow-xl rounded-xl">
-          <Image
-            className="rounded-xl opacity-50"
-            src="/images/drink.jpg"
-            alt="drink"
-            width={350}
-            height={400}
-          />
+          {drinkImage ? (
+            <Image
+              className="rounded-xl opacity-70"
+              src={drinkImage.imageURL}
+              alt="drink"
+              width={400}
+              height={500}
+            />
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </div>

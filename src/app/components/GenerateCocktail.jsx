@@ -167,26 +167,6 @@ export default function GenerateCocktail({}) {
         {drinkRecipe ? <RecipeCard drinkRecipe={drinkRecipe} /> : ""}
       </div>
       <div>
-        <button
-          onClick={() => console.log(drinkImage.imageURL)}
-          className="border-2 border-sky-600"
-        >
-          Get Image data
-        </button>
-      </div>
-      <div>
-        {drinkImage ? (
-          <Image
-            src={drinkImage.imageURL}
-            width={500}
-            height={500}
-            alt="cocktail visual"
-          />
-        ) : (
-          ""
-        )}
-      </div>
-      <div>
         {drinkRecipe ? (
           <Button
             className="mt-[80px] bg-transparent border-2 border-slate-500 opacity-80 shadow-lg"
