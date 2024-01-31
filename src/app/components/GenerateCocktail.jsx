@@ -12,6 +12,8 @@ export default function GenerateCocktail({}) {
     userMood,
     drinkRecipe,
     setDrinkRecipe,
+    drinkImage,
+    setDrinkImage,
     setQuestionIndex,
   } = userStore();
 

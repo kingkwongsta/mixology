@@ -2,17 +2,16 @@
 import { useState } from "react";
 import Image from "next/image";
 
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-
-export default function ImageCreator() {
+export default function ImageCreator({ liquor }) {
   const [prediction, setPrediction] = useState(null);
   const [error, setError] = useState(null);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("submit clicked");
 
     try {
-      const response = await fetch("/api/image", {
+      const response = await fetch("/api/image-gen", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -39,40 +38,14 @@ export default function ImageCreator() {
   };
 
   return (
-    <div className="space-y-5">
-      <h2>OctoAI + Next.js</h2>
-      <form className="space-x-8" onSubmit={handleSubmit}>
-        <textarea
-          className="border-slate-800 border-2 min-h-[200px] min-w-[500px] p-4 break-words"
-          type="text"
-          name="prompt"
-          placeholder="Enter a prompt to display an image"
-        />
-        <button className="border-2 border-slate-700 p-4" type="submit">
-          Go!
-        </button>
-      </form>
-
-      <div>
-        <h2>Debug</h2>
-        {prediction && <h3>Data Recieved</h3>}
-        <button
-          onClick={() => console.log(prediction)}
-          className="border-2 border-sky-800"
-        >
-          GET ME THE DATA
-        </button>
-      </div>
-
+    <div className="">
       {prediction && (
-        <div className="">
-          <Image
-            src={prediction.imageURL}
-            alt="output"
-            width={1000}
-            height={1000}
-          />
-        </div>
+        <Image
+          src={prediction.imageURL}
+          alt="output"
+          width={1000}
+          height={1000}
+        />
       )}
     </div>
   );
