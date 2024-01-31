@@ -4,6 +4,7 @@ import userStore from "@/lib/userStore";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import RecipeCard from "./RecipeCard";
+import Image from "next/image";
 
 export default function GenerateCocktail({}) {
   const {
@@ -65,28 +66,58 @@ export default function GenerateCocktail({}) {
   const getCocktail = async () => {
     setIsLoading(true);
 
-    try {
-      const response = await fetch("/api/gptrequest", {
+    const [gptResponse, imageResponse] = await Promise.all([
+      fetch("/api/gptrequest", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userFlavor, userLiquor, userMood }),
-      });
+      }),
+      fetch("/api/image-gen", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          prompt: userLiquor,
+        }),
+      }),
+    ]);
 
-      const data = await response.json();
+    const gptData = await gptResponse.json();
+    const { images } = await imageResponse.json();
 
-      if (data.data.choices && data.data.choices.length > 0) {
-        setDrinkRecipe(JSON.parse(data.data.choices[0].message.content));
-        console.log(data);
-      } else {
-        setRecipe("Error: Unexpected response structure");
-      }
-    } catch (error) {
-      console.error(error);
-      setRecipe("Error");
-      console.log(error.response);
-    } finally {
-      setIsLoading(false);
+    if (data.data.choices && data.data.choices.length > 0) {
+      setDrinkRecipe(JSON.parse(data.data.choices[0].message.content));
+      console.log(data);
+    } else {
+      setRecipe("Error: Unexpected response structure");
     }
+
+    const imageURL = `data:image/jpeg;base64,${images[0].imageData}`;
+    setDrinkImage({ imageURL });
+
+    //   try {
+    //     const response = await fetch("/api/gptrequest", {
+    //       method: "POST",
+    //       headers: { "Content-Type": "application/json" },
+    //       body: JSON.stringify({ userFlavor, userLiquor, userMood }),
+    //     });
+
+    //     const data = await response.json();
+
+    //     if (data.data.choices && data.data.choices.length > 0) {
+    //       setDrinkRecipe(JSON.parse(data.data.choices[0].message.content));
+    //       console.log(data);
+    //     } else {
+    //       setRecipe("Error: Unexpected response structure");
+    //     }
+    //   } catch (error) {
+    //     console.error(error);
+    //     setRecipe("Error");
+    //     console.log(error.response);
+    //   } finally {
+    //     setIsLoading(false);
+    //   }
   };
   return (
     <div className="mt-10 flex flex-col items-center">
@@ -136,6 +167,7 @@ export default function GenerateCocktail({}) {
       <div className="min-h-[300px]">
         {drinkRecipe ? <RecipeCard drinkRecipe={drinkRecipe} /> : ""}
       </div>
+      <div>{drinkImage ? <Image /> : ""}</div>
       <div>
         {drinkRecipe ? (
           <Button
