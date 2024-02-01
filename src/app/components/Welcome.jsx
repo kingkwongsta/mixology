@@ -33,7 +33,7 @@ export default function Welcome({ display }) {
           height={300}
         />
         <div className="absolute inset-0 flex flex-col items-center justify-start mt-[150px]">
-          <div className="pt-4 px-8 rounded-xl bg-black bg-opacity-10 border-2 border-slate-300 shadow-lg">
+          <div className="pt-4 px-8 rounded-xl backdrop-blur-sm	  border-2 border-slate-300 shadow-lg">
             <h1 className="text-4xl text-[#F2ADA7] font-bold mb-7">
               Crafted for Your Palate
             </h1>
