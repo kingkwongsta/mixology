@@ -6,7 +6,15 @@ import userStore from "@/lib/userStore";
 export default function LiquorChoice() {
   const { setUserLiquor, setQuestionIndex } = userStore();
   const [selectedButton, setSelectedButton] = useState();
-  const liquorOptions = ["Vodka", "Whiskey", "Rum", "Gin", "Tequila", "Brandy"];
+  const liquorOptions = [
+    "Vodka",
+    "Soju",
+    "Whiskey",
+    "Rum",
+    "Gin",
+    "Tequila",
+    "Brandy",
+  ];
 
   return (
     <div className="m-8">
