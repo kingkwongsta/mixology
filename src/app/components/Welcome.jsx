@@ -25,6 +25,14 @@ export default function Welcome({ display }) {
   return (
     <div className="flex items-center justify-center ">
       <div className="relative">
+        {/* <<<<< FULL IMAGE SIZE >>>>>*/}
+        {/* <Image
+          className="w-screen h-full object-cover opacity-70 rounded-md"
+          src="/images/hero-1.jpg"
+          alt="welcome"
+          width={1200}
+          height={300}
+        /> */}
         <Image
           className="w-screen h-full object-cover opacity-70 rounded-md"
           src="/images/hero-1.jpg"
@@ -32,17 +40,17 @@ export default function Welcome({ display }) {
           width={1200}
           height={300}
         />
-        <div className="absolute inset-0 flex flex-col items-center justify-start mt-[150px]">
+        <div className="absolute inset-0 flex flex-col items-center justify-start mt-[150px] text-center">
           <div className="pt-4 px-8 rounded-xl backdrop-blur-sm	  border-2 border-slate-300 shadow-lg">
-            <h1 className="text-4xl text-[#F2ADA7] font-bold mb-7">
+            <h1 className="text-4xl text-[#F2ADA7] font-bold mb-10 drop-shadow-lg tracking-wide">
               Crafted for Your Palate
             </h1>
-            <h2 className="text-xl font-semibold">
+            <h2 className="text-xl font-semibold drop-shadow-lg">
               Discover a world of exquisite cocktails
             </h2>
             {/* <h1>{introMessages[randomNum]}</h1> */}
             <Button
-              className="bg-[#9BF2F2] m-[100px] min-w-[200px] shadow-md text-lg text-slate-700"
+              className="bg-[#9BF2F2] m-[100px] min-w-[200px] shadow-md text-lg text-slate-700 drop-shadow-lg"
               onClick={() => setQuestionIndex(1)}
             >
               <span className="">Start Mixing</span>
