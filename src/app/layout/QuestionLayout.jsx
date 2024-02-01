@@ -8,16 +8,16 @@ export default function RightImage({ children }) {
     <div className="m-10">
       {isImageOnRight ? (
         <div className="flex flex-row space-x-5">
-          <div className="basis-3/5 min-h-[500px] bg-white bg-opacity-20 rounded-xl">
+          <div className="basis-3/5 bg-white bg-opacity-20 rounded-xl">
             {children}
           </div>
-          <div className="basis-2/5 min-h-[500px]">
+          <div className="basis-2/5 h-full">
             <Image
-              className="rounded-xl my-8 opacity-70"
+              className="rounded-xl my-8 opacity-70 object-cover"
               src={imageSrc}
               alt={imageAlt}
-              width={500}
-              height={500}
+              width={1000}
+              height={1000}
             />
           </div>
         </div>
@@ -25,7 +25,7 @@ export default function RightImage({ children }) {
         <div className="flex flex-row space-x-5">
           <div className="basis-2/5 min-h-[500px]">
             <Image
-              className="rounded-xl my-8 opacity-70"
+              className="rounded-xl my-8 opacity-70 object-cover"
               src={imageSrc}
               alt={imageAlt}
               width={500}

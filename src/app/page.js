@@ -22,7 +22,7 @@ export default function Home() {
         <Transition>
           <QuestionLayout>
             <FlavorChoice
-              imageSrc="/images/flavor.jpg"
+              imageSrc="/images/flavor-2.jpg"
               imageAlt="picture of flavor"
               imagePosition="right"
             />
@@ -36,7 +36,7 @@ export default function Home() {
             <LiquorChoice
               imageSrc="/images/liquor.jpg"
               imageAlt="picture liquor"
-              imagePosition="left"
+              imagePosition="right"
             />
           </QuestionLayout>
         </Transition>
