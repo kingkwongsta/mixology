@@ -26,13 +26,6 @@ export default function Welcome({ display }) {
     <div className="flex items-center justify-center ">
       <div className="relative">
         {/* <<<<< FULL IMAGE SIZE >>>>>*/}
-        {/* <Image
-          className="w-screen h-full object-cover opacity-70 rounded-md"
-          src="/images/hero-1.jpg"
-          alt="welcome"
-          width={1200}
-          height={300}
-        /> */}
         <Image
           className="w-screen h-full object-cover opacity-70 rounded-md"
           src="/images/hero-1.jpg"
@@ -40,6 +33,13 @@ export default function Welcome({ display }) {
           width={1200}
           height={300}
         />
+        {/* <Image
+          className="opacity-70 rounded-md max-h-[800px]"
+          src="/images/hero-1.jpg"
+          alt="welcome"
+          width={1200}
+          height={300}
+        /> */}
         <div className="absolute inset-0 flex flex-col items-center justify-start mt-[150px] text-center">
           <div className="pt-4 px-8 rounded-xl backdrop-blur-sm	  border-2 border-slate-300 shadow-lg">
             <h1 className="text-4xl text-[#F2ADA7] font-bold mb-10 drop-shadow-lg tracking-wide">
