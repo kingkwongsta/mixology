@@ -27,25 +27,27 @@ export default function Welcome({ display }) {
       <div className="relative">
         <Image
           className="w-screen h-full object-cover opacity-70 rounded-md"
-          src="/images/welcome.jpg"
+          src="/images/hero-1.jpg"
           alt="welcome"
           width={1200}
           height={300}
         />
         <div className="absolute inset-0 flex flex-col items-center justify-start mt-[150px]">
-          <h1 className="text-4xl text-[#F2ADA7] font-bold mb-7">
-            Crafted for Your Palate
-          </h1>
-          <h2 className="text-xl font-semibold">
-            Discover a world of exquisite cocktails
-          </h2>
-          {/* <h1>{introMessages[randomNum]}</h1> */}
-          <Button
-            className="bg-[#9BF2F2] m-[100px] min-w-[200px] shadow-md text-lg text-slate-700"
-            onClick={() => setQuestionIndex(1)}
-          >
-            <span className="">Start Mixing</span>
-          </Button>
+          <div className="pt-4 px-8 rounded-xl bg-black bg-opacity-10 border-2 border-slate-300 shadow-lg">
+            <h1 className="text-4xl text-[#F2ADA7] font-bold mb-7">
+              Crafted for Your Palate
+            </h1>
+            <h2 className="text-xl font-semibold">
+              Discover a world of exquisite cocktails
+            </h2>
+            {/* <h1>{introMessages[randomNum]}</h1> */}
+            <Button
+              className="bg-[#9BF2F2] m-[100px] min-w-[200px] shadow-md text-lg text-slate-700"
+              onClick={() => setQuestionIndex(1)}
+            >
+              <span className="">Start Mixing</span>
+            </Button>
+          </div>
         </div>
       </div>
     </div>
