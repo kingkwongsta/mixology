@@ -41,7 +41,7 @@ export default function Welcome({ display }) {
           height={300}
         /> */}
         <div className="absolute inset-0 flex flex-col items-center justify-start mt-[100px] text-center">
-          <div className="pt-4 px-8 rounded-xl backdrop-blur-sm border-2 border-slate-300 shadow-lg">
+          <div className="pt-4 px-8 rounded-xl backdrop-blur-sm hover:border-cyan-300 border-2 border-slate-300 shadow-lg">
             <h1 className="text-4xl text-[#9BF2F2] font-bold mb-10 drop-shadow-md tracking-wide">
               Crafted for Your Palate
             </h1>
