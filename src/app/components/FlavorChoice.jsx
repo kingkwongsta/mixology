@@ -6,7 +6,7 @@ import QuestionCard from "./QuestionCard";
 
 export default function FlavorChoice() {
   const [isHovered, setIsHovered] = useState(
-    "Do you prefer your cocktails sweet, tart, or balanced? Popular sweeteners include simple syrup, liqueurs, fruit juices, and flavored syrups."
+    "Do you prefer your cocktails sweet, tart, or balanced? Popular sweeteners include simple syrup, liqueurs, fruit juices, and flavored syrups.",
   );
   const [selectedButton, setSelectedButton] = useState();
   const flavorProfiles = [
@@ -36,6 +36,8 @@ export default function FlavorChoice() {
         "Fresh fruits, fruit juices, and infused spirits can add vibrant fruit flavors. Consider your favorite fruits or whether you prefer a tropical or citrusy twist.",
     },
   ];
+
+  const question = "Pick a flavor profile that you are looking for:";
 
   return (
     <QuestionCard
