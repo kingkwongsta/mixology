@@ -65,35 +65,71 @@ export default function GenerateCocktail({}) {
   }, []);
   const getCocktail = async () => {
     setIsLoading(true);
-
-    const [gptResponse, imageResponse] = await Promise.all([
-      fetch("/api/gptrequest", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ userFlavor, userLiquor, userMood }),
-      }),
-      fetch("/api/image-gen", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          prompt: userLiquor,
+    try {
+      const [gptResponse, imageResponse] = await Promise.all([
+        fetch("/api/gptrequest", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ userFlavor, userLiquor, userMood }),
         }),
-      }),
-    ]);
+        fetch("/api/image-gen", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            prompt: userLiquor,
+          }),
+        }),
+      ]);
 
-    const gptData = await gptResponse.json();
-    const { images } = await imageResponse.json();
+      const gptData = await gptResponse.json();
+      const { images } = await imageResponse.json();
 
-    if (gptData.data.choices && gptData.data.choices.length > 0) {
-      setDrinkRecipe(JSON.parse(gptData.data.choices[0].message.content));
-    } else {
-      setRecipe("Error: Unexpected response structure");
+      if (gptData.data.choices && gptData.data.choices.length > 0) {
+        setDrinkRecipe(JSON.parse(gptData.data.choices[0].message.content));
+      } else {
+        setRecipe("Error: Unexpected response structure");
+      }
+
+      const imageURL = `data:image/jpeg;base64,${images[0].imageData}`;
+      setDrinkImage({ imageURL });
+      setIsLoading(false);
+    } catch (error) {
+      console.error("Error:", error);
+      setRecipe("Error: Fetch failed");
+      setIsLoading(false);
     }
 
-    const imageURL = `data:image/jpeg;base64,${images[0].imageData}`;
-    setDrinkImage({ imageURL });
+    // const [gptResponse, imageResponse] = await Promise.all([
+    //   fetch("/api/gptrequest", {
+    //     method: "POST",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify({ userFlavor, userLiquor, userMood }),
+    //   }),
+    //   fetch("/api/image-gen", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       prompt: userLiquor,
+    //     }),
+    //   }),
+    // ]);
+
+    // const gptData = await gptResponse.json();
+    // const { images } = await imageResponse.json();
+
+    // if (gptData.data.choices && gptData.data.choices.length > 0) {
+    //   setDrinkRecipe(JSON.parse(gptData.data.choices[0].message.content));
+    // } else {
+    //   setRecipe("Error: Unexpected response structure");
+    // }
+
+    // const imageURL = `data:image/jpeg;base64,${images[0].imageData}`;
+    // setDrinkImage({ imageURL });
+    // setIsLoading(false);
 
     //   try {
     //     const response = await fetch("/api/gptrequest", {
@@ -125,16 +161,16 @@ export default function GenerateCocktail({}) {
           You are in a{" "}
           <span
             onClick={() => setQuestionIndex(-3)}
-            className="text-xl font-semibold text-[#2E83F2] lowercase "
+            className="text-xl font-semibold text-[#262626] lowercase "
           >
             {userMood}
           </span>{" "}
           mood and are looking for{" "}
-          <span className="text-xl font-semibold text-[#2E83F2] lowercase ">
+          <span className="text-xl font-semibold text-[#262626] lowercase ">
             {userFlavor}
           </span>{" "}
           drink with{" "}
-          <span className="text-xl font-semibold text-[#2E83F2] lowercase ">
+          <span className="text-xl font-semibold text-[#262626] lowercase ">
             {userLiquor}
           </span>{" "}
         </p>
@@ -143,7 +179,7 @@ export default function GenerateCocktail({}) {
         ""
       ) : (
         <Button
-          className={`max-w-[250px] mt-12 ${selected && "bg-[#2E83F2]"}`}
+          className={`max-w-[250px] mt-12 ${selected && "bg-[#D9D9D9]"}`}
           onClick={() => {
             setSelected(!selected);
             getCocktail();
