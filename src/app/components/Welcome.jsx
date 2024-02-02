@@ -41,8 +41,8 @@ export default function Welcome({ display }) {
           height={300}
         /> */}
         <div className="absolute inset-0 flex flex-col items-center justify-start mt-[100px] text-center">
-          <div className="pt-4 px-8 rounded-xl backdrop-blur-sm hover:border-cyan-300 border-2 border-slate-300 shadow-lg">
-            <h1 className="text-4xl text-[#9BF2F2] font-bold mb-10 drop-shadow-md tracking-wide">
+          <div className="pt-4 px-8 rounded-xl backdrop-blur-sm hover:border-[#D9984A] border-2 border-slate-300 shadow-lg">
+            <h1 className="text-4xl text-[#D9984A] font-bold mb-10 drop-shadow-md tracking-wide">
               Crafted for Your Palate
             </h1>
             <h2 className="text-xl font-semibold drop-shadow-md">
@@ -50,7 +50,7 @@ export default function Welcome({ display }) {
             </h2>
             {/* <h1>{introMessages[randomNum]}</h1> */}
             <Button
-              className="bg-[#9BF2F2] m-[100px] min-w-[200px] shadow-md text-lg text-slate-700 drop-shadow-lg"
+              className="bg-[#D9984A] m-[100px] min-w-[200px] shadow-md text-lg text-slate-700 drop-shadow-lg hover:bg-[#8C4130]"
               onClick={() => setQuestionIndex(1)}
             >
               <span className="text-white drop-shadow-md">Start Mixing</span>
