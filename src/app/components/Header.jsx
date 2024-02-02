@@ -5,16 +5,8 @@ import ModeToggle from "./buttons/ModeToggle";
 import userStore from "@/lib/userStore";
 
 export default function Header() {
-  const { questionIndex, setQuestionIndex } = userStore();
+  const { questionIndex, setQuestionIndex, setRecipe } = userStore();
   return (
-    // <div className="flex items-center justify-center mx-1 bg-gradient-to-r from-[#F2ADA7] to-[#9BF2F2] ">
-    //   <div className="flex-grow ">
-    //     <HomeButton className="" />
-    //   </div>
-    //   <div className="flex-none ">
-    //     <ModeToggle className="" />
-    //   </div>
-    // </div>
     <div className="flex items-center justify-center mx-1 ">
       <div className="">
         <Image
@@ -23,7 +15,10 @@ export default function Header() {
           alt="home"
           width={25}
           height={25}
-          onClick={() => setQuestionIndex(-questionIndex)}
+          onClick={() => {
+            setQuestionIndex(-questionIndex);
+            setRecipe("");
+          }}
         />
       </div>
     </div>

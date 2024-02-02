@@ -35,7 +35,7 @@ export default function ButtonListDropdown({
             {buttonContent.map((content, index) => (
               <Button
                 key={index}
-                className={`bg-[#D9D9D9] my-2 min-w-[100px] max-w-[160px] hover:bg-opacity-75 ${
+                className={`bg-[#BFB2AA] my-2 min-w-[100px] max-w-[160px] hover:bg-opacity-75 drop-shadow-md ${
                   index === selectedButton && backgroundColor
                 }`}
                 onMouseEnter={() => setIsHovered(content.description)}
