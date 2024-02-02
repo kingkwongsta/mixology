@@ -205,7 +205,7 @@ export default function GenerateCocktail({}) {
       <div>
         {drinkRecipe ? (
           <Button
-            className="mt-[80px] bg-transparent border-2 border-slate-500 opacity-80 shadow-lg"
+            className="mt-[50px] bg-[#BFB2AA] opacity-80 shadow-lg"
             onClick={() => {
               setQuestionIndex(-4);
               setDrinkRecipe("");

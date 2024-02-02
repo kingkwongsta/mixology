@@ -13,7 +13,7 @@ export default function RecipeCard({ drinkRecipe }) {
   const { drinkImage } = userStore();
   return (
     <div>
-      <h2 className="text-center text-3xl font-semibold text-[#F2ADA7] mt-10 mb-3">
+      <h2 className="text-center text-3xl font-semibold text-white mt-10 mb-3">
         {drinkRecipe.name}
       </h2>
 
@@ -21,7 +21,7 @@ export default function RecipeCard({ drinkRecipe }) {
         <div className="flex flex-col space-y-8">
           <Card className="w-[450px] border-[#2E83F2] border-none shadow-xl bg-transparent">
             <CardHeader>
-              <CardTitle className="text-[#9BF2F2] ">Ingredients</CardTitle>
+              <CardTitle className="text-[#8C4130] ">Ingredients</CardTitle>
             </CardHeader>
             <CardContent>
               <ul>
@@ -38,7 +38,7 @@ export default function RecipeCard({ drinkRecipe }) {
 
           <Card className="w-[450px] border-none shadow-xl bg-transparent">
             <CardHeader>
-              <CardTitle className="text-[#9BF2F2] ">Instructions</CardTitle>
+              <CardTitle className="text-[#8C4130] ">Instructions</CardTitle>
             </CardHeader>
             <CardContent>
               <ol>

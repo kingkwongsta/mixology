@@ -5,7 +5,7 @@ import ModeToggle from "./buttons/ModeToggle";
 import userStore from "@/lib/userStore";
 
 export default function Header() {
-  const { questionIndex, setQuestionIndex, setRecipe } = userStore();
+  const { questionIndex, setQuestionIndex, setDrinkRecipe } = userStore();
   return (
     <div className="flex items-center justify-center mx-1 ">
       <div className="">
@@ -17,7 +17,7 @@ export default function Header() {
           height={25}
           onClick={() => {
             setQuestionIndex(-questionIndex);
-            setRecipe("");
+            setDrinkRecipe("");
           }}
         />
       </div>
