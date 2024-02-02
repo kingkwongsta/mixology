@@ -9,8 +9,6 @@ export default function FlavorChoice() {
     "Do you prefer your cocktails sweet, tart, or balanced? Popular sweeteners include simple syrup, liqueurs, fruit juices, and flavored syrups."
   );
   const [selectedButton, setSelectedButton] = useState();
-  const { setUserFlavor, setQuestionIndex } = userStore();
-
   const flavorProfiles = [
     {
       profile: "Sweet",

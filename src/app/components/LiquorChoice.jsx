@@ -2,6 +2,7 @@
 import { useState } from "react";
 import ButtonList from "./ButtonList";
 import userStore from "@/lib/userStore";
+import QuestionCard from "./QuestionCard";
 
 export default function LiquorChoice() {
   const { setUserLiquor, setQuestionIndex } = userStore();
@@ -17,16 +18,16 @@ export default function LiquorChoice() {
   ];
 
   return (
-    <div className="m-8">
-      <h2 className="text-2xl mb-10">
-        What liquor are you interested in using?
-      </h2>
-      <ButtonList
-        buttonContent={liquorOptions}
-        selectedButton={selectedButton}
-        setSelectedButton={setSelectedButton}
-        onButtonClick={setUserLiquor}
-      />
-    </div>
+    <QuestionCard
+      question="What liquor are you interested in using?"
+      buttons={
+        <ButtonList
+          buttonContent={liquorOptions}
+          selectedButton={selectedButton}
+          setSelectedButton={setSelectedButton}
+          onButtonClick={setUserLiquor}
+        />
+      }
+    />
   );
 }
