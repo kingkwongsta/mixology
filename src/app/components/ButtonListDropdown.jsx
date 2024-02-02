@@ -35,7 +35,7 @@ export default function ButtonListDropdown({
             {buttonContent.map((content, index) => (
               <Button
                 key={index}
-                className={`bg-[#6AAED9] my-2 min-w-[100px] max-w-[160px] hover:bg-opacity-75 ${
+                className={`bg-[#BFB2AA] my-2 min-w-[100px] max-w-[160px] hover:bg-opacity-75 drop-shadow-md ${
                   index === selectedButton && backgroundColor
                 }`}
                 onMouseEnter={() => setIsHovered(content.description)}
@@ -56,7 +56,7 @@ export default function ButtonListDropdown({
         </div>
         <div className="mx-10">
           {isHovered && (
-            <div className="hover-description my-2 max-w-[400px] text-[#2E83F2] text-md font-medium">
+            <div className="hover-description my-2 max-w-[400px] text-[#D9D9D9] text-md font-medium">
               {isHovered}
             </div>
           )}

@@ -25,27 +25,37 @@ export default function Welcome({ display }) {
   return (
     <div className="flex items-center justify-center ">
       <div className="relative">
+        {/* <<<<< FULL IMAGE SIZE >>>>>*/}
         <Image
-          className="h-full w-screen rounded-md object-cover opacity-70"
-          src="/images/welcome.jpg"
+          className="w-screen h-full object-cover opacity-70 rounded-md"
+          src="/images/hero-1.jpg"
           alt="welcome"
           width={1200}
           height={300}
         />
-        <div className="absolute inset-0 mt-[150px] flex flex-col items-center justify-start">
-          <h1 className="mb-7 text-4xl font-bold text-[#F2ADA7]">
-            Crafted for Your Palate
-          </h1>
-          <h2 className="text-xl font-semibold">
-            Discover a world of exquisite cocktails
-          </h2>
-          {/* <h1>{introMessages[randomNum]}</h1> */}
-          <Button
-            className="m-[100px] min-w-[200px] bg-[#9BF2F2] text-lg text-slate-700 shadow-md"
-            onClick={() => setQuestionIndex(1)}
-          >
-            <span className="">Start Mixing</span>
-          </Button>
+        {/* <Image
+          className="opacity-70 rounded-md max-h-[800px]"
+          src="/images/hero-1.jpg"
+          alt="welcome"
+          width={1200}
+          height={300}
+        /> */}
+        <div className="absolute inset-0 flex flex-col items-center justify-start mt-[100px] text-center">
+          <div className="pt-4 px-8 rounded-xl backdrop-blur-sm hover:border-[#D9984A] border-2 border-slate-300 shadow-lg">
+            <h1 className="text-4xl text-[#D9984A] font-bold mb-10 drop-shadow-md tracking-wide">
+              Crafted for Your Palate
+            </h1>
+            <h2 className="text-xl font-semibold drop-shadow-md">
+              Discover a world of exquisite cocktails
+            </h2>
+            {/* <h1>{introMessages[randomNum]}</h1> */}
+            <Button
+              className="bg-[#D9984A] m-[100px] min-w-[200px] shadow-md text-lg text-slate-700 drop-shadow-lg hover:bg-[#8C4130]"
+              onClick={() => setQuestionIndex(1)}
+            >
+              <span className="text-white drop-shadow-md">Start Mixing</span>
+            </Button>
+          </div>
         </div>
       </div>
     </div>

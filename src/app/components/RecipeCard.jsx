@@ -7,23 +7,24 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import userStore from "@/lib/userStore";
 
 export default function RecipeCard({ drinkRecipe }) {
+  const { drinkImage } = userStore();
   return (
     <div>
-      <h2 className="text-center text-3xl font-semibold text-slate-900 mt-7 mb-6">
+      <h2 className="text-center text-3xl font-semibold text-white mt-10 mb-3">
         {drinkRecipe.name}
       </h2>
 
-      <div className="flex flex-row space-x-10">
+      <div className="flex flex-row space-x-10 items-center max-w-[1000px] max-h-[800px]">
         <div className="flex flex-col space-y-8">
-          {/* <<<<<INGREDIENTS CARD>>>>> */}
-          <Card className="w-[500px] border-[#2E83F2] border-none shadow-xl bg-slate-100 p-3">
+          <Card className="w-[450px] border-[#2E83F2] border-none shadow-xl bg-transparent">
             <CardHeader>
-              <CardTitle className="text-slate-900 ">Ingredients</CardTitle>
+              <CardTitle className="text-[#8C4130] ">Ingredients</CardTitle>
             </CardHeader>
             <CardContent>
-              <ul className="text-slate-800">
+              <ul>
                 {drinkRecipe.ingredients
                   .filter((item) => item.name !== "Ice cubes")
                   .map((ingredient, index) => (
@@ -34,13 +35,13 @@ export default function RecipeCard({ drinkRecipe }) {
               </ul>
             </CardContent>
           </Card>
-          {/* <<<<<INSTRUCTIONS CARD>>>>> */}
-          <Card className="w-[500px] border-none shadow-xl bg-slate-200 p-3">
+
+          <Card className="w-[450px] border-none shadow-xl bg-transparent">
             <CardHeader>
-              <CardTitle className="text-slate-900 ">Instructions</CardTitle>
+              <CardTitle className="text-[#8C4130] ">Instructions</CardTitle>
             </CardHeader>
             <CardContent>
-              <ol className="text-slate-800">
+              <ol>
                 {drinkRecipe.instructions
                   .split("\n")
                   .map((instruction, index) => (
@@ -50,15 +51,18 @@ export default function RecipeCard({ drinkRecipe }) {
             </CardContent>
           </Card>
         </div>
-        {/* IMAGE FOR RECIPE */}
-        <div className="shadow-xl rounded-xl">
-          <Image
-            className="rounded-xl opacity-60"
-            src="/images/drink.jpg"
-            alt="drink"
-            width={350}
-            height={400}
-          />
+        <div className="shadow-xl rounded-xl h-full">
+          {drinkImage ? (
+            <Image
+              className="rounded-xl object-cover opacity-70"
+              src={drinkImage.imageURL}
+              alt="drink"
+              width={400}
+              height={800}
+            />
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </div>

@@ -9,63 +9,60 @@ import Transition from "@/lib/transition";
 import QuestionLayout from "./layout/QuestionLayout";
 
 export default function Home() {
-  const { userFlavor, userLiquor, userMood, drinkRecipe, questionIndex } =
-    userStore();
+  const { questionIndex } = userStore();
   return (
-    <section className="py-7">
-      <main className="container">
-        {questionIndex === 0 && (
-          <Transition>
-            <Welcome />
-          </Transition>
-        )}
-        {questionIndex === 1 && (
-          <Transition>
-            <QuestionLayout>
-              <FlavorChoice
-                imageSrc="/images/flavor.jpg"
-                imageAlt="picture of flavor"
-                imagePosition="right"
-              />
-            </QuestionLayout>
-          </Transition>
-        )}
+    <main className="m-3 ">
+      {questionIndex === 0 && (
+        <Transition>
+          <Welcome />
+        </Transition>
+      )}
+      {questionIndex === 1 && (
+        <Transition>
+          <QuestionLayout>
+            <FlavorChoice
+              imageSrc="/images/flavor-2.jpg"
+              imageAlt="picture of flavor"
+              imagePosition="right"
+            />
+          </QuestionLayout>
+        </Transition>
+      )}
 
-        {questionIndex === 2 && (
-          <Transition>
-            <QuestionLayout>
-              <LiquorChoice
-                imageSrc="/images/liquor.jpg"
-                imageAlt="picture liquor"
-                imagePosition="right"
-              />
-            </QuestionLayout>
-          </Transition>
-        )}
-        {questionIndex === 3 && (
-          <Transition>
-            <QuestionLayout>
-              <MoodChoice
-                imageSrc="/images/mood.jpg"
-                imageAlt="picture of mood"
-                imagePosition="right"
-              />
-            </QuestionLayout>
-          </Transition>
-        )}
-        {questionIndex === 4 && (
-          <Transition>
-            <GenerateCocktail />
-          </Transition>
-        )}
-        {/*----- DEBUG STATE -----*/}
-        {/* <button
+      {questionIndex === 2 && (
+        <Transition>
+          <QuestionLayout>
+            <LiquorChoice
+              imageSrc="/images/liquor-2.jpg"
+              imageAlt="picture liquor"
+              imagePosition="right"
+            />
+          </QuestionLayout>
+        </Transition>
+      )}
+      {questionIndex === 3 && (
+        <Transition>
+          <QuestionLayout>
+            <MoodChoice
+              imageSrc="/images/mood.jpg"
+              imageAlt="picture of mood"
+              imagePosition="right"
+            />
+          </QuestionLayout>
+        </Transition>
+      )}
+      {questionIndex === 4 && (
+        <Transition>
+          <GenerateCocktail />
+        </Transition>
+      )}
+      {/*----- DEBUG STATE -----*/}
+      {/* <button
         onClick={() => console.log(questionIndex)}
         className="p-2 m-5 border-solid border-2 border-sky-500 rounded-lg"
       >
         Debug: get Question Index
       </button>{" "} */}
-      </main>
-    </section>
+    </main>
   );
 }

@@ -9,8 +9,6 @@ export default function FlavorChoice() {
     "Do you prefer your cocktails sweet, tart, or balanced? Popular sweeteners include simple syrup, liqueurs, fruit juices, and flavored syrups.",
   );
   const [selectedButton, setSelectedButton] = useState();
-  const { setUserFlavor, setQuestionIndex } = userStore();
-
   const flavorProfiles = [
     {
       profile: "Sweet",
@@ -42,21 +40,17 @@ export default function FlavorChoice() {
   const question = "Pick a flavor profile that you are looking for:";
 
   return (
-    <div className="m-8">
-      <QuestionCard
-        question={question}
-        content={
-          <ButtonListDropdown
-            buttonContent={flavorProfiles}
-            selectedButton={selectedButton}
-            setSelectedButton={setSelectedButton}
-            isHovered={isHovered}
-            setIsHovered={setIsHovered}
-          />
-        }
-      />
-      <h1 className="my-10 text-2xl text-[#FFFFFF]"></h1>
-      {/* <div>{renderFlavorProfiles()}</div> */}
-    </div>
+    <QuestionCard
+      question="Pick a flavor profile that you are looking for: "
+      buttons={
+        <ButtonListDropdown
+          buttonContent={flavorProfiles}
+          selectedButton={selectedButton}
+          setSelectedButton={setSelectedButton}
+          isHovered={isHovered}
+          setIsHovered={setIsHovered}
+        />
+      }
+    />
   );
 }
