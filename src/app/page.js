@@ -9,8 +9,7 @@ import Transition from "@/lib/transition";
 import QuestionLayout from "./layout/QuestionLayout";
 
 export default function Home() {
-  const { userFlavor, userLiquor, userMood, drinkRecipe, questionIndex } =
-    userStore();
+  const { questionIndex } = userStore();
   return (
     <main className="m-3 ">
       {questionIndex === 0 && (
