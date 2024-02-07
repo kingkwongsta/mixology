@@ -44,7 +44,7 @@ export default function Home() {
         <Transition>
           <QuestionLayout>
             <MoodChoice
-              imageSrc="/images/mood.jpg"
+              imageSrc="/images/mood-1.jpg"
               imageAlt="picture of mood"
               imagePosition="right"
             />

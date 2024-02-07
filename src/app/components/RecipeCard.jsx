@@ -1,12 +1,4 @@
 import Image from "next/image";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import userStore from "@/lib/userStore";
 
 export default function RecipeCard({ drinkRecipe }) {
@@ -17,14 +9,11 @@ export default function RecipeCard({ drinkRecipe }) {
         {drinkRecipe.name}
       </h2>
 
-      <div className="flex flex-row space-x-10 items-center max-w-[1000px] max-h-[800px]">
-        <div className="flex flex-col space-y-8">
-          <Card className="w-[450px] border-[#2E83F2] border-none shadow-xl bg-transparent">
-            <CardHeader>
-              <CardTitle className="text-[#8C4130] ">Ingredients</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul>
+      <div className="flex flex-row space-x-10">
+        <div className="flex flex-col space-y-8 max-w-[600px]">
+          <div className="shadow-xl basis-1/2 p-10 rounded-xl">
+            <h2 className="text-[#8C4130] font-semibold text-xl mb-5">Ingredients</h2>
+            <ul>
                 {drinkRecipe.ingredients
                   .filter((item) => item.name !== "Ice cubes")
                   .map((ingredient, index) => (
@@ -33,23 +22,17 @@ export default function RecipeCard({ drinkRecipe }) {
                     </li>
                   ))}
               </ul>
-            </CardContent>
-          </Card>
-
-          <Card className="w-[450px] border-none shadow-xl bg-transparent">
-            <CardHeader>
-              <CardTitle className="text-[#8C4130] ">Instructions</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ol>
+          </div>
+          <div className="shadow-xl basis-1/2 p-10 rounded-xl">
+            <h2 className="text-[#8C4130] font-semibold text-xl mb-5">Instructions</h2>
+            <ol>
                 {drinkRecipe.instructions
                   .split("\n")
                   .map((instruction, index) => (
                     <li key={index}>{instruction.trim()}</li>
                   ))}
               </ol>
-            </CardContent>
-          </Card>
+          </div>
         </div>
         <div className="shadow-xl rounded-xl h-full">
           {drinkImage ? (
