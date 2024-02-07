@@ -155,21 +155,23 @@ export default function GenerateCocktail({}) {
     //   }
   };
   return (
+
+
     <div className="mt-10 flex flex-col items-center">
       <div className="shadow-xs p-2 rounded-lg">
         <p className="text-lg">
-          You are in a{" "}
+          Feeling {" "}
           <span
             onClick={() => setQuestionIndex(-3)}
             className="text-xl font-semibold text-[#262626] lowercase "
           >
             {userMood}
-          </span>{" "}
-          mood and are looking for{" "}
+          </span>{", "}
+          you search for a drink with a {" "}
           <span className="text-xl font-semibold text-[#262626] lowercase ">
             {userFlavor}
           </span>{" "}
-          drink with{" "}
+          taste, perhaps something containing{" "}
           <span className="text-xl font-semibold text-[#262626] lowercase ">
             {userLiquor}
           </span>{" "}
