@@ -23,11 +23,11 @@ export default function Welcome({ display }) {
   //   setrandomNum(randomIndex);
   // }, [introMessages]);
   return (
-    <div className="flex items-center justify-center ">
+    <div className="flex items-center justify-center">
       <div className="relative">
         {/* <<<<< FULL IMAGE SIZE >>>>>*/}
         <Image
-          className="w-screen h-full object-cover opacity-70 rounded-md"
+          className="w-screen h-full object-cover opacity-80 rounded-md"
           src="/images/hero-1.jpg"
           alt="welcome"
           width={1200}
@@ -40,9 +40,9 @@ export default function Welcome({ display }) {
           width={1200}
           height={300}
         /> */}
-        <div className="absolute inset-0 flex flex-col items-center justify-start mt-[100px] text-center">
+        <div className="absolute inset-0 flex flex-col items-center justify-start mt-[100px] text-center]">
           <div className="pt-4 px-8 rounded-xl backdrop-blur-sm hover:border-[#D9984A] border-2 border-slate-300 shadow-lg">
-            <h1 className="text-4xl text-[#ff983f] font-bold mb-10 drop-shadow-md tracking-wide">
+            <h1 className="text-4xl text-[#ffffff] font-bold mb-10 drop-shadow-md tracking-wide">
               Crafted for Your Palate
             </h1>
             <h2 className="text-xl font-semibold drop-shadow-md">
