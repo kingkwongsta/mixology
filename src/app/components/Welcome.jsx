@@ -5,23 +5,7 @@ import userStore from "@/lib/userStore";
 
 export default function Welcome({ display }) {
   const { setQuestionIndex } = userStore();
-  // const [randomNum, setrandomNum] = useState(0);
 
-  // const introMessages = useMemo(
-  //   () => [
-  //     "Ready for a flavor adventure? Answer a few quick questions and we'll whip up a drink you'll love!",
-  //     "Forget bland beverages! Unmask your true cocktail personality with our fun and fiery quiz.",
-  //     "Can't decide on a cocktail? Let's unlock your taste buds with a personalized mixology journey!",
-  //     "Imagine sipping the perfect drink, tailored just for you. Take our quiz and make it a reality!",
-  //     "Ditch the guesswork, find your flavor bliss! Discover your signature cocktail in minutes.",
-  //     "Elevate your evenings with bespoke cocktails! Unleash your inner bartender with our taste profile quiz.",
-  //   ],
-  //   []
-  // );
-  // useEffect(() => {
-  //   const randomIndex = Math.floor(Math.random() * introMessages.length);
-  //   setrandomNum(randomIndex);
-  // }, [introMessages]);
   return (
     <div className="flex items-center justify-center">
       <div className="relative">
@@ -33,13 +17,6 @@ export default function Welcome({ display }) {
           width={1200}
           height={300}
         />
-        {/* <Image
-          className="opacity-70 rounded-md max-h-[800px]"
-          src="/images/hero-1.jpg"
-          alt="welcome"
-          width={1200}
-          height={300}
-        /> */}
         <div className="absolute inset-0 flex flex-col items-center justify-start mt-[100px] text-center]">
           <div className="pt-4 px-8 rounded-xl backdrop-blur-sm hover:border-[#D9984A] border-2 border-slate-300 shadow-lg">
             <h1 className="text-4xl text-[#ffffff] font-bold mb-10 drop-shadow-md tracking-wide">
