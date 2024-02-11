@@ -100,59 +100,6 @@ export default function GenerateCocktail({}) {
       setRecipe("Error: Fetch failed");
       setIsLoading(false);
     }
-
-    // const [gptResponse, imageResponse] = await Promise.all([
-    //   fetch("/api/gptrequest", {
-    //     method: "POST",
-    //     headers: { "Content-Type": "application/json" },
-    //     body: JSON.stringify({ userFlavor, userLiquor, userMood }),
-    //   }),
-    //   fetch("/api/image-gen", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({
-    //       prompt: userLiquor,
-    //     }),
-    //   }),
-    // ]);
-
-    // const gptData = await gptResponse.json();
-    // const { images } = await imageResponse.json();
-
-    // if (gptData.data.choices && gptData.data.choices.length > 0) {
-    //   setDrinkRecipe(JSON.parse(gptData.data.choices[0].message.content));
-    // } else {
-    //   setRecipe("Error: Unexpected response structure");
-    // }
-
-    // const imageURL = `data:image/jpeg;base64,${images[0].imageData}`;
-    // setDrinkImage({ imageURL });
-    // setIsLoading(false);
-
-    //   try {
-    //     const response = await fetch("/api/gptrequest", {
-    //       method: "POST",
-    //       headers: { "Content-Type": "application/json" },
-    //       body: JSON.stringify({ userFlavor, userLiquor, userMood }),
-    //     });
-
-    //     const data = await response.json();
-
-    //     if (data.data.choices && data.data.choices.length > 0) {
-    //       setDrinkRecipe(JSON.parse(data.data.choices[0].message.content));
-    //       console.log(data);
-    //     } else {
-    //       setRecipe("Error: Unexpected response structure");
-    //     }
-    //   } catch (error) {
-    //     console.error(error);
-    //     setRecipe("Error");
-    //     console.log(error.response);
-    //   } finally {
-    //     setIsLoading(false);
-    //   }
   };
   return (
 
@@ -200,8 +147,10 @@ export default function GenerateCocktail({}) {
           ""
         )}
       </div>
+      <div><button className="border-2 border-cyan-500" onClick={()=>{console.log(drinkRecipe)}}>Get State</button></div>
+
       {/* <<<<<< RENDER RECIPE >>>>> */}
-      <div className="min-h-[300px]">
+      {/* <div className="min-h-[300px]">
         {drinkRecipe ? <RecipeCard drinkRecipe={drinkRecipe} /> : ""}
       </div>
       <div>
@@ -218,7 +167,7 @@ export default function GenerateCocktail({}) {
         ) : (
           ""
         )}
-      </div>
+      </div> */}
     </div>
   );
 }

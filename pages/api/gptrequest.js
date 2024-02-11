@@ -25,7 +25,7 @@ export default async function createMessage(req, res) {
 
     const body = JSON.stringify({
       messages,
-      model: "gpt-3.5-turbo",
+      model: "ft:gpt-3.5-turbo-1106:personal::8qcUE1mM",
       // response_format: "json_object",
       stream: false,
     });
