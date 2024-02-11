@@ -108,16 +108,16 @@ export default function GenerateCocktail({}) {
           Feeling {" "}
           <span
             onClick={() => setQuestionIndex(-3)}
-            className="text-xl font-semibold text-[#262626] lowercase "
+            className="text-xl font-semibold text-[#dd6236] lowercase "
           >
             {userMood}
           </span>{", "}
           you search for a drink with a {" "}
-          <span className="text-xl font-semibold text-[#262626] lowercase ">
+          <span className="text-xl font-semibold text-[#dd6236] lowercase ">
             {userFlavor}
           </span>{" "}
           taste, perhaps something containing{" "}
-          <span className="text-xl font-semibold text-[#262626] lowercase ">
+          <span className="text-xl font-semibold text-[#dd6236] lowercase ">
             {userLiquor}
           </span>{" "}
         </p>
