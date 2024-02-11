@@ -9,7 +9,7 @@ export default function RecipeCard({ drinkRecipe }) {
         {drinkRecipe.name}
       </h2>
 
-      <div className="flex flex-row space-x-10">
+      <div className="flex flex-row space-x-10 max-sm:flex-col max-sm:space-y-5">
         <div className="flex flex-col space-y-8 max-w-[600px]">
           <div className="shadow-xl basis-1/2 p-10 rounded-xl bg-[#2c2c2c]">
             <h2 className="text-[#dd6236] font-semibold text-xl mb-5">Ingredients</h2>
