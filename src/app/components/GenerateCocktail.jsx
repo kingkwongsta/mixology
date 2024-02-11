@@ -85,11 +85,11 @@ export default function GenerateCocktail({}) {
 
       const gptData = await gptResponse.json();
       const { images } = await imageResponse.json();
-
+      console.log(gptData.data.choices[0])
       if (gptData.data.choices && gptData.data.choices.length > 0) {
         setDrinkRecipe(JSON.parse(gptData.data.choices[0].message.content));
       } else {
-        setRecipe("Error: Unexpected response structure");
+        setDrinkRecipe("Error: Unexpected response structure");
       }
 
       const imageURL = `data:image/jpeg;base64,${images[0].imageData}`;
@@ -97,13 +97,11 @@ export default function GenerateCocktail({}) {
       setIsLoading(false);
     } catch (error) {
       console.error("Error:", error);
-      setRecipe("Error: Fetch failed");
+      setDrinkRecipe("Error: Fetch failed");
       setIsLoading(false);
     }
   };
   return (
-
-
     <div className="mt-10 flex flex-col items-center">
       <div className="shadow-xs p-2 rounded-lg">
         <p className="text-lg">
@@ -147,10 +145,8 @@ export default function GenerateCocktail({}) {
           ""
         )}
       </div>
-      <div><button className="border-2 border-cyan-500" onClick={()=>{console.log(drinkRecipe)}}>Get State</button></div>
-
       {/* <<<<<< RENDER RECIPE >>>>> */}
-      {/* <div className="min-h-[300px]">
+      <div className="min-h-[300px]">
         {drinkRecipe ? <RecipeCard drinkRecipe={drinkRecipe} /> : ""}
       </div>
       <div>
@@ -167,7 +163,7 @@ export default function GenerateCocktail({}) {
         ) : (
           ""
         )}
-      </div> */}
+      </div>
     </div>
   );
 }
