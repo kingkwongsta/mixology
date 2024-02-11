@@ -85,11 +85,11 @@ export default function GenerateCocktail({}) {
 
       const gptData = await gptResponse.json();
       const { images } = await imageResponse.json();
-
+      console.log(gptData.data.choices[0])
       if (gptData.data.choices && gptData.data.choices.length > 0) {
         setDrinkRecipe(JSON.parse(gptData.data.choices[0].message.content));
       } else {
-        setRecipe("Error: Unexpected response structure");
+        setDrinkRecipe("Error: Unexpected response structure");
       }
 
       const imageURL = `data:image/jpeg;base64,${images[0].imageData}`;
@@ -97,82 +97,27 @@ export default function GenerateCocktail({}) {
       setIsLoading(false);
     } catch (error) {
       console.error("Error:", error);
-      setRecipe("Error: Fetch failed");
+      setDrinkRecipe("Error: Fetch failed");
       setIsLoading(false);
     }
-
-    // const [gptResponse, imageResponse] = await Promise.all([
-    //   fetch("/api/gptrequest", {
-    //     method: "POST",
-    //     headers: { "Content-Type": "application/json" },
-    //     body: JSON.stringify({ userFlavor, userLiquor, userMood }),
-    //   }),
-    //   fetch("/api/image-gen", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({
-    //       prompt: userLiquor,
-    //     }),
-    //   }),
-    // ]);
-
-    // const gptData = await gptResponse.json();
-    // const { images } = await imageResponse.json();
-
-    // if (gptData.data.choices && gptData.data.choices.length > 0) {
-    //   setDrinkRecipe(JSON.parse(gptData.data.choices[0].message.content));
-    // } else {
-    //   setRecipe("Error: Unexpected response structure");
-    // }
-
-    // const imageURL = `data:image/jpeg;base64,${images[0].imageData}`;
-    // setDrinkImage({ imageURL });
-    // setIsLoading(false);
-
-    //   try {
-    //     const response = await fetch("/api/gptrequest", {
-    //       method: "POST",
-    //       headers: { "Content-Type": "application/json" },
-    //       body: JSON.stringify({ userFlavor, userLiquor, userMood }),
-    //     });
-
-    //     const data = await response.json();
-
-    //     if (data.data.choices && data.data.choices.length > 0) {
-    //       setDrinkRecipe(JSON.parse(data.data.choices[0].message.content));
-    //       console.log(data);
-    //     } else {
-    //       setRecipe("Error: Unexpected response structure");
-    //     }
-    //   } catch (error) {
-    //     console.error(error);
-    //     setRecipe("Error");
-    //     console.log(error.response);
-    //   } finally {
-    //     setIsLoading(false);
-    //   }
   };
   return (
-
-
     <div className="mt-10 flex flex-col items-center">
       <div className="shadow-xs p-2 rounded-lg">
         <p className="text-lg">
           Feeling {" "}
           <span
             onClick={() => setQuestionIndex(-3)}
-            className="text-xl font-semibold text-[#262626] lowercase "
+            className="text-xl font-semibold text-[#dd6236] lowercase "
           >
             {userMood}
           </span>{", "}
           you search for a drink with a {" "}
-          <span className="text-xl font-semibold text-[#262626] lowercase ">
+          <span className="text-xl font-semibold text-[#dd6236] lowercase ">
             {userFlavor}
           </span>{" "}
           taste, perhaps something containing{" "}
-          <span className="text-xl font-semibold text-[#262626] lowercase ">
+          <span className="text-xl font-semibold text-[#dd6236] lowercase ">
             {userLiquor}
           </span>{" "}
         </p>

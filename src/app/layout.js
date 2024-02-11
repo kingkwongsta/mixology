@@ -14,8 +14,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        // className={`${inter.className} bg-gradient-to-r from-[#9BF2F2] to-[#F2ADA7]`}
-        className={`${inter.className} bg-gradient-to-r from-[#D9984A] to-[#8C4130]`}
+          className={`${inter.className} bg-gradient-to-r from-[#000000] to-[#000000]`}
+        // className={`${inter.className} bg-gradient-to-r from-[#e0e0e0] to-[#F5F5F5]`}
       >
         <ThemeProvider
           attribute="class"
