@@ -64,7 +64,7 @@ export default function GenerateCocktail({}) {
 
     return () => clearInterval(timerId); // Clear interval on unmount
   }, []);
-  const getCocktail = async () => {
+  async function action() {
     setIsLoading(true);
     try {
       const [gptResponse, imageResponse] = await Promise.all([
@@ -103,7 +103,7 @@ export default function GenerateCocktail({}) {
       setDrinkRecipe("Error: Fetch failed");
       setIsLoading(false);
     }
-  };
+  }
   return (
     <div className="mt-10 flex flex-col items-center">
       <div className="shadow-xs rounded-lg p-2">
