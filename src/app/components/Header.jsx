@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 export default function Header() {
   const { questionIndex, setQuestionIndex, setDrinkRecipe } = userStore();
   return (
-    <div className="mx-1 flex items-center justify-center ">
+    <div className="container flex max-w-5xl items-center justify-between px-3">
       <div className="">
         <Image
           className="mt-2"
