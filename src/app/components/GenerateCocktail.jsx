@@ -66,6 +66,12 @@ export default function GenerateCocktail({}) {
   }, []);
   async function action() {
     setIsLoading(true);
+
+    const { error } = await createCompletion(prompt);
+    if (error) {
+      toast.error(error);
+    }
+
     try {
       const [gptResponse, imageResponse] = await Promise.all([
         fetch("/api/gptrequest", {

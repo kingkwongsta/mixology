@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
         >
           <Header />
           <main>{children}</main>
-          <Toaster position="top-right" theme="dark" richColors />
+          <Toaster position="bottom-right" theme="dark" richColors />
         </ThemeProvider>
       </body>
     </html>
