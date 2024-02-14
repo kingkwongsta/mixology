@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-          className={`${inter.className} bg-gradient-to-r from-[#000000] to-[#000000]`}
+        className={`${inter.className} bg-gradient-to-r from-[#000000] to-[#000000]`}
         // className={`${inter.className} bg-gradient-to-r from-[#e0e0e0] to-[#F5F5F5]`}
       >
         <ThemeProvider
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
         >
           <Header />
           <main>{children}</main>
+          <Toaster position="top-right" theme="dark" richColors />
         </ThemeProvider>
       </body>
     </html>

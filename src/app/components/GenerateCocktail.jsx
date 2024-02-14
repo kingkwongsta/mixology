@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import RecipeCard from "./RecipeCard";
 import Image from "next/image";
+import { toast } from "sonner";
 
 export default function GenerateCocktail({}) {
   const {
@@ -42,7 +43,7 @@ export default function GenerateCocktail({}) {
       "Blast Off to Flavortown",
       "Escape to Cocktail Island",
     ],
-    []
+    [],
   );
   // Create random number to set button text
   useEffect(() => {
@@ -85,11 +86,12 @@ export default function GenerateCocktail({}) {
 
       const gptData = await gptResponse.json();
       const { images } = await imageResponse.json();
-      console.log(gptData.data.choices[0])
+      console.log(gptData.data.choices[0]);
       if (gptData.data.choices && gptData.data.choices.length > 0) {
         setDrinkRecipe(JSON.parse(gptData.data.choices[0].message.content));
       } else {
         setDrinkRecipe("Error: Unexpected response structure");
+        toast.error("Error: Unexpected response structure");
       }
 
       const imageURL = `data:image/jpeg;base64,${images[0].imageData}`;
@@ -97,27 +99,29 @@ export default function GenerateCocktail({}) {
       setIsLoading(false);
     } catch (error) {
       console.error("Error:", error);
+      toast.error("Error:", error);
       setDrinkRecipe("Error: Fetch failed");
       setIsLoading(false);
     }
   };
   return (
     <div className="mt-10 flex flex-col items-center">
-      <div className="shadow-xs p-2 rounded-lg">
+      <div className="shadow-xs rounded-lg p-2">
         <p className="text-lg">
-          Feeling {" "}
+          Feeling{" "}
           <span
             onClick={() => setQuestionIndex(-3)}
-            className="text-xl font-semibold text-[#dd6236] lowercase "
+            className="text-xl font-semibold lowercase text-[#dd6236] "
           >
             {userMood}
-          </span>{", "}
-          you search for a drink with a {" "}
-          <span className="text-xl font-semibold text-[#dd6236] lowercase ">
+          </span>
+          {", "}
+          you search for a drink with a{" "}
+          <span className="text-xl font-semibold lowercase text-[#dd6236] ">
             {userFlavor}
           </span>{" "}
           taste, perhaps something containing{" "}
-          <span className="text-xl font-semibold text-[#dd6236] lowercase ">
+          <span className="text-xl font-semibold lowercase text-[#dd6236] ">
             {userLiquor}
           </span>{" "}
         </p>
@@ -126,7 +130,7 @@ export default function GenerateCocktail({}) {
         ""
       ) : (
         <Button
-          className={`max-w-[250px] mt-12 ${selected && "bg-[#D9D9D9]"}`}
+          className={`mt-12 max-w-[250px] ${selected && "bg-[#D9D9D9]"}`}
           onClick={() => {
             setSelected(!selected);
             getCocktail();
@@ -135,9 +139,9 @@ export default function GenerateCocktail({}) {
           {buttonName}
         </Button>
       )}
-      <div className=" text-slate-500 text-xl">
+      <div className=" text-xl text-slate-500">
         {isLoading ? (
-          <div className="flex flex-col items-center space-y-8 mt-8">
+          <div className="mt-8 flex flex-col items-center space-y-8">
             <p>Shaking up your signature sip... </p>
             <Progress value={progress} className="w-[60%]" />
           </div>
