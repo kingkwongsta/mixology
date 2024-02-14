@@ -67,52 +67,10 @@ export default function GenerateCocktail({}) {
   async function action() {
     // setIsLoading(true);
 
-    const { error } = await createCompletion({
-      userFlavor,
-      userLiquor,
-      userMood,
-    });
+    const { error } = await createCompletion(userFlavor, userLiquor, userMood);
     if (error) {
       toast.error(error);
     }
-
-    // try {
-    //   const [gptResponse, imageResponse] = await Promise.all([
-    //     fetch("/api/gptrequest", {
-    //       method: "POST",
-    //       headers: { "Content-Type": "application/json" },
-    //       body: JSON.stringify({ userFlavor, userLiquor, userMood }),
-    //     }),
-    //     fetch("/api/image-gen", {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify({
-    //         prompt: userLiquor,
-    //       }),
-    //     }),
-    //   ]);
-
-    //   const gptData = await gptResponse.json();
-    //   const { images } = await imageResponse.json();
-    //   console.log(gptData.data.choices[0]);
-    //   if (gptData.data.choices && gptData.data.choices.length > 0) {
-    //     setDrinkRecipe(JSON.parse(gptData.data.choices[0].message.content));
-    //   } else {
-    //     setDrinkRecipe("Error: Unexpected response structure");
-    //     toast.error("Error: Unexpected response structure");
-    //   }
-
-    //   const imageURL = `data:image/jpeg;base64,${images[0].imageData}`;
-    //   setDrinkImage({ imageURL });
-    //   setIsLoading(false);
-    // } catch (error) {
-    //   console.error("Error:", error);
-    //   toast.error("Error:", error);
-    //   setDrinkRecipe("Error: Fetch failed");
-    //   setIsLoading(false);
-    // }
   }
   return (
     <div className="mt-10 flex flex-col items-center">
