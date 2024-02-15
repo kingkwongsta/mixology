@@ -28,27 +28,28 @@ export async function createCompletion(userFlavor, userLiquor, userMood) {
     messages,
   });
 
-  const recipe = completion.choices[0].message.content
-  if(!recipe){
-    return {error: "Unable to generate recipe"}
+  const recipe = completion.choices[0].message.content;
+  if (!recipe) {
+    return { error: "Unable to generate recipe" };
   }
   // generate image using OctoAI - Stable Diffusion XL
 
   //upload image to supabase storage
 
   //create new blog post in supabase
-  const { data: blog, error: blogError } = await supabase
-    .from('blogs')
-    .insert([{ title: "hello", content: recipe, imageUrl: "imgage", userId: "123" }])
-    .select()
+  //   const { data: blog, error: blogError } = await supabase
+  //     .from("blogs")
+  //     .insert([
+  //       { title: "hello", content: recipe, imageUrl: "imgage", userId: "123" },
+  //     ])
+  //     .select();
 
-  if (blogError) {
-    return { error: 'Unable to insert the blog into the database.' }
-  }
+  //   if (blogError) {
+  //     return { error: "Unable to insert the blog into the database." };
+  //   }
 
-  const blogId = blog?.[0]?.id
+  //   const blogId = blog?.[0]?.id;
 
-  revalidatePath('/')
-  redirect(`/blog/${blogId}`)
-}
+  //   revalidatePath("/");
+  //   redirect(`/blog/${blogId}`);
 }

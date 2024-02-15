@@ -6,7 +6,7 @@ import { Progress } from "@/components/ui/progress";
 import RecipeCard from "./RecipeCard";
 import Image from "next/image";
 import { toast } from "sonner";
-import { createCompletion } from "../actions";
+import { createCompletion } from "./../actions";
 
 export default function GenerateCocktail({}) {
   const {
