@@ -6,6 +6,7 @@ import { Progress } from "@/components/ui/progress";
 import RecipeCard from "./RecipeCard";
 import Image from "next/image";
 import { toast } from "sonner";
+import { createCompletion } from "../actions";
 
 export default function GenerateCocktail({}) {
   const {
@@ -65,11 +66,17 @@ export default function GenerateCocktail({}) {
     return () => clearInterval(timerId); // Clear interval on unmount
   }, []);
   async function action() {
-    // setIsLoading(true);
-
-    const { error } = await createCompletion(userFlavor, userLiquor, userMood);
-    if (error) {
+    try {
+      const { recipe } = await createCompletion(
+        userFlavor,
+        userLiquor,
+        userMood,
+      );
+      setDrinkRecipe(recipe); // Update state with the received recipe
+    } catch (error) {
       toast.error(error);
+    } finally {
+      setIsLoading(false);
     }
   }
   return (
