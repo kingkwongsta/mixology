@@ -33,6 +33,8 @@ export async function createCompletion(userFlavor, userLiquor, userMood) {
     return { error: "Unable to generate recipe" };
   }
   console.log("action completed");
+  console.log(recipe);
+  return recipe;
   // generate image using OctoAI - Stable Diffusion XL
 
   //upload image to supabase storage
