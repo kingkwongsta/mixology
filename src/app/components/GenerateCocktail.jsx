@@ -65,7 +65,7 @@ export default function GenerateCocktail({}) {
 
     return () => clearInterval(timerId); // Clear interval on unmount
   }, []);
-  async function action() {
+  async function getRecipe() {
     try {
       const { recipe } = await createCompletion(
         userFlavor,
@@ -104,15 +104,17 @@ export default function GenerateCocktail({}) {
       {drinkRecipe ? (
         ""
       ) : (
-        <Button
-          className={`mt-12 max-w-[250px] ${selected && "bg-[#D9D9D9]"}`}
-          onClick={() => {
-            setSelected(!selected);
-            action();
-          }}
-        >
-          {buttonName}
-        </Button>
+        <form>
+          <button
+            className={`mt-12 max-w-[250px] ${selected && "bg-[#D9D9D9]"}`}
+            formAction={getRecipe}
+            onClick={() => {
+              setSelected(!selected);
+            }}
+          >
+            {buttonName}
+          </button>
+        </form>
       )}
       <div className=" text-xl text-slate-500">
         {isLoading ? (
