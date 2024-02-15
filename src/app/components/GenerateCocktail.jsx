@@ -74,7 +74,7 @@ export default function GenerateCocktail({}) {
       );
       setDrinkRecipe(recipe); // Update state with the received recipe
     } catch (error) {
-      toast.error(error);
+      console.log(error);
     } finally {
       setIsLoading(false);
     }
@@ -104,10 +104,10 @@ export default function GenerateCocktail({}) {
       {drinkRecipe ? (
         ""
       ) : (
-        <form>
+        <form action={getRecipe}>
           <button
             className={`mt-12 max-w-[250px] ${selected && "bg-[#D9D9D9]"}`}
-            formAction={getRecipe}
+            type="submit"
             onClick={() => {
               setSelected(!selected);
             }}
