@@ -67,12 +67,13 @@ export default function GenerateCocktail({}) {
   }, []);
   async function getRecipe() {
     try {
-      const { recipe } = await createCompletion(
-        userFlavor,
-        userLiquor,
-        userMood,
-      );
-      setDrinkRecipe(recipe); // Update state with the received recipe
+      const response = await createCompletion(userFlavor, userLiquor, userMood);
+      if (response && response.recipe) {
+        // Check for existence of recipe
+        setDrinkRecipe(response.recipe);
+      } else {
+        console.log("recipe unavailable");
+      }
     } catch (error) {
       console.log(error);
     } finally {
@@ -145,6 +146,14 @@ export default function GenerateCocktail({}) {
           ""
         )}
       </div>
+      <button
+        onClick={() => {
+          console.log(drinkRecipe);
+        }}
+        className="border-2 border-cyan-500 p-5"
+      >
+        Get STate
+      </button>
     </div>
   );
 }
