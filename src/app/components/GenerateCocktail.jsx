@@ -128,7 +128,7 @@ export default function GenerateCocktail({}) {
         )}
       </div>
       {/* <<<<<< RENDER RECIPE >>>>> */}
-      {/* <div className="min-h-[300px]">
+      <div className="min-h-[300px]">
         {drinkRecipe ? <RecipeCard drinkRecipe={drinkRecipe} /> : ""}
       </div>
       <div>
@@ -145,7 +145,7 @@ export default function GenerateCocktail({}) {
         ) : (
           ""
         )}
-      </div> */}
+      </div>
       <button
         onClick={() => {
           console.log(drinkRecipe);
