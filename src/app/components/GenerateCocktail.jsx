@@ -6,7 +6,7 @@ import { Progress } from "@/components/ui/progress";
 import RecipeCard from "./RecipeCard";
 import Image from "next/image";
 import { toast } from "sonner";
-import { createCompletion } from "./../actions";
+import { createCompletion, createImage } from "./../actions";
 
 export default function GenerateCocktail({}) {
   const {
@@ -68,9 +68,11 @@ export default function GenerateCocktail({}) {
   async function getRecipe() {
     try {
       const response = await createCompletion(userFlavor, userLiquor, userMood);
-      if (response) {
+      const imageResponse = await createImage();
+      if (response && imageResponse) {
         // Check for existence of recipe
         setDrinkRecipe(response);
+        setDrinkImage(imageResponse);
       } else {
         console.log("recipe unavailable");
       }
@@ -152,7 +154,15 @@ export default function GenerateCocktail({}) {
         }}
         className="border-2 border-cyan-500 p-5"
       >
-        Get STate
+        Get Drink Recipe
+      </button>
+      <button
+        onClick={() => {
+          console.log(drinkImage);
+        }}
+        className="border-2 border-cyan-500 p-5"
+      >
+        Get Drink Image
       </button>
     </div>
   );
