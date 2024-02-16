@@ -69,6 +69,7 @@ export default function GenerateCocktail({}) {
     try {
       const response = await createCompletion(userFlavor, userLiquor, userMood);
       const imageResponse = await createImage();
+
       if (response && imageResponse) {
         // Check for existence of recipe
         setDrinkRecipe(response);
@@ -130,7 +131,7 @@ export default function GenerateCocktail({}) {
         )}
       </div>
       {/* <<<<<< RENDER RECIPE >>>>> */}
-      <div className="min-h-[300px]">
+      {/* <div className="min-h-[300px]">
         {drinkRecipe ? <RecipeCard drinkRecipe={drinkRecipe} /> : ""}
       </div>
       <div>
@@ -147,7 +148,7 @@ export default function GenerateCocktail({}) {
         ) : (
           ""
         )}
-      </div>
+      </div> */}
       <button
         onClick={() => {
           console.log(drinkRecipe);

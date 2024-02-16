@@ -48,7 +48,6 @@ export async function createCompletion(userFlavor, userLiquor, userMood) {
       throw new Error("Invalid recipe format");
     }
     console.log("recipe creation completed...");
-    console.log(recipe);
     return recipe;
   } catch (error) {
     console.error("Error parsing recipe:", error);
@@ -76,15 +75,16 @@ export async function createImage() {
   try {
     const outputs = await client.infer(endpointUrl, inputs);
 
-    if (outputs.error) {
-      throw new Error(`Error from OctoAI: ${outputs.error}`);
+    if (response.error) {
+      throw new Error(`Error from OctoAI: ${response.error}`);
     }
 
     const imageResponse = outputs.images[0];
     const imageData = imageResponse.image_b64;
     const imageUrl = `data:image/jpeg;base64,${imageData}`;
+
     console.log("image creation completed");
-    return { imageUrl };
+    return imageUrl;
   } catch (error) {
     console.error("Error generating image:", error);
     return { error: "Unable to generate image" };
