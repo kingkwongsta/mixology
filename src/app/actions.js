@@ -54,42 +54,42 @@ export async function createCompletion(userFlavor, userLiquor, userMood) {
     return { error: "Unable to parse recipe as JSON" };
   }
 }
-export async function createImage() {
-  const endpointUrl = "https://image.octoai.run/generate/sdxl";
-  const modifiedPrompt = `In the center of the bar, illuminated by a spotlight emanating from the ceiling, sits a masterpiece of cocktail. A crystal coupe glass cradles a cocktail containing gin, lemon juice, simple syrup, orange bitters, and egg white. A liquor bottle of gin next to cocktail.Utilizing photorealistic and hyper-detailed style to capture the rich textures and vibrant colors of the scene. Additionally emphasize the interplay of light and shadow, creating a sense of drama and intrigue.`;
-  const inputs = {
-    prompt: modifiedPrompt,
-    negative_prompt:
-      "Blurry photo, distortion, low-res, poor quality, multiple cocktail glasses",
-    width: 832,
-    height: 1216,
-    num_images: 1,
-    sampler: "DDIM",
-    steps: 30,
-    cfg_scale: 12,
-    use_refiner: true,
-    high_noise_frac: 0.8,
-    style_preset: "Watercolor",
-  };
+// export async function createImage() {
+//   const endpointUrl = "https://image.octoai.run/generate/sdxl";
+//   const modifiedPrompt = `In the center of the bar, illuminated by a spotlight emanating from the ceiling, sits a masterpiece of cocktail. A crystal coupe glass cradles a cocktail containing gin, lemon juice, simple syrup, orange bitters, and egg white. A liquor bottle of gin next to cocktail.Utilizing photorealistic and hyper-detailed style to capture the rich textures and vibrant colors of the scene. Additionally emphasize the interplay of light and shadow, creating a sense of drama and intrigue.`;
+//   const inputs = {
+//     prompt: modifiedPrompt,
+//     negative_prompt:
+//       "Blurry photo, distortion, low-res, poor quality, multiple cocktail glasses",
+//     width: 832,
+//     height: 1216,
+//     num_images: 1,
+//     sampler: "DDIM",
+//     steps: 30,
+//     cfg_scale: 12,
+//     use_refiner: true,
+//     high_noise_frac: 0.8,
+//     style_preset: "Watercolor",
+//   };
 
-  try {
-    const outputs = await client.infer(endpointUrl, inputs);
+//   try {
+//     const outputs = await client.infer(endpointUrl, inputs);
 
-    if (response.error) {
-      throw new Error(`Error from OctoAI: ${response.error}`);
-    }
+//     if (response.error) {
+//       throw new Error(`Error from OctoAI: ${response.error}`);
+//     }
 
-    const imageResponse = outputs.images[0];
-    const imageData = imageResponse.image_b64;
-    const imageUrl = `data:image/jpeg;base64,${imageData}`;
+//     const imageResponse = outputs.images[0];
+//     const imageData = imageResponse.image_b64;
+//     const imageUrl = `data:image/jpeg;base64,${imageData}`;
 
-    console.log("image creation completed");
-    return imageUrl;
-  } catch (error) {
-    console.error("Error generating image:", error);
-    return { error: "Unable to generate image" };
-  }
-}
+//     console.log("image creation completed");
+//     return imageUrl;
+//   } catch (error) {
+//     console.error("Error generating image:", error);
+//     return { error: "Unable to generate image" };
+//   }
+// }
 
 // generate image using OctoAI - Stable Diffusion XL
 

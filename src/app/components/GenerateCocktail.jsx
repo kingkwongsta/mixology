@@ -6,7 +6,7 @@ import { Progress } from "@/components/ui/progress";
 import RecipeCard from "./RecipeCard";
 import Image from "next/image";
 import { toast } from "sonner";
-import { createCompletion, createImage } from "./../actions";
+import { createCompletion } from "./../actions";
 
 export default function GenerateCocktail({}) {
   const {
@@ -82,7 +82,6 @@ export default function GenerateCocktail({}) {
       //   console.log(error);
       // } finally {
       //   setIsLoading(false);
-      const imageResponse = await createImage();
 
       if (response) {
         setDrinkRecipe(response);
@@ -143,7 +142,7 @@ export default function GenerateCocktail({}) {
         )}
       </div>
       {/* <<<<<< RENDER RECIPE >>>>> */}
-      {/* <div className="min-h-[300px]">
+      <div className="min-h-[300px]">
         {drinkRecipe ? <RecipeCard drinkRecipe={drinkRecipe} /> : ""}
       </div>
       <div>
@@ -160,23 +159,7 @@ export default function GenerateCocktail({}) {
         ) : (
           ""
         )}
-      </div> */}
-      <button
-        onClick={() => {
-          console.log(drinkRecipe);
-        }}
-        className="border-2 border-cyan-500 p-5"
-      >
-        Get Drink Recipe
-      </button>
-      <button
-        onClick={() => {
-          console.log(drinkImage);
-        }}
-        className="border-2 border-cyan-500 p-5"
-      >
-        Get Drink Image
-      </button>
+      </div>
     </div>
   );
 }
