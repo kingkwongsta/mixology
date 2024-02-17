@@ -120,15 +120,16 @@ export default function GenerateCocktail({}) {
         ""
       ) : (
         <form action={getRecipe}>
-          <button
+          <Button
             className={`mt-12 max-w-[250px] ${selected && "bg-[#D9D9D9]"}`}
             type="submit"
             onClick={() => {
               setSelected(!selected);
+              setIsLoading(!isLoading);
             }}
           >
             {buttonName}
-          </button>
+          </Button>
         </form>
       )}
       <div className=" text-xl text-slate-500">
