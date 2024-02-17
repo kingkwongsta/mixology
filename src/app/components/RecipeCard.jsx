@@ -42,8 +42,8 @@ export default function RecipeCard({ drinkRecipe }) {
           {drinkImage ? (
             <Image
               className="rounded-xl object-cover opacity-70"
-              src={drinkImage.imageURL}
-              // src={"/images/liquor-1.jpg"}
+              // src={drinkImage.imageURL}
+              src={"/images/liquor-1.jpg"}
               alt="drink"
               width={400}
               height={800}

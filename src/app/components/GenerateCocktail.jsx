@@ -66,14 +66,26 @@ export default function GenerateCocktail({}) {
     return () => clearInterval(timerId); // Clear interval on unmount
   }, []);
   async function getRecipe() {
+    setIsLoading(true);
     try {
       const response = await createCompletion(userFlavor, userLiquor, userMood);
+      //   const imageResponse = await createImage();
+
+      //   if (response && imageResponse) {
+      //     // Check for existence of recipe
+      //     setDrinkRecipe(response);
+      //     setDrinkImage(imageResponse);
+      //   } else {
+      //     console.log("recipe unavailable");
+      //   }
+      // } catch (error) {
+      //   console.log(error);
+      // } finally {
+      //   setIsLoading(false);
       const imageResponse = await createImage();
 
-      if (response && imageResponse) {
-        // Check for existence of recipe
+      if (response) {
         setDrinkRecipe(response);
-        setDrinkImage(imageResponse);
       } else {
         console.log("recipe unavailable");
       }
