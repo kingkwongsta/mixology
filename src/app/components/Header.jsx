@@ -3,11 +3,12 @@ import Image from "next/image";
 import HomeButton from "./buttons/HomeButton";
 import ModeToggle from "./buttons/ModeToggle";
 import userStore from "@/lib/userStore";
+import { Button } from "@/components/ui/button";
 
 export default function Header() {
   const { questionIndex, setQuestionIndex, setDrinkRecipe } = userStore();
   return (
-    <div className="flex items-center justify-center mx-1 ">
+    <div className="container flex max-w-5xl items-center justify-between px-3">
       <div className="">
         <Image
           className="mt-2"
@@ -21,6 +22,9 @@ export default function Header() {
           }}
         />
       </div>
+      <button size="sm" variant="ghost">
+        Sign In
+      </button>
     </div>
   );
 }
